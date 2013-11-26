@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+	<!-- Database schema for nhs-dna-process (master) -->
+	<changeSet id="1" author="dheeraj">
+
+
+		<createTable tableName="Array">
+			<column autoIncrement="true" name="ArrayID" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="FeatureExtractor_barcode" type="VARCHAR(22)"></column>
+			<column name="AnyColorPrcntFeatNonUnifOL" type="DOUBLE"></column>
+			<column name="DerivativeLR_spread" type="DOUBLE"></column>
+			<column name="g_Signal2Noise" type="DOUBLE"></column>
+			<column name="g_SignalIntensity" type="DOUBLE"></column>
+			<column name="r_Signal2Noise" type="DOUBLE"></column>
+			<column name="r_SignalIntensity" type="DOUBLE"></column>
+			<column name="Scan_Date" type="VARCHAR(30)"></column>
+			<column name="ShortArrayId" type="DOUBLE"></column>
+		</createTable>
+
+		<createIndex tableName="Array" indexName="barcodeID">
+			<column name="featureExtractor_barcode"></column>
+		</createIndex>
+
+
+
+		<createTable tableName="Signal">
+			<column autoIncrement="true" name="SignalId" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="ProbeName" type="VARCHAR(30)"></column>
+			<column name="SystematicName" type="VARCHAR(50)"></column>
+			<column name="LogRatio" type="DOUBLE"></column>
+			<column name="gProcessedSignal" type="DOUBLE"></column>
+			<column name="rProcessedSignal" type="DOUBLE"></column>
+			<column name="gIsSaturated" type="BOOLEAN"
+				defaultValueBoolean="true"></column>
+			<column name="rIsSaturated" type="BOOLEAN"></column>
+			<column name="gIsFeatNonUnifOL" type="BOOLEAN"></column>
+			<column name="rIsFeatNonUnifOL" type="BOOLEAN"></column>
+			<column name="gIsBGNonUnifOL" type="BOOLEAN"></column>
+			<column name="rIsBGNonUnifOL" type="BOOLEAN"></column>
+			<column name="FeatureExtractor_barcode" type="VARCHAR(22)"></column>
+			<column name="Chromosome" type="VARCHAR(10)"></column>
+			<column name="StartPosition" type="BIGINT"></column>
+			<column name="StopPosition" type="BIGINT"></column>
+		</createTable>
+
+		<createIndex tableName="Signal" indexName="chromosomeIndex">
+			<column name="Chromosome"></column>
+		</createIndex>
+
+
+
+		<createTable tableName="Region">
+			<column autoIncrement="true" name="RegionID" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="Chromosome" type="VARCHAR(10)"></column>
+			<column name="StartPosition" type="BIGINT"></column>
+			<column name="StopPosition" type="BIGINT"></column>
+		</createTable>
+
+		<createIndex tableName="Region" indexName="chromosomeIndex">
+			<column name="Chromosome"></column>
+		</createIndex>
+
+
+
+		<createTable tableName="RegionIntensity">
+			<column autoIncrement="true" name="RegionIntensityId" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="RegionId" type="BIGINT"></column>
+			<column name="Chromosome" type="VARCHAR(10)"></column>
+			<column name="StartPosition" type="BIGINT"></column>
+			<column name="StopPosition" type="BIGINT"></column>
+			<column name="FeatureExtractor_Barcode" type="VARCHAR(22)"></column>
+			<column name="MeanGreenSignal" type="DOUBLE"></column>
+			<column name="MedianGreenSignal" type="DOUBLE"></column>
+			<column name="MeanRedSignal" type="DOUBLE"></column>
+			<column name="MedianRedSignal" type="DOUBLE"></column>
+			<column name="MeanLogRatio" type="DOUBLE"></column>
+			<column name="MedianLogRatio" type="DOUBLE"></column>
+		</createTable>
+
+		<createIndex tableName="RegionIntensity" indexName="RegionIdIndex">
+			<column name="RegionId"></column>
+		</createIndex>
+		<createIndex tableName="RegionIntensity" indexName="ChromosomeIndex">
+			<column name="Chromosome"></column>
+		</createIndex>
+		<createIndex tableName="RegionIntensity" indexName="BarcodeIndex">
+			<column name="FeatureExtractor_Barcode"></column>
+		</createIndex>
+
+
+		<createTable tableName="BaselineAverages">
+			<column autoIncrement="true" name="BaselineAveragesId" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="RegionId" type="BIGINT"></column>
+			<column name="Chromosome" type="VARCHAR(10)"></column>
+			<column name="StartPosition" type="BIGINT"></column>
+			<column name="StopPosition" type="BIGINT"></column>
+			<column name="BMeanGreenSignal" type="DOUBLE"></column>
+			<column name="BMeanGreenSignalSD" type="DOUBLE"></column>
+			<column name="BMedianGreenSignal" type="DOUBLE"></column>
+			<column name="BMedianGreenSignalSD" type="DOUBLE"></column>
+			<column name="BMeanRedSignal" type="DOUBLE"></column>
+			<column name="BMeanRedSignalSD" type="DOUBLE"></column>
+			<column name="BMedianRedSignal" type="DOUBLE"></column>
+			<column name="BMedianRedSignalSD" type="DOUBLE"></column>
+			<column name="BMeanLogRatio" type="DOUBLE"></column>
+			<column name="BMeanLogRatioSD" type="DOUBLE"></column>
+			<column name="BMedianLogRatio" type="DOUBLE"></column>
+			<column name="BMedianLogRatioSD" type="DOUBLE"></column>
+		</createTable>
+		<createIndex tableName="BaselineAverages" indexName="RegionIdIndex">
+			<column name="RegionId"></column>
+		</createIndex>
+
+		<createIndex tableName="BaselineAverages" indexName="ChromosomeIndex">
+			<column name="Chromosome"></column>
+		</createIndex>
+
+
+		<createTable tableName="ZScore">
+			<column autoIncrement="true" name="ZScoreId" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="RegionIntensityId" type="BIGINT"></column>
+			<column name="ZMeanGreenSignal" type="DOUBLE"></column>
+			<column name="ZMedianGreenSignal" type="DOUBLE"></column>
+			<column name="ZMeanRedSignal" type="DOUBLE"></column>
+			<column name="ZMedianRedSignal" type="DOUBLE"></column>
+			<column name="ZMeanLogRatio" type="DOUBLE"></column>
+			<column name="ZMedianLogRatio" type="DOUBLE"></column>
+		</createTable>
+
+		<createIndex tableName="ZScore" indexName="RegionIntensityIndex">
+			<column name="RegionIntensityId"></column>
+		</createIndex>
+
+
+		<createTable tableName="Audit">
+			<column autoIncrement="true" name="audit_id" type="BIGINT">
+				<constraints primaryKey="true" nullable="false" />
+			</column>
+			<column name="filename" type="VARCHAR(100)"></column>
+			<column name="processed_date" type="TIMESTAMP"></column>
+			<column name="processed" type="BOOLEAN"></column>
+		</createTable>
+
+		<createIndex tableName="Audit" indexName="filename">
+			<column name="filename"></column>
+		</createIndex>
+
+	</changeSet>
+
+</databaseChangeLog>

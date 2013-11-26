@@ -1,0 +1,159 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>uk.co.techblue</groupId>
+        <artifactId>cgh-processor</artifactId>
+        <version>${application.version}</version>
+    </parent>
+
+    <artifactId>cgh-orm</artifactId>
+    <packaging>jar</packaging>
+
+    <name>cgh-orm</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <!-- Specify the maven code generator plugin -->
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+
+                <!-- The plugin should hook into the generate goal
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                 -->
+                <!-- Specify the plugin configuration -->
+                <configuration>
+                    <!-- JDBC connection parameters -->
+                    <jdbc>
+                        <driver>com.mysql.jdbc.Driver</driver>
+                        <url>jdbc:mysql://localhost:3306/nhs-cgh</url>
+                        <user>root</user>
+                        <password>admin</password>
+                    </jdbc>
+                    <!-- Generator parameters -->
+                    <generator>
+                        <name>org.jooq.util.DefaultGenerator</name>
+                        <strategy>
+                            <name>org.jooq.util.DefaultGeneratorStrategy</name><!-- 
+                                TO DO: Can be configured..... -->
+                        </strategy>
+
+                        <generate>
+
+                            <!-- Primary key / foreign key relations should 
+                                be generated and used. This is a prerequisite for various advanced features. 
+                                Defaults to true -->
+                            <relations>true</relations>
+
+                            <!-- Generate the javax.annotation.Generated 
+                                annotation to indicate jOOQ version used for source code. Defaults to true -->
+                            <generatedAnnotation>false</generatedAnnotation>
+
+                            <!-- Generate POJOs in addition to Record classes 
+                                for usage of the ResultQuery.fetchInto(Class) API Defaults to false -->
+                            <pojos>true</pojos>
+
+                            <!-- Generate immutable POJOs for usage of the 
+                                ResultQuery.fetchInto(Class) API This overrides any value set in <pojos/> 
+                                Defaults to false -->
+                            <!-- <immutablePojos>true</immutablePojos> -->
+
+                            <!-- Generate interfaces that will be implemented 
+                                by records and/or pojos. You can also use these interfaces in Record.into(Class<?>) 
+                                and similar methods, to let jOOQ return proxy objects for them. Defaults 
+                                to false -->
+                            <interfaces>true</interfaces>
+
+                            <!-- Generate DAOs in addition to POJO classes 
+                                Defaults to false -->
+                            <daos>true</daos>
+
+                            <!-- Annotate POJOs and Records with JPA annotations 
+                                for increased compatibility and better integration with JPA/Hibernate, etc 
+                                Defaults to false -->
+                            <!-- <jpaAnnotations>true</jpaAnnotations> -->
+
+                            <!-- Annotate POJOs and Records with JSR-303 
+                                validation annotations Defaults to false <validationAnnotations>true</validationAnnotations> -->
+                        </generate>
+                        <database>
+                            <name>org.jooq.util.mysql.MySQLDatabase</name>
+                            <includes>.*</includes>
+                            <excludes>databasechangelog|databasechangeloglock</excludes>
+                            <inputSchema>nhs-cgh</inputSchema>
+                            <forcedTypes>
+                                <forcedType>
+                                    <name>BOOLEAN</name>
+                                    <expressions>.*\.gIsSaturated|.*\.rIsSaturated|.*\.gIsFeatNonUnifOL|.*\.rIsFeatNonUnifOL|.*\.gIsBGNonUnifOL|.*\.rIsBGNonUnifOL|.*\.processed</expressions>
+                                </forcedType>
+                            </forcedTypes>
+                        </database>
+                        <target>
+                            <packageName>uk.co.techblue.cgh.dnap</packageName>
+                            <directory>${basedir}/src/main/java</directory>
+                        </target>
+                    </generator>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse 
+                    m2e settings only. It has no influence on the Maven build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.jooq</groupId>
+                                        <artifactId>
+                                            jooq-codegen-maven
+                                        </artifactId>
+                                        <versionRange>
+                                            [3.0.0-RC3,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>generate</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <execute></execute>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    <dependencies>
+        <!-- <dependency> <groupId>javax.validation</groupId> <artifactId>validation-api</artifactId> 
+            </dependency> <dependency> <groupId>javax.persistence</groupId> <artifactId>persistence-api</artifactId> 
+            <type>jar</type> <optional>true</optional> </dependency> -->
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen</artifactId>
+        </dependency>
+    </dependencies>
+</project>

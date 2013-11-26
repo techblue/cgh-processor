@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns="http://logback.qos.ch/schema/configuration"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://logback.qos.ch/schema/configuration https://raw.github.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback_0.9.30.xsd">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date [%thread] %-5level %C{100}:%line -
+                %msg%n%exception{full}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- <filter class="ch.qos.logback.classic.filter.ThresholdFilter"> 
+            <level>INFO</level> </filter> -->
+        <append>true</append>
+        <!-- Support multiple-JVM writing to the same log file -->
+        <file>${java.io.tmpdir}/NHS_Logs/nhslog.log</file>
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Roll-over daily -->
+            <fileNamePattern>${java.io.tmpdir}/NHS_Logs/archive/nhslog-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- OR whenever the file size reaches 5MB -->
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date [%thread] %-5level %C{100}:%line -
+                %msg%n%exception{full}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+        <!-- <appender-ref ref="STDOUT" /> -->
+    </root>
+</configuration>
