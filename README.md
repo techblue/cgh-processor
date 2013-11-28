@@ -28,21 +28,21 @@ Module 1 consists of 4 main functions or sub modules to cover the data analysis 
 
 3.) StartProcess: This sub module is responsible for processing of all extracted data and store the data in the database.
         
-        3.1) Save regions in the database in table `region`.
+3.1) Save regions in the database in table `region`.
         
-        3.2) Process and save all arrays(FEStats) and signals(FEFeatures) in the database in tables, `array` and `signal` respectively.
+3.2) Process and save all arrays(FEStats) and signals(FEFeatures) in the database in tables, `array` and `signal` respectively.
         
-        3.3) Calculate Mean and Median of Red signals, Green Signals and Log ratio from `signal` table corresponding to each region and FE Extractor barcode and the results are stored in `regionintensity` table.
+3.3) Calculate Mean and Median of Red signals, Green Signals and Log ratio from `signal` table corresponding to each region and FE Extractor barcode and the results are stored in `regionintensity` table.
         
-            The signals will be fetched on the basis of certain query clause provided:
+The signals will be fetched on the basis of certain query clause provided:
             
-            Signal Records:
-                Feature extractor barcode = 252846911293_1_2
+Signal Records:
+    Feature extractor barcode = 252846911293_1_2
             
-            Region record:
-                Chromosome = chr16
-                Start position = 29500000
-                Stop position = 30100000
+Region record:
+    Chromosome = chr16
+    Start position = 29500000
+    Stop position = 30100000
             
             ```sql
             WHERE 
@@ -72,12 +72,12 @@ Module 1 consists of 4 main functions or sub modules to cover the data analysis 
             calculateMedian(logRatio)
             ```
             
-        3.4) In the next step; Mean, Median, MeanSD* and MedianSD* will be calculated of MeanRedsignal, MedianRedSignal, MeanGreenSignal, MedianGreenSignal, MeanLogRatio and MedionLogRaio of Region Intensities stored in `regionintensity` table corresponding to each region to get the base line averages. 
-            The calculated figures will be stored in `baselineaverages` table.
+3.4) In the next step; Mean, Median, MeanSD* and MedianSD* will be calculated of MeanRedsignal, MedianRedSignal, MeanGreenSignal, MedianGreenSignal, MeanLogRatio and MedionLogRaio of Region Intensities stored in `regionintensity` table corresponding to each region to get the base line averages. 
+The calculated figures will be stored in `baselineaverages` table.
         
-            Baseline averages are calculated by further averaging the region intensities across all arrays(Feature extractor bar codes) corresponding to each region.
+Baseline averages are calculated by further averaging the region intensities across all arrays(Feature extractor bar codes) corresponding to each region.
             
-            For the set of rows the following functions will handle the averaging:
+For the set of rows the following functions will handle the averaging:
             
             ```java
             calculateBaselineMean(meanGreenSignal)
@@ -97,7 +97,7 @@ Module 1 consists of 4 main functions or sub modules to cover the data analysis 
             ```
             
         
-        3.5) In the final Step, ZScores are calculated on the basis of the formula provided and are stored in table `ZScroes`:
+3.5) In the final Step, ZScores are calculated on the basis of the formula provided and are stored in table `ZScroes`:
                 
                 ( RegionIntensity.MeanGreenSignal - BaselineAverages.BMeanGreenSignal )
                 ------------------------------------------------------------------------
