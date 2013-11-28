@@ -9,8 +9,8 @@ Each array CGH test generates ~60,000 rows of data which are analyzed to identif
 Each “array” consists of “probes” that match different parts of the human genome. These probes indicate whether the patient has lost or gained DNA at each position. 
 
 This software consist of 2 modules, 
-###Module 1 (data analysis) - Identification of regions where both patients have lost or gained DNA
-###Module 2 (data transfer) - Importing into sql server database (under progress...) 
+#### Module 1 (data analysis) - Identification of regions where both patients have lost or gained DNA
+#### Module 2 (data transfer) - Importing into sql server database (under progress...) 
 
 ##Software Functionality
 
