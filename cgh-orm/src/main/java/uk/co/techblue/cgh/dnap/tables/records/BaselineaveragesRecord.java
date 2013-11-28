@@ -12,7 +12,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	private static final long serialVersionUID = 243240862;
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BaselineAveragesId</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BaselineAveragesId</code>. 
 	 */
 	@Override
 	public void setBaselineaveragesid(java.lang.Long value) {
@@ -20,7 +20,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BaselineAveragesId</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BaselineAveragesId</code>. 
 	 */
 	@Override
 	public java.lang.Long getBaselineaveragesid() {
@@ -28,7 +28,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.RegionId</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.RegionId</code>. 
 	 */
 	@Override
 	public void setRegionid(java.lang.Long value) {
@@ -36,7 +36,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.RegionId</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.RegionId</code>. 
 	 */
 	@Override
 	public java.lang.Long getRegionid() {
@@ -44,7 +44,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.Chromosome</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.Chromosome</code>. 
 	 */
 	@Override
 	public void setChromosome(java.lang.String value) {
@@ -52,7 +52,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.Chromosome</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.Chromosome</code>. 
 	 */
 	@Override
 	public java.lang.String getChromosome() {
@@ -60,7 +60,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.StartPosition</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.StartPosition</code>. 
 	 */
 	@Override
 	public void setStartposition(java.lang.Long value) {
@@ -68,7 +68,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.StartPosition</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.StartPosition</code>. 
 	 */
 	@Override
 	public java.lang.Long getStartposition() {
@@ -76,7 +76,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.StopPosition</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.StopPosition</code>. 
 	 */
 	@Override
 	public void setStopposition(java.lang.Long value) {
@@ -84,7 +84,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.StopPosition</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.StopPosition</code>. 
 	 */
 	@Override
 	public java.lang.Long getStopposition() {
@@ -92,7 +92,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanGreenSignal</code>. 
 	 */
 	@Override
 	public void setBmeangreensignal(java.lang.Double value) {
@@ -100,7 +100,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanGreenSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmeangreensignal() {
@@ -108,7 +108,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanGreenSignalSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanGreenSignalSD</code>. 
 	 */
 	@Override
 	public void setBmeangreensignalsd(java.lang.Double value) {
@@ -116,7 +116,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanGreenSignalSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanGreenSignalSD</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmeangreensignalsd() {
@@ -124,7 +124,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianGreenSignal</code>. 
 	 */
 	@Override
 	public void setBmediangreensignal(java.lang.Double value) {
@@ -132,7 +132,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianGreenSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmediangreensignal() {
@@ -140,7 +140,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianGreenSignalSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianGreenSignalSD</code>. 
 	 */
 	@Override
 	public void setBmediangreensignalsd(java.lang.Double value) {
@@ -148,7 +148,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianGreenSignalSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianGreenSignalSD</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmediangreensignalsd() {
@@ -156,7 +156,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanRedSignal</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanRedSignal</code>. 
 	 */
 	@Override
 	public void setBmeanredsignal(java.lang.Double value) {
@@ -164,7 +164,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanRedSignal</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanRedSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmeanredsignal() {
@@ -172,7 +172,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanRedSignalSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanRedSignalSD</code>. 
 	 */
 	@Override
 	public void setBmeanredsignalsd(java.lang.Double value) {
@@ -180,7 +180,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanRedSignalSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanRedSignalSD</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmeanredsignalsd() {
@@ -188,7 +188,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianRedSignal</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianRedSignal</code>. 
 	 */
 	@Override
 	public void setBmedianredsignal(java.lang.Double value) {
@@ -196,7 +196,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianRedSignal</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianRedSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmedianredsignal() {
@@ -204,7 +204,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianRedSignalSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianRedSignalSD</code>. 
 	 */
 	@Override
 	public void setBmedianredsignalsd(java.lang.Double value) {
@@ -212,7 +212,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianRedSignalSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianRedSignalSD</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmedianredsignalsd() {
@@ -220,7 +220,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanLogRatio</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanLogRatio</code>. 
 	 */
 	@Override
 	public void setBmeanlogratio(java.lang.Double value) {
@@ -228,7 +228,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanLogRatio</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanLogRatio</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmeanlogratio() {
@@ -236,7 +236,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanLogRatioSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanLogRatioSD</code>. 
 	 */
 	@Override
 	public void setBmeanlogratiosd(java.lang.Double value) {
@@ -244,7 +244,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanLogRatioSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanLogRatioSD</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmeanlogratiosd() {
@@ -252,7 +252,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianLogRatio</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianLogRatio</code>. 
 	 */
 	@Override
 	public void setBmedianlogratio(java.lang.Double value) {
@@ -260,7 +260,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianLogRatio</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianLogRatio</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmedianlogratio() {
@@ -268,7 +268,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianLogRatioSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianLogRatioSD</code>. 
 	 */
 	@Override
 	public void setBmedianlogratiosd(java.lang.Double value) {
@@ -276,7 +276,7 @@ public class BaselineaveragesRecord extends org.jooq.impl.UpdatableRecordImpl<uk
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianLogRatioSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianLogRatioSD</code>. 
 	 */
 	@Override
 	public java.lang.Double getBmedianlogratiosd() {

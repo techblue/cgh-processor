@@ -61,7 +61,7 @@ public class SignalExtractionProcessor {
     /** The Constant LOGGER. */
     private final static Logger LOGGER = LoggerFactory.getLogger(SignalExtractionProcessor.class);
 
-    /** The nhs properties. */
+    /** The cgh properties. */
     private static DefaultConfiguration defaultConfiguration = getDefaultConfiguration();
 
     /** The csv mapping properties. */
@@ -70,16 +70,16 @@ public class SignalExtractionProcessor {
     protected static DefaultConfiguration getDefaultConfiguration() {
         try {
             return SignalProcessorHelper.getConfigurationProperties(DefaultConfiguration.class);
-        } catch (CGHProcessorException nhse) {
-            throw new RuntimeException("An error occurred while loading application default configuration properties.", nhse);
+        } catch (CGHProcessorException cghe) {
+            throw new RuntimeException("An error occurred while loading application default configuration properties.", cghe);
         }
     }
 
     protected static CsvConfiguration getCsvConfiguration() {
         try {
             return SignalProcessorHelper.getConfigurationProperties(CsvConfiguration.class);
-        } catch (CGHProcessorException nhse) {
-            throw new RuntimeException("An error occurred while loading application CSV configuration properties.", nhse);
+        } catch (CGHProcessorException cghe) {
+            throw new RuntimeException("An error occurred while loading application CSV configuration properties.", cghe);
         }
     }
 
@@ -109,8 +109,8 @@ public class SignalExtractionProcessor {
             CsvToBeanIterator<Attribute> csvIterator = null;
             try {
                 csvIterator = SignalProcessorHelper.getCustomCsvToBeanIterator(Attribute.class, map, reader);
-            } catch (CGHProcessorException nhse) {
-                throw nhse;
+            } catch (CGHProcessorException cghe) {
+                throw cghe;
             }
             Attribute attribute = null;
             while (null != (attribute = csvIterator.readNext())) {
@@ -184,8 +184,8 @@ public class SignalExtractionProcessor {
             CsvToBeanIterator<FeatureExtractorParameters> csvIterator = null;
             try {
                 csvIterator = SignalProcessorHelper.getCustomCsvToBeanIterator(FeatureExtractorParameters.class, map, reader);
-            } catch (CGHProcessorException nhse) {
-                throw nhse;
+            } catch (CGHProcessorException cghe) {
+                throw cghe;
             }
             while (null != (feParamHeader = csvIterator.readNext())) {
                 counter++;
@@ -234,8 +234,8 @@ public class SignalExtractionProcessor {
             CsvToBeanIterator<FeatureExtractorStatistics> csvIterator = null;
             try {
                 csvIterator = SignalProcessorHelper.getCustomCsvToBeanIterator(FeatureExtractorStatistics.class, map, reader);
-            } catch (CGHProcessorException nhse) {
-                throw nhse;
+            } catch (CGHProcessorException cghe) {
+                throw cghe;
             }
             while (null != (statHeader = csvIterator.readNext())) {
                 counter++;
@@ -289,8 +289,8 @@ public class SignalExtractionProcessor {
             CsvToBeanIterator<SignalFeatures> csvIterator = null;
             try {
                 csvIterator = SignalProcessorHelper.getCustomCsvToBeanIterator(SignalFeatures.class, map, reader);
-            } catch (CGHProcessorException nhse) {
-                throw nhse;
+            } catch (CGHProcessorException cghe) {
+                throw cghe;
             }
             SignalFeatures signalFeature = null;
             while (null != (signalFeature = csvIterator.readNext())) {

@@ -12,7 +12,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	private static final long serialVersionUID = 1301628773;
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.RegionIntensityId</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.RegionIntensityId</code>. 
 	 */
 	@Override
 	public void setRegionintensityid(java.lang.Long value) {
@@ -20,7 +20,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.RegionIntensityId</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.RegionIntensityId</code>. 
 	 */
 	@Override
 	public java.lang.Long getRegionintensityid() {
@@ -28,7 +28,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.RegionId</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.RegionId</code>. 
 	 */
 	@Override
 	public void setRegionid(java.lang.Long value) {
@@ -36,7 +36,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.RegionId</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.RegionId</code>. 
 	 */
 	@Override
 	public java.lang.Long getRegionid() {
@@ -44,7 +44,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.Chromosome</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.Chromosome</code>. 
 	 */
 	@Override
 	public void setChromosome(java.lang.String value) {
@@ -52,7 +52,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.Chromosome</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.Chromosome</code>. 
 	 */
 	@Override
 	public java.lang.String getChromosome() {
@@ -60,7 +60,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.StartPosition</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.StartPosition</code>. 
 	 */
 	@Override
 	public void setStartposition(java.lang.Long value) {
@@ -68,7 +68,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.StartPosition</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.StartPosition</code>. 
 	 */
 	@Override
 	public java.lang.Long getStartposition() {
@@ -76,7 +76,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.StopPosition</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.StopPosition</code>. 
 	 */
 	@Override
 	public void setStopposition(java.lang.Long value) {
@@ -84,7 +84,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.StopPosition</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.StopPosition</code>. 
 	 */
 	@Override
 	public java.lang.Long getStopposition() {
@@ -92,7 +92,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.FeatureExtractor_Barcode</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.FeatureExtractor_Barcode</code>. 
 	 */
 	@Override
 	public void setFeatureextractorBarcode(java.lang.String value) {
@@ -100,7 +100,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.FeatureExtractor_Barcode</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.FeatureExtractor_Barcode</code>. 
 	 */
 	@Override
 	public java.lang.String getFeatureextractorBarcode() {
@@ -108,7 +108,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MeanGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MeanGreenSignal</code>. 
 	 */
 	@Override
 	public void setMeangreensignal(java.lang.Double value) {
@@ -116,7 +116,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MeanGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MeanGreenSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getMeangreensignal() {
@@ -124,7 +124,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MedianGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MedianGreenSignal</code>. 
 	 */
 	@Override
 	public void setMediangreensignal(java.lang.Double value) {
@@ -132,7 +132,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MedianGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MedianGreenSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getMediangreensignal() {
@@ -140,7 +140,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MeanRedSignal</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MeanRedSignal</code>. 
 	 */
 	@Override
 	public void setMeanredsignal(java.lang.Double value) {
@@ -148,7 +148,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MeanRedSignal</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MeanRedSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getMeanredsignal() {
@@ -156,7 +156,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MedianRedSignal</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MedianRedSignal</code>. 
 	 */
 	@Override
 	public void setMedianredsignal(java.lang.Double value) {
@@ -164,7 +164,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MedianRedSignal</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MedianRedSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getMedianredsignal() {
@@ -172,7 +172,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MeanLogRatio</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MeanLogRatio</code>. 
 	 */
 	@Override
 	public void setMeanlogratio(java.lang.Double value) {
@@ -180,7 +180,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MeanLogRatio</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MeanLogRatio</code>. 
 	 */
 	@Override
 	public java.lang.Double getMeanlogratio() {
@@ -188,7 +188,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MedianLogRatio</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MedianLogRatio</code>. 
 	 */
 	@Override
 	public void setMedianlogratio(java.lang.Double value) {
@@ -196,7 +196,7 @@ public class RegionintensityRecord extends org.jooq.impl.UpdatableRecordImpl<uk.
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MedianLogRatio</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MedianLogRatio</code>. 
 	 */
 	@Override
 	public java.lang.Double getMedianlogratio() {

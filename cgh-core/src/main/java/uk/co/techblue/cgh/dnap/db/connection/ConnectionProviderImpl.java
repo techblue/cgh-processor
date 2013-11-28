@@ -49,14 +49,14 @@ public class ConnectionProviderImpl implements ConnectionProvider {
      * 
      * @return the connection
      * @throws DataAccessException the data access exception
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     private Connection createConnection() throws DataAccessException {
         DbConfiguration dbConfiguration = null;
         try {
             dbConfiguration = SignalProcessorHelper.getConfigurationProperties(DbConfiguration.class);
-        } catch (CGHProcessorException nhse) {
-            throw new DataAccessException("", nhse);
+        } catch (CGHProcessorException cghe) {
+            throw new DataAccessException("", cghe);
         }
 
         if (dbConfiguration == null || StringUtils.isBlank(dbConfiguration.getDriver())) {

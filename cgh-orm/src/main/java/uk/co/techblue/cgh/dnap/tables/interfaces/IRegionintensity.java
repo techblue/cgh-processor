@@ -10,122 +10,122 @@ package uk.co.techblue.cgh.dnap.tables.interfaces;
 public interface IRegionintensity extends java.io.Serializable {
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.RegionIntensityId</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.RegionIntensityId</code>. 
 	 */
 	public void setRegionintensityid(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.RegionIntensityId</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.RegionIntensityId</code>. 
 	 */
 	public java.lang.Long getRegionintensityid();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.RegionId</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.RegionId</code>. 
 	 */
 	public void setRegionid(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.RegionId</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.RegionId</code>. 
 	 */
 	public java.lang.Long getRegionid();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.Chromosome</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.Chromosome</code>. 
 	 */
 	public void setChromosome(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.Chromosome</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.Chromosome</code>. 
 	 */
 	public java.lang.String getChromosome();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.StartPosition</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.StartPosition</code>. 
 	 */
 	public void setStartposition(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.StartPosition</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.StartPosition</code>. 
 	 */
 	public java.lang.Long getStartposition();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.StopPosition</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.StopPosition</code>. 
 	 */
 	public void setStopposition(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.StopPosition</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.StopPosition</code>. 
 	 */
 	public java.lang.Long getStopposition();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.FeatureExtractor_Barcode</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.FeatureExtractor_Barcode</code>. 
 	 */
 	public void setFeatureextractorBarcode(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.FeatureExtractor_Barcode</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.FeatureExtractor_Barcode</code>. 
 	 */
 	public java.lang.String getFeatureextractorBarcode();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MeanGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MeanGreenSignal</code>. 
 	 */
 	public void setMeangreensignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MeanGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MeanGreenSignal</code>. 
 	 */
 	public java.lang.Double getMeangreensignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MedianGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MedianGreenSignal</code>. 
 	 */
 	public void setMediangreensignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MedianGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MedianGreenSignal</code>. 
 	 */
 	public java.lang.Double getMediangreensignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MeanRedSignal</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MeanRedSignal</code>. 
 	 */
 	public void setMeanredsignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MeanRedSignal</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MeanRedSignal</code>. 
 	 */
 	public java.lang.Double getMeanredsignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MedianRedSignal</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MedianRedSignal</code>. 
 	 */
 	public void setMedianredsignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MedianRedSignal</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MedianRedSignal</code>. 
 	 */
 	public java.lang.Double getMedianredsignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MeanLogRatio</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MeanLogRatio</code>. 
 	 */
 	public void setMeanlogratio(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MeanLogRatio</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MeanLogRatio</code>. 
 	 */
 	public java.lang.Double getMeanlogratio();
 
 	/**
-	 * Setter for <code>nhs-cgh.regionintensity.MedianLogRatio</code>. 
+	 * Setter for <code>cgh-processor.regionintensity.MedianLogRatio</code>. 
 	 */
 	public void setMedianlogratio(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.regionintensity.MedianLogRatio</code>. 
+	 * Getter for <code>cgh-processor.regionintensity.MedianLogRatio</code>. 
 	 */
 	public java.lang.Double getMedianlogratio();
 

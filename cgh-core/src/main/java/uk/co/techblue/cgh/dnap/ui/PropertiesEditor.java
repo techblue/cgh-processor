@@ -70,9 +70,9 @@ public class PropertiesEditor extends Composite {
         initGui();
         try {
             populateConfigurations();
-        } catch (CGHProcessorException nhse) {
-            logger.error("", nhse);
-            MessageDialog.openError(getShell(), DIALOG_TITLE, nhse.getLocalizedMessage());
+        } catch (CGHProcessorException cghe) {
+            logger.error("", cghe);
+            MessageDialog.openError(getShell(), DIALOG_TITLE, cghe.getLocalizedMessage());
         }
     }
 
@@ -89,7 +89,7 @@ public class PropertiesEditor extends Composite {
     /**
      * Populate configurations.
      * 
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     public void populateConfigurations() throws CGHProcessorException {
         Properties props = null;

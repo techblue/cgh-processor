@@ -12,7 +12,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	private static final long serialVersionUID = 1493583746;
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.SignalId</code>. 
+	 * Setter for <code>cgh-processor.signal.SignalId</code>. 
 	 */
 	@Override
 	public void setSignalid(java.lang.Long value) {
@@ -20,7 +20,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.SignalId</code>. 
+	 * Getter for <code>cgh-processor.signal.SignalId</code>. 
 	 */
 	@Override
 	public java.lang.Long getSignalid() {
@@ -28,7 +28,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.ProbeName</code>. 
+	 * Setter for <code>cgh-processor.signal.ProbeName</code>. 
 	 */
 	@Override
 	public void setProbename(java.lang.String value) {
@@ -36,7 +36,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.ProbeName</code>. 
+	 * Getter for <code>cgh-processor.signal.ProbeName</code>. 
 	 */
 	@Override
 	public java.lang.String getProbename() {
@@ -44,7 +44,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.SystematicName</code>. 
+	 * Setter for <code>cgh-processor.signal.SystematicName</code>. 
 	 */
 	@Override
 	public void setSystematicname(java.lang.String value) {
@@ -52,7 +52,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.SystematicName</code>. 
+	 * Getter for <code>cgh-processor.signal.SystematicName</code>. 
 	 */
 	@Override
 	public java.lang.String getSystematicname() {
@@ -60,7 +60,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.LogRatio</code>. 
+	 * Setter for <code>cgh-processor.signal.LogRatio</code>. 
 	 */
 	@Override
 	public void setLogratio(java.lang.Double value) {
@@ -68,7 +68,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.LogRatio</code>. 
+	 * Getter for <code>cgh-processor.signal.LogRatio</code>. 
 	 */
 	@Override
 	public java.lang.Double getLogratio() {
@@ -76,7 +76,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.gProcessedSignal</code>. 
+	 * Setter for <code>cgh-processor.signal.gProcessedSignal</code>. 
 	 */
 	@Override
 	public void setGprocessedsignal(java.lang.Double value) {
@@ -84,7 +84,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.gProcessedSignal</code>. 
+	 * Getter for <code>cgh-processor.signal.gProcessedSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getGprocessedsignal() {
@@ -92,7 +92,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.rProcessedSignal</code>. 
+	 * Setter for <code>cgh-processor.signal.rProcessedSignal</code>. 
 	 */
 	@Override
 	public void setRprocessedsignal(java.lang.Double value) {
@@ -100,7 +100,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.rProcessedSignal</code>. 
+	 * Getter for <code>cgh-processor.signal.rProcessedSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getRprocessedsignal() {
@@ -108,7 +108,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.gIsSaturated</code>. 
+	 * Setter for <code>cgh-processor.signal.gIsSaturated</code>. 
 	 */
 	@Override
 	public void setGissaturated(java.lang.Boolean value) {
@@ -116,7 +116,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.gIsSaturated</code>. 
+	 * Getter for <code>cgh-processor.signal.gIsSaturated</code>. 
 	 */
 	@Override
 	public java.lang.Boolean getGissaturated() {
@@ -124,7 +124,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.rIsSaturated</code>. 
+	 * Setter for <code>cgh-processor.signal.rIsSaturated</code>. 
 	 */
 	@Override
 	public void setRissaturated(java.lang.Boolean value) {
@@ -132,7 +132,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.rIsSaturated</code>. 
+	 * Getter for <code>cgh-processor.signal.rIsSaturated</code>. 
 	 */
 	@Override
 	public java.lang.Boolean getRissaturated() {
@@ -140,7 +140,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.gIsFeatNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.signal.gIsFeatNonUnifOL</code>. 
 	 */
 	@Override
 	public void setGisfeatnonunifol(java.lang.Boolean value) {
@@ -148,7 +148,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.gIsFeatNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.signal.gIsFeatNonUnifOL</code>. 
 	 */
 	@Override
 	public java.lang.Boolean getGisfeatnonunifol() {
@@ -156,7 +156,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.rIsFeatNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.signal.rIsFeatNonUnifOL</code>. 
 	 */
 	@Override
 	public void setRisfeatnonunifol(java.lang.Boolean value) {
@@ -164,7 +164,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.rIsFeatNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.signal.rIsFeatNonUnifOL</code>. 
 	 */
 	@Override
 	public java.lang.Boolean getRisfeatnonunifol() {
@@ -172,7 +172,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.gIsBGNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.signal.gIsBGNonUnifOL</code>. 
 	 */
 	@Override
 	public void setGisbgnonunifol(java.lang.Boolean value) {
@@ -180,7 +180,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.gIsBGNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.signal.gIsBGNonUnifOL</code>. 
 	 */
 	@Override
 	public java.lang.Boolean getGisbgnonunifol() {
@@ -188,7 +188,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.rIsBGNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.signal.rIsBGNonUnifOL</code>. 
 	 */
 	@Override
 	public void setRisbgnonunifol(java.lang.Boolean value) {
@@ -196,7 +196,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.rIsBGNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.signal.rIsBGNonUnifOL</code>. 
 	 */
 	@Override
 	public java.lang.Boolean getRisbgnonunifol() {
@@ -204,7 +204,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.FeatureExtractor_barcode</code>. 
+	 * Setter for <code>cgh-processor.signal.FeatureExtractor_barcode</code>. 
 	 */
 	@Override
 	public void setFeatureextractorBarcode(java.lang.String value) {
@@ -212,7 +212,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.FeatureExtractor_barcode</code>. 
+	 * Getter for <code>cgh-processor.signal.FeatureExtractor_barcode</code>. 
 	 */
 	@Override
 	public java.lang.String getFeatureextractorBarcode() {
@@ -220,7 +220,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.Chromosome</code>. 
+	 * Setter for <code>cgh-processor.signal.Chromosome</code>. 
 	 */
 	@Override
 	public void setChromosome(java.lang.String value) {
@@ -228,7 +228,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.Chromosome</code>. 
+	 * Getter for <code>cgh-processor.signal.Chromosome</code>. 
 	 */
 	@Override
 	public java.lang.String getChromosome() {
@@ -236,7 +236,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.StartPosition</code>. 
+	 * Setter for <code>cgh-processor.signal.StartPosition</code>. 
 	 */
 	@Override
 	public void setStartposition(java.lang.Long value) {
@@ -244,7 +244,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.StartPosition</code>. 
+	 * Getter for <code>cgh-processor.signal.StartPosition</code>. 
 	 */
 	@Override
 	public java.lang.Long getStartposition() {
@@ -252,7 +252,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.StopPosition</code>. 
+	 * Setter for <code>cgh-processor.signal.StopPosition</code>. 
 	 */
 	@Override
 	public void setStopposition(java.lang.Long value) {
@@ -260,7 +260,7 @@ public class SignalRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.StopPosition</code>. 
+	 * Getter for <code>cgh-processor.signal.StopPosition</code>. 
 	 */
 	@Override
 	public java.lang.Long getStopposition() {

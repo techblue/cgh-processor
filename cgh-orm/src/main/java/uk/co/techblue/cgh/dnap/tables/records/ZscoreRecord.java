@@ -12,7 +12,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	private static final long serialVersionUID = -2048536301;
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZScoreId</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZScoreId</code>. 
 	 */
 	@Override
 	public void setZscoreid(java.lang.Long value) {
@@ -20,7 +20,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZScoreId</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZScoreId</code>. 
 	 */
 	@Override
 	public java.lang.Long getZscoreid() {
@@ -28,7 +28,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.RegionIntensityId</code>. 
+	 * Setter for <code>cgh-processor.zscore.RegionIntensityId</code>. 
 	 */
 	@Override
 	public void setRegionintensityid(java.lang.Long value) {
@@ -36,7 +36,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.RegionIntensityId</code>. 
+	 * Getter for <code>cgh-processor.zscore.RegionIntensityId</code>. 
 	 */
 	@Override
 	public java.lang.Long getRegionintensityid() {
@@ -44,7 +44,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMeanGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMeanGreenSignal</code>. 
 	 */
 	@Override
 	public void setZmeangreensignal(java.lang.Double value) {
@@ -52,7 +52,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMeanGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMeanGreenSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getZmeangreensignal() {
@@ -60,7 +60,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMedianGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMedianGreenSignal</code>. 
 	 */
 	@Override
 	public void setZmediangreensignal(java.lang.Double value) {
@@ -68,7 +68,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMedianGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMedianGreenSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getZmediangreensignal() {
@@ -76,7 +76,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMeanRedSignal</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMeanRedSignal</code>. 
 	 */
 	@Override
 	public void setZmeanredsignal(java.lang.Double value) {
@@ -84,7 +84,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMeanRedSignal</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMeanRedSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getZmeanredsignal() {
@@ -92,7 +92,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMedianRedSignal</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMedianRedSignal</code>. 
 	 */
 	@Override
 	public void setZmedianredsignal(java.lang.Double value) {
@@ -100,7 +100,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMedianRedSignal</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMedianRedSignal</code>. 
 	 */
 	@Override
 	public java.lang.Double getZmedianredsignal() {
@@ -108,7 +108,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMeanLogRatio</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMeanLogRatio</code>. 
 	 */
 	@Override
 	public void setZmeanlogratio(java.lang.Double value) {
@@ -116,7 +116,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMeanLogRatio</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMeanLogRatio</code>. 
 	 */
 	@Override
 	public java.lang.Double getZmeanlogratio() {
@@ -124,7 +124,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMedianLogRatio</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMedianLogRatio</code>. 
 	 */
 	@Override
 	public void setZmedianlogratio(java.lang.Double value) {
@@ -132,7 +132,7 @@ public class ZscoreRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMedianLogRatio</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMedianLogRatio</code>. 
 	 */
 	@Override
 	public java.lang.Double getZmedianlogratio() {

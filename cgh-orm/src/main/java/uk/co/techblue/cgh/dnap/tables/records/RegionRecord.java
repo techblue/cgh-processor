@@ -12,7 +12,7 @@ public class RegionRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	private static final long serialVersionUID = 1124364297;
 
 	/**
-	 * Setter for <code>nhs-cgh.region.RegionID</code>. 
+	 * Setter for <code>cgh-processor.region.RegionID</code>. 
 	 */
 	@Override
 	public void setRegionid(java.lang.Long value) {
@@ -20,7 +20,7 @@ public class RegionRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.region.RegionID</code>. 
+	 * Getter for <code>cgh-processor.region.RegionID</code>. 
 	 */
 	@Override
 	public java.lang.Long getRegionid() {
@@ -28,7 +28,7 @@ public class RegionRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.region.Chromosome</code>. 
+	 * Setter for <code>cgh-processor.region.Chromosome</code>. 
 	 */
 	@Override
 	public void setChromosome(java.lang.String value) {
@@ -36,7 +36,7 @@ public class RegionRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.region.Chromosome</code>. 
+	 * Getter for <code>cgh-processor.region.Chromosome</code>. 
 	 */
 	@Override
 	public java.lang.String getChromosome() {
@@ -44,7 +44,7 @@ public class RegionRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.region.StartPosition</code>. 
+	 * Setter for <code>cgh-processor.region.StartPosition</code>. 
 	 */
 	@Override
 	public void setStartposition(java.lang.Long value) {
@@ -52,7 +52,7 @@ public class RegionRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.region.StartPosition</code>. 
+	 * Getter for <code>cgh-processor.region.StartPosition</code>. 
 	 */
 	@Override
 	public java.lang.Long getStartposition() {
@@ -60,7 +60,7 @@ public class RegionRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.region.StopPosition</code>. 
+	 * Setter for <code>cgh-processor.region.StopPosition</code>. 
 	 */
 	@Override
 	public void setStopposition(java.lang.Long value) {
@@ -68,7 +68,7 @@ public class RegionRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techbl
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.region.StopPosition</code>. 
+	 * Getter for <code>cgh-processor.region.StopPosition</code>. 
 	 */
 	@Override
 	public java.lang.Long getStopposition() {

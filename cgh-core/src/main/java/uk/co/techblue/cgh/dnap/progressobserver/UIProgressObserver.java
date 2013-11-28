@@ -42,7 +42,7 @@ public class UIProgressObserver implements ProgressObserver {
     /*
      * (non-Javadoc)
      * 
-     * @see uk.co.techblue.nhs.dnap.progressobserver.ProgressObserver#publishProgressStart()
+     * @see uk.co.techblue.cgh.dnap.progressobserver.ProgressObserver#publishProgressStart()
      */
     @Override
     public void publishProgressStart() {
@@ -53,7 +53,7 @@ public class UIProgressObserver implements ProgressObserver {
     /*
      * (non-Javadoc)
      * 
-     * @see uk.co.techblue.nhs.dnap.progressobserver.ProgressObserver#publishProgressComplete()
+     * @see uk.co.techblue.cgh.dnap.progressobserver.ProgressObserver#publishProgressComplete()
      */
     @Override
     public void publishProgressComplete() {
@@ -64,7 +64,7 @@ public class UIProgressObserver implements ProgressObserver {
     /*
      * (non-Javadoc)
      * 
-     * @see uk.co.techblue.nhs.dnap.progressobserver.ProgressObserver#publishProgressInfo(java.lang.String)
+     * @see uk.co.techblue.cgh.dnap.progressobserver.ProgressObserver#publishProgressInfo(java.lang.String)
      */
     @Override
     public void publishProgressInfo(final String message) {
@@ -74,7 +74,7 @@ public class UIProgressObserver implements ProgressObserver {
     /*
      * (non-Javadoc)
      * 
-     * @see uk.co.techblue.nhs.dnap.progressobserver.ProgressObserver#publishProgressError(java.lang.String)
+     * @see uk.co.techblue.cgh.dnap.progressobserver.ProgressObserver#publishProgressError(java.lang.String)
      */
     @Override
     public void publishProgressError(final String message) {
@@ -91,9 +91,9 @@ public class UIProgressObserver implements ProgressObserver {
         Properties props = null;
         try {
             props = SignalProcessorHelper.getProperties(SystemConfiguration.class);
-        } catch (CGHProcessorException nhse) {
-            publishProgressError("An error occurred while archiving the data files " + nhse.getMessage());
-            nhse.printStackTrace();
+        } catch (CGHProcessorException cghe) {
+            publishProgressError("An error occurred while archiving the data files " + cghe.getMessage());
+            cghe.printStackTrace();
         }
         if (props == null) {
             return;

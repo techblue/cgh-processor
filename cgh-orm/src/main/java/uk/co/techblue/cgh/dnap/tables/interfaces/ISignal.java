@@ -10,162 +10,162 @@ package uk.co.techblue.cgh.dnap.tables.interfaces;
 public interface ISignal extends java.io.Serializable {
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.SignalId</code>. 
+	 * Setter for <code>cgh-processor.signal.SignalId</code>. 
 	 */
 	public void setSignalid(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.SignalId</code>. 
+	 * Getter for <code>cgh-processor.signal.SignalId</code>. 
 	 */
 	public java.lang.Long getSignalid();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.ProbeName</code>. 
+	 * Setter for <code>cgh-processor.signal.ProbeName</code>. 
 	 */
 	public void setProbename(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.ProbeName</code>. 
+	 * Getter for <code>cgh-processor.signal.ProbeName</code>. 
 	 */
 	public java.lang.String getProbename();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.SystematicName</code>. 
+	 * Setter for <code>cgh-processor.signal.SystematicName</code>. 
 	 */
 	public void setSystematicname(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.SystematicName</code>. 
+	 * Getter for <code>cgh-processor.signal.SystematicName</code>. 
 	 */
 	public java.lang.String getSystematicname();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.LogRatio</code>. 
+	 * Setter for <code>cgh-processor.signal.LogRatio</code>. 
 	 */
 	public void setLogratio(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.LogRatio</code>. 
+	 * Getter for <code>cgh-processor.signal.LogRatio</code>. 
 	 */
 	public java.lang.Double getLogratio();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.gProcessedSignal</code>. 
+	 * Setter for <code>cgh-processor.signal.gProcessedSignal</code>. 
 	 */
 	public void setGprocessedsignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.gProcessedSignal</code>. 
+	 * Getter for <code>cgh-processor.signal.gProcessedSignal</code>. 
 	 */
 	public java.lang.Double getGprocessedsignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.rProcessedSignal</code>. 
+	 * Setter for <code>cgh-processor.signal.rProcessedSignal</code>. 
 	 */
 	public void setRprocessedsignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.rProcessedSignal</code>. 
+	 * Getter for <code>cgh-processor.signal.rProcessedSignal</code>. 
 	 */
 	public java.lang.Double getRprocessedsignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.gIsSaturated</code>. 
+	 * Setter for <code>cgh-processor.signal.gIsSaturated</code>. 
 	 */
 	public void setGissaturated(java.lang.Boolean value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.gIsSaturated</code>. 
+	 * Getter for <code>cgh-processor.signal.gIsSaturated</code>. 
 	 */
 	public java.lang.Boolean getGissaturated();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.rIsSaturated</code>. 
+	 * Setter for <code>cgh-processor.signal.rIsSaturated</code>. 
 	 */
 	public void setRissaturated(java.lang.Boolean value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.rIsSaturated</code>. 
+	 * Getter for <code>cgh-processor.signal.rIsSaturated</code>. 
 	 */
 	public java.lang.Boolean getRissaturated();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.gIsFeatNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.signal.gIsFeatNonUnifOL</code>. 
 	 */
 	public void setGisfeatnonunifol(java.lang.Boolean value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.gIsFeatNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.signal.gIsFeatNonUnifOL</code>. 
 	 */
 	public java.lang.Boolean getGisfeatnonunifol();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.rIsFeatNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.signal.rIsFeatNonUnifOL</code>. 
 	 */
 	public void setRisfeatnonunifol(java.lang.Boolean value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.rIsFeatNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.signal.rIsFeatNonUnifOL</code>. 
 	 */
 	public java.lang.Boolean getRisfeatnonunifol();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.gIsBGNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.signal.gIsBGNonUnifOL</code>. 
 	 */
 	public void setGisbgnonunifol(java.lang.Boolean value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.gIsBGNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.signal.gIsBGNonUnifOL</code>. 
 	 */
 	public java.lang.Boolean getGisbgnonunifol();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.rIsBGNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.signal.rIsBGNonUnifOL</code>. 
 	 */
 	public void setRisbgnonunifol(java.lang.Boolean value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.rIsBGNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.signal.rIsBGNonUnifOL</code>. 
 	 */
 	public java.lang.Boolean getRisbgnonunifol();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.FeatureExtractor_barcode</code>. 
+	 * Setter for <code>cgh-processor.signal.FeatureExtractor_barcode</code>. 
 	 */
 	public void setFeatureextractorBarcode(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.FeatureExtractor_barcode</code>. 
+	 * Getter for <code>cgh-processor.signal.FeatureExtractor_barcode</code>. 
 	 */
 	public java.lang.String getFeatureextractorBarcode();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.Chromosome</code>. 
+	 * Setter for <code>cgh-processor.signal.Chromosome</code>. 
 	 */
 	public void setChromosome(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.Chromosome</code>. 
+	 * Getter for <code>cgh-processor.signal.Chromosome</code>. 
 	 */
 	public java.lang.String getChromosome();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.StartPosition</code>. 
+	 * Setter for <code>cgh-processor.signal.StartPosition</code>. 
 	 */
 	public void setStartposition(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.StartPosition</code>. 
+	 * Getter for <code>cgh-processor.signal.StartPosition</code>. 
 	 */
 	public java.lang.Long getStartposition();
 
 	/**
-	 * Setter for <code>nhs-cgh.signal.StopPosition</code>. 
+	 * Setter for <code>cgh-processor.signal.StopPosition</code>. 
 	 */
 	public void setStopposition(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.signal.StopPosition</code>. 
+	 * Getter for <code>cgh-processor.signal.StopPosition</code>. 
 	 */
 	public java.lang.Long getStopposition();
 

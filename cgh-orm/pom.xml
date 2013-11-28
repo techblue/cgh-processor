@@ -34,7 +34,7 @@
                     <!-- JDBC connection parameters -->
                     <jdbc>
                         <driver>com.mysql.jdbc.Driver</driver>
-                        <url>jdbc:mysql://localhost:3306/nhs-cgh</url>
+                        <url>jdbc:mysql://localhost:3306/cgh-processor</url>
                         <user>root</user>
                         <password>admin</password>
                     </jdbc>
@@ -88,7 +88,7 @@
                             <name>org.jooq.util.mysql.MySQLDatabase</name>
                             <includes>.*</includes>
                             <excludes>databasechangelog|databasechangeloglock</excludes>
-                            <inputSchema>nhs-cgh</inputSchema>
+                            <inputSchema>cgh-processor</inputSchema>
                             <forcedTypes>
                                 <forcedType>
                                     <name>BOOLEAN</name>

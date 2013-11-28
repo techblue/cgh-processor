@@ -12,7 +12,7 @@ public class AuditRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	private static final long serialVersionUID = -1594530256;
 
 	/**
-	 * Setter for <code>nhs-cgh.audit.audit_id</code>. 
+	 * Setter for <code>cgh-processor.audit.audit_id</code>. 
 	 */
 	@Override
 	public void setAuditId(java.lang.Long value) {
@@ -20,7 +20,7 @@ public class AuditRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.audit.audit_id</code>. 
+	 * Getter for <code>cgh-processor.audit.audit_id</code>. 
 	 */
 	@Override
 	public java.lang.Long getAuditId() {
@@ -28,7 +28,7 @@ public class AuditRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.audit.filename</code>. 
+	 * Setter for <code>cgh-processor.audit.filename</code>. 
 	 */
 	@Override
 	public void setFilename(java.lang.String value) {
@@ -36,7 +36,7 @@ public class AuditRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.audit.filename</code>. 
+	 * Getter for <code>cgh-processor.audit.filename</code>. 
 	 */
 	@Override
 	public java.lang.String getFilename() {
@@ -44,7 +44,7 @@ public class AuditRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.audit.processed_date</code>. 
+	 * Setter for <code>cgh-processor.audit.processed_date</code>. 
 	 */
 	@Override
 	public void setProcessedDate(java.sql.Timestamp value) {
@@ -52,7 +52,7 @@ public class AuditRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.audit.processed_date</code>. 
+	 * Getter for <code>cgh-processor.audit.processed_date</code>. 
 	 */
 	@Override
 	public java.sql.Timestamp getProcessedDate() {
@@ -60,7 +60,7 @@ public class AuditRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.audit.processed</code>. 
+	 * Setter for <code>cgh-processor.audit.processed</code>. 
 	 */
 	@Override
 	public void setProcessed(java.lang.Boolean value) {
@@ -68,7 +68,7 @@ public class AuditRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.audit.processed</code>. 
+	 * Getter for <code>cgh-processor.audit.processed</code>. 
 	 */
 	@Override
 	public java.lang.Boolean getProcessed() {

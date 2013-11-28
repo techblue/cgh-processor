@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
 
-	<!-- Database schema for nhs-dna-process (master) -->
+	<!-- Database schema for cgh-processor (master) -->
 	<changeSet id="1" author="dheeraj">
 
 

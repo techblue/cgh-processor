@@ -12,7 +12,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	private static final long serialVersionUID = 1332246817;
 
 	/**
-	 * Setter for <code>nhs-cgh.array.ArrayID</code>. 
+	 * Setter for <code>cgh-processor.array.ArrayID</code>. 
 	 */
 	@Override
 	public void setArrayid(java.lang.Long value) {
@@ -20,7 +20,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.ArrayID</code>. 
+	 * Getter for <code>cgh-processor.array.ArrayID</code>. 
 	 */
 	@Override
 	public java.lang.Long getArrayid() {
@@ -28,7 +28,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.array.FeatureExtractor_barcode</code>. 
+	 * Setter for <code>cgh-processor.array.FeatureExtractor_barcode</code>. 
 	 */
 	@Override
 	public void setFeatureextractorBarcode(java.lang.String value) {
@@ -36,7 +36,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.FeatureExtractor_barcode</code>. 
+	 * Getter for <code>cgh-processor.array.FeatureExtractor_barcode</code>. 
 	 */
 	@Override
 	public java.lang.String getFeatureextractorBarcode() {
@@ -44,7 +44,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.array.AnyColorPrcntFeatNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.array.AnyColorPrcntFeatNonUnifOL</code>. 
 	 */
 	@Override
 	public void setAnycolorprcntfeatnonunifol(java.lang.Double value) {
@@ -52,7 +52,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.AnyColorPrcntFeatNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.array.AnyColorPrcntFeatNonUnifOL</code>. 
 	 */
 	@Override
 	public java.lang.Double getAnycolorprcntfeatnonunifol() {
@@ -60,7 +60,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.array.DerivativeLR_spread</code>. 
+	 * Setter for <code>cgh-processor.array.DerivativeLR_spread</code>. 
 	 */
 	@Override
 	public void setDerivativelrSpread(java.lang.Double value) {
@@ -68,7 +68,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.DerivativeLR_spread</code>. 
+	 * Getter for <code>cgh-processor.array.DerivativeLR_spread</code>. 
 	 */
 	@Override
 	public java.lang.Double getDerivativelrSpread() {
@@ -76,7 +76,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.array.g_Signal2Noise</code>. 
+	 * Setter for <code>cgh-processor.array.g_Signal2Noise</code>. 
 	 */
 	@Override
 	public void setGSignal2noise(java.lang.Double value) {
@@ -84,7 +84,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.g_Signal2Noise</code>. 
+	 * Getter for <code>cgh-processor.array.g_Signal2Noise</code>. 
 	 */
 	@Override
 	public java.lang.Double getGSignal2noise() {
@@ -92,7 +92,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.array.g_SignalIntensity</code>. 
+	 * Setter for <code>cgh-processor.array.g_SignalIntensity</code>. 
 	 */
 	@Override
 	public void setGSignalintensity(java.lang.Double value) {
@@ -100,7 +100,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.g_SignalIntensity</code>. 
+	 * Getter for <code>cgh-processor.array.g_SignalIntensity</code>. 
 	 */
 	@Override
 	public java.lang.Double getGSignalintensity() {
@@ -108,7 +108,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.array.r_Signal2Noise</code>. 
+	 * Setter for <code>cgh-processor.array.r_Signal2Noise</code>. 
 	 */
 	@Override
 	public void setRSignal2noise(java.lang.Double value) {
@@ -116,7 +116,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.r_Signal2Noise</code>. 
+	 * Getter for <code>cgh-processor.array.r_Signal2Noise</code>. 
 	 */
 	@Override
 	public java.lang.Double getRSignal2noise() {
@@ -124,7 +124,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.array.r_SignalIntensity</code>. 
+	 * Setter for <code>cgh-processor.array.r_SignalIntensity</code>. 
 	 */
 	@Override
 	public void setRSignalintensity(java.lang.Double value) {
@@ -132,7 +132,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.r_SignalIntensity</code>. 
+	 * Getter for <code>cgh-processor.array.r_SignalIntensity</code>. 
 	 */
 	@Override
 	public java.lang.Double getRSignalintensity() {
@@ -140,7 +140,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.array.Scan_Date</code>. 
+	 * Setter for <code>cgh-processor.array.Scan_Date</code>. 
 	 */
 	@Override
 	public void setScanDate(java.lang.String value) {
@@ -148,7 +148,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.Scan_Date</code>. 
+	 * Getter for <code>cgh-processor.array.Scan_Date</code>. 
 	 */
 	@Override
 	public java.lang.String getScanDate() {
@@ -156,7 +156,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Setter for <code>nhs-cgh.array.ShortArrayId</code>. 
+	 * Setter for <code>cgh-processor.array.ShortArrayId</code>. 
 	 */
 	@Override
 	public void setShortarrayid(java.lang.Double value) {
@@ -164,7 +164,7 @@ public class ArrayRecord extends org.jooq.impl.UpdatableRecordImpl<uk.co.techblu
 	}
 
 	/**
-	 * Getter for <code>nhs-cgh.array.ShortArrayId</code>. 
+	 * Getter for <code>cgh-processor.array.ShortArrayId</code>. 
 	 */
 	@Override
 	public java.lang.Double getShortarrayid() {

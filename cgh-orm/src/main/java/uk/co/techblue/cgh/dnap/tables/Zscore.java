@@ -12,7 +12,7 @@ public class Zscore extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	private static final long serialVersionUID = -309914703;
 
 	/**
-	 * The singleton instance of <code>nhs-cgh.zscore</code>
+	 * The singleton instance of <code>cgh-processor.zscore</code>
 	 */
 	public static final uk.co.techblue.cgh.dnap.tables.Zscore ZSCORE = new uk.co.techblue.cgh.dnap.tables.Zscore();
 
@@ -25,57 +25,57 @@ public class Zscore extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	}
 
 	/**
-	 * The column <code>nhs-cgh.zscore.ZScoreId</code>. 
+	 * The column <code>cgh-processor.zscore.ZScoreId</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Long> ZSCOREID = createField("ZScoreId", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.zscore.RegionIntensityId</code>. 
+	 * The column <code>cgh-processor.zscore.RegionIntensityId</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Long> REGIONINTENSITYID = createField("RegionIntensityId", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.zscore.ZMeanGreenSignal</code>. 
+	 * The column <code>cgh-processor.zscore.ZMeanGreenSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Double> ZMEANGREENSIGNAL = createField("ZMeanGreenSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.zscore.ZMedianGreenSignal</code>. 
+	 * The column <code>cgh-processor.zscore.ZMedianGreenSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Double> ZMEDIANGREENSIGNAL = createField("ZMedianGreenSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.zscore.ZMeanRedSignal</code>. 
+	 * The column <code>cgh-processor.zscore.ZMeanRedSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Double> ZMEANREDSIGNAL = createField("ZMeanRedSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.zscore.ZMedianRedSignal</code>. 
+	 * The column <code>cgh-processor.zscore.ZMedianRedSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Double> ZMEDIANREDSIGNAL = createField("ZMedianRedSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.zscore.ZMeanLogRatio</code>. 
+	 * The column <code>cgh-processor.zscore.ZMeanLogRatio</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Double> ZMEANLOGRATIO = createField("ZMeanLogRatio", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.zscore.ZMedianLogRatio</code>. 
+	 * The column <code>cgh-processor.zscore.ZMedianLogRatio</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Double> ZMEDIANLOGRATIO = createField("ZMedianLogRatio", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * Create a <code>nhs-cgh.zscore</code> table reference
+	 * Create a <code>cgh-processor.zscore</code> table reference
 	 */
 	public Zscore() {
-		super("zscore", uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH);
+		super("zscore", uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR);
 	}
 
 	/**
-	 * Create an aliased <code>nhs-cgh.zscore</code> table reference
+	 * Create an aliased <code>cgh-processor.zscore</code> table reference
 	 */
 	public Zscore(java.lang.String alias) {
-		super(alias, uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH, uk.co.techblue.cgh.dnap.tables.Zscore.ZSCORE);
+		super(alias, uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR, uk.co.techblue.cgh.dnap.tables.Zscore.ZSCORE);
 	}
 
 	/**

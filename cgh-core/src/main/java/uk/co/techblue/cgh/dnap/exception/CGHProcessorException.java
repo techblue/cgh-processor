@@ -2,7 +2,7 @@ package uk.co.techblue.cgh.dnap.exception;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class NHSProcessorException.
+ * The Class CGHProcessorException.
  * @author dheeraj
  */
 public class CGHProcessorException extends Exception {
@@ -11,14 +11,14 @@ public class CGHProcessorException extends Exception {
     private static final long serialVersionUID = 2115630042547490655L;
 
     /**
-     * Instantiates a new nHS processor exception.
+     * Instantiates a new cGH processor exception.
      */
     public CGHProcessorException() {
         super();
     }
 
     /**
-     * Instantiates a new nHS processor exception.
+     * Instantiates a new cGH processor exception.
      *
      * @param message the message
      * @param cause the cause
@@ -28,7 +28,7 @@ public class CGHProcessorException extends Exception {
     }
 
     /**
-     * Instantiates a new nHS processor exception.
+     * Instantiates a new cGH processor exception.
      *
      * @param message the message
      */
@@ -37,7 +37,7 @@ public class CGHProcessorException extends Exception {
     }
 
     /**
-     * Instantiates a new nHS processor exception.
+     * Instantiates a new cGH processor exception.
      *
      * @param cause the cause
      */

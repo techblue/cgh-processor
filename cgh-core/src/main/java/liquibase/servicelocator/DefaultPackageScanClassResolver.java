@@ -31,7 +31,7 @@ public class DefaultPackageScanClassResolver implements PackageScanClassResolver
     private void cacheClasses() {
         try {
             cachedClasses.clear();
-            List<String> classNames = readResourceAsStrings("/uk/co/techblue/nhs/liquibase/liquibase-services.txt");
+            List<String> classNames = readResourceAsStrings("/uk/co/techblue/cgh/liquibase/liquibase-services.txt");
             Set<ClassLoader> set = getClassLoaders();
             for (String className : classNames) {
                 for (ClassLoader classLoader : set) {

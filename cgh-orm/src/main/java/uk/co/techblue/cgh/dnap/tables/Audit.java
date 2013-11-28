@@ -12,7 +12,7 @@ public class Audit extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.table
 	private static final long serialVersionUID = -553891557;
 
 	/**
-	 * The singleton instance of <code>nhs-cgh.audit</code>
+	 * The singleton instance of <code>cgh-processor.audit</code>
 	 */
 	public static final uk.co.techblue.cgh.dnap.tables.Audit AUDIT = new uk.co.techblue.cgh.dnap.tables.Audit();
 
@@ -25,37 +25,37 @@ public class Audit extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.table
 	}
 
 	/**
-	 * The column <code>nhs-cgh.audit.audit_id</code>. 
+	 * The column <code>cgh-processor.audit.audit_id</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.AuditRecord, java.lang.Long> AUDIT_ID = createField("audit_id", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.audit.filename</code>. 
+	 * The column <code>cgh-processor.audit.filename</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.AuditRecord, java.lang.String> FILENAME = createField("filename", org.jooq.impl.SQLDataType.VARCHAR.length(100), this);
 
 	/**
-	 * The column <code>nhs-cgh.audit.processed_date</code>. 
+	 * The column <code>cgh-processor.audit.processed_date</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.AuditRecord, java.sql.Timestamp> PROCESSED_DATE = createField("processed_date", org.jooq.impl.SQLDataType.TIMESTAMP, this);
 
 	/**
-	 * The column <code>nhs-cgh.audit.processed</code>. 
+	 * The column <code>cgh-processor.audit.processed</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.AuditRecord, java.lang.Boolean> PROCESSED = createField("processed", org.jooq.impl.SQLDataType.BOOLEAN, this);
 
 	/**
-	 * Create a <code>nhs-cgh.audit</code> table reference
+	 * Create a <code>cgh-processor.audit</code> table reference
 	 */
 	public Audit() {
-		super("audit", uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH);
+		super("audit", uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR);
 	}
 
 	/**
-	 * Create an aliased <code>nhs-cgh.audit</code> table reference
+	 * Create an aliased <code>cgh-processor.audit</code> table reference
 	 */
 	public Audit(java.lang.String alias) {
-		super(alias, uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH, uk.co.techblue.cgh.dnap.tables.Audit.AUDIT);
+		super(alias, uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR, uk.co.techblue.cgh.dnap.tables.Audit.AUDIT);
 	}
 
 	/**

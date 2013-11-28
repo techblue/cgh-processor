@@ -10,102 +10,102 @@ package uk.co.techblue.cgh.dnap.tables.interfaces;
 public interface IArray extends java.io.Serializable {
 
 	/**
-	 * Setter for <code>nhs-cgh.array.ArrayID</code>. 
+	 * Setter for <code>cgh-processor.array.ArrayID</code>. 
 	 */
 	public void setArrayid(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.ArrayID</code>. 
+	 * Getter for <code>cgh-processor.array.ArrayID</code>. 
 	 */
 	public java.lang.Long getArrayid();
 
 	/**
-	 * Setter for <code>nhs-cgh.array.FeatureExtractor_barcode</code>. 
+	 * Setter for <code>cgh-processor.array.FeatureExtractor_barcode</code>. 
 	 */
 	public void setFeatureextractorBarcode(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.FeatureExtractor_barcode</code>. 
+	 * Getter for <code>cgh-processor.array.FeatureExtractor_barcode</code>. 
 	 */
 	public java.lang.String getFeatureextractorBarcode();
 
 	/**
-	 * Setter for <code>nhs-cgh.array.AnyColorPrcntFeatNonUnifOL</code>. 
+	 * Setter for <code>cgh-processor.array.AnyColorPrcntFeatNonUnifOL</code>. 
 	 */
 	public void setAnycolorprcntfeatnonunifol(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.AnyColorPrcntFeatNonUnifOL</code>. 
+	 * Getter for <code>cgh-processor.array.AnyColorPrcntFeatNonUnifOL</code>. 
 	 */
 	public java.lang.Double getAnycolorprcntfeatnonunifol();
 
 	/**
-	 * Setter for <code>nhs-cgh.array.DerivativeLR_spread</code>. 
+	 * Setter for <code>cgh-processor.array.DerivativeLR_spread</code>. 
 	 */
 	public void setDerivativelrSpread(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.DerivativeLR_spread</code>. 
+	 * Getter for <code>cgh-processor.array.DerivativeLR_spread</code>. 
 	 */
 	public java.lang.Double getDerivativelrSpread();
 
 	/**
-	 * Setter for <code>nhs-cgh.array.g_Signal2Noise</code>. 
+	 * Setter for <code>cgh-processor.array.g_Signal2Noise</code>. 
 	 */
 	public void setGSignal2noise(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.g_Signal2Noise</code>. 
+	 * Getter for <code>cgh-processor.array.g_Signal2Noise</code>. 
 	 */
 	public java.lang.Double getGSignal2noise();
 
 	/**
-	 * Setter for <code>nhs-cgh.array.g_SignalIntensity</code>. 
+	 * Setter for <code>cgh-processor.array.g_SignalIntensity</code>. 
 	 */
 	public void setGSignalintensity(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.g_SignalIntensity</code>. 
+	 * Getter for <code>cgh-processor.array.g_SignalIntensity</code>. 
 	 */
 	public java.lang.Double getGSignalintensity();
 
 	/**
-	 * Setter for <code>nhs-cgh.array.r_Signal2Noise</code>. 
+	 * Setter for <code>cgh-processor.array.r_Signal2Noise</code>. 
 	 */
 	public void setRSignal2noise(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.r_Signal2Noise</code>. 
+	 * Getter for <code>cgh-processor.array.r_Signal2Noise</code>. 
 	 */
 	public java.lang.Double getRSignal2noise();
 
 	/**
-	 * Setter for <code>nhs-cgh.array.r_SignalIntensity</code>. 
+	 * Setter for <code>cgh-processor.array.r_SignalIntensity</code>. 
 	 */
 	public void setRSignalintensity(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.r_SignalIntensity</code>. 
+	 * Getter for <code>cgh-processor.array.r_SignalIntensity</code>. 
 	 */
 	public java.lang.Double getRSignalintensity();
 
 	/**
-	 * Setter for <code>nhs-cgh.array.Scan_Date</code>. 
+	 * Setter for <code>cgh-processor.array.Scan_Date</code>. 
 	 */
 	public void setScanDate(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.Scan_Date</code>. 
+	 * Getter for <code>cgh-processor.array.Scan_Date</code>. 
 	 */
 	public java.lang.String getScanDate();
 
 	/**
-	 * Setter for <code>nhs-cgh.array.ShortArrayId</code>. 
+	 * Setter for <code>cgh-processor.array.ShortArrayId</code>. 
 	 */
 	public void setShortarrayid(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.array.ShortArrayId</code>. 
+	 * Getter for <code>cgh-processor.array.ShortArrayId</code>. 
 	 */
 	public java.lang.Double getShortarrayid();
 

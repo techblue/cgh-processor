@@ -63,7 +63,7 @@ public class WatcherService {
      * Instantiates a new watcher service.
      * 
      * @param pollingInterval the polling interval
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     public WatcherService(final long pollingInterval) throws CGHProcessorException {
         this.dataFiles = new ArrayList<String>();
@@ -75,7 +75,7 @@ public class WatcherService {
      * Start watch service.
      * 
      * @param watchDirectoryPath the watch directory path
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     public void startWatchService(final String watchDirectoryPath) throws CGHProcessorException {
         File directory = new File(watchDirectoryPath);
@@ -114,14 +114,14 @@ public class WatcherService {
                 if (file.getName().equals(generalProperties.getAttribFileName())) {
                     try {
                         attributes = parseAttributes(file.getAbsolutePath());
-                    } catch (CGHProcessorException nhse) {
-                        throw new RuntimeException("", nhse);
+                    } catch (CGHProcessorException cghe) {
+                        throw new RuntimeException("", cghe);
                     }
                 } else if (file.getName().equals(generalProperties.getRegionFileName())) {
                     try {
                         regions = parseRegions(file.getAbsolutePath());
-                    } catch (CGHProcessorException nhse) {
-                        throw new RuntimeException("", nhse);
+                    } catch (CGHProcessorException cghe) {
+                        throw new RuntimeException("", cghe);
                     }
                 } else {
                     dataFiles.add(file.getAbsolutePath());
@@ -169,7 +169,7 @@ public class WatcherService {
      * 
      * @param absolutePath the absolute path
      * @return the list
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     private List<Region> parseRegions(final String absolutePath) throws CGHProcessorException {
         logger.info("Parsing {} ", absolutePath);
@@ -211,7 +211,7 @@ public class WatcherService {
      * 
      * @param absolutePath the absolute path
      * @return the list
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     protected List<Attribute> parseAttributes(String absolutePath) throws CGHProcessorException {
         logger.info("Parsing {} ", absolutePath);
@@ -222,7 +222,7 @@ public class WatcherService {
     /**
      * Stop.
      * 
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     public void stopWatchService() throws CGHProcessorException {
         if (monitor != null) {

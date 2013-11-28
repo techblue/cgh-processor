@@ -12,7 +12,7 @@ public class Signal extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	private static final long serialVersionUID = 518906428;
 
 	/**
-	 * The singleton instance of <code>nhs-cgh.signal</code>
+	 * The singleton instance of <code>cgh-processor.signal</code>
 	 */
 	public static final uk.co.techblue.cgh.dnap.tables.Signal SIGNAL = new uk.co.techblue.cgh.dnap.tables.Signal();
 
@@ -25,97 +25,97 @@ public class Signal extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	}
 
 	/**
-	 * The column <code>nhs-cgh.signal.SignalId</code>. 
+	 * The column <code>cgh-processor.signal.SignalId</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Long> SIGNALID = createField("SignalId", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.ProbeName</code>. 
+	 * The column <code>cgh-processor.signal.ProbeName</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.String> PROBENAME = createField("ProbeName", org.jooq.impl.SQLDataType.VARCHAR.length(30), this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.SystematicName</code>. 
+	 * The column <code>cgh-processor.signal.SystematicName</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.String> SYSTEMATICNAME = createField("SystematicName", org.jooq.impl.SQLDataType.VARCHAR.length(50), this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.LogRatio</code>. 
+	 * The column <code>cgh-processor.signal.LogRatio</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Double> LOGRATIO = createField("LogRatio", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.gProcessedSignal</code>. 
+	 * The column <code>cgh-processor.signal.gProcessedSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Double> GPROCESSEDSIGNAL = createField("gProcessedSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.rProcessedSignal</code>. 
+	 * The column <code>cgh-processor.signal.rProcessedSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Double> RPROCESSEDSIGNAL = createField("rProcessedSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.gIsSaturated</code>. 
+	 * The column <code>cgh-processor.signal.gIsSaturated</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Boolean> GISSATURATED = createField("gIsSaturated", org.jooq.impl.SQLDataType.BOOLEAN, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.rIsSaturated</code>. 
+	 * The column <code>cgh-processor.signal.rIsSaturated</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Boolean> RISSATURATED = createField("rIsSaturated", org.jooq.impl.SQLDataType.BOOLEAN, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.gIsFeatNonUnifOL</code>. 
+	 * The column <code>cgh-processor.signal.gIsFeatNonUnifOL</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Boolean> GISFEATNONUNIFOL = createField("gIsFeatNonUnifOL", org.jooq.impl.SQLDataType.BOOLEAN, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.rIsFeatNonUnifOL</code>. 
+	 * The column <code>cgh-processor.signal.rIsFeatNonUnifOL</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Boolean> RISFEATNONUNIFOL = createField("rIsFeatNonUnifOL", org.jooq.impl.SQLDataType.BOOLEAN, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.gIsBGNonUnifOL</code>. 
+	 * The column <code>cgh-processor.signal.gIsBGNonUnifOL</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Boolean> GISBGNONUNIFOL = createField("gIsBGNonUnifOL", org.jooq.impl.SQLDataType.BOOLEAN, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.rIsBGNonUnifOL</code>. 
+	 * The column <code>cgh-processor.signal.rIsBGNonUnifOL</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Boolean> RISBGNONUNIFOL = createField("rIsBGNonUnifOL", org.jooq.impl.SQLDataType.BOOLEAN, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.FeatureExtractor_barcode</code>. 
+	 * The column <code>cgh-processor.signal.FeatureExtractor_barcode</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.String> FEATUREEXTRACTOR_BARCODE = createField("FeatureExtractor_barcode", org.jooq.impl.SQLDataType.VARCHAR.length(22), this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.Chromosome</code>. 
+	 * The column <code>cgh-processor.signal.Chromosome</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.String> CHROMOSOME = createField("Chromosome", org.jooq.impl.SQLDataType.VARCHAR.length(10), this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.StartPosition</code>. 
+	 * The column <code>cgh-processor.signal.StartPosition</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Long> STARTPOSITION = createField("StartPosition", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.signal.StopPosition</code>. 
+	 * The column <code>cgh-processor.signal.StopPosition</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Long> STOPPOSITION = createField("StopPosition", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * Create a <code>nhs-cgh.signal</code> table reference
+	 * Create a <code>cgh-processor.signal</code> table reference
 	 */
 	public Signal() {
-		super("signal", uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH);
+		super("signal", uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR);
 	}
 
 	/**
-	 * Create an aliased <code>nhs-cgh.signal</code> table reference
+	 * Create an aliased <code>cgh-processor.signal</code> table reference
 	 */
 	public Signal(java.lang.String alias) {
-		super(alias, uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH, uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL);
+		super(alias, uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR, uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL);
 	}
 
 	/**

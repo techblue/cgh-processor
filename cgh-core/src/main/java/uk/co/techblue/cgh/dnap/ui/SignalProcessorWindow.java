@@ -136,9 +136,9 @@ public class SignalProcessorWindow extends ApplicationWindow {
         addMenuBar();
         try {
             this.watcherService = new WatcherService(2 * 1000);
-        } catch (CGHProcessorException nhse) {
-            LOGGER.error("", nhse);
-            MessageDialog.openError(getShell(), DIALOG_TITLE, nhse.getLocalizedMessage());
+        } catch (CGHProcessorException cghe) {
+            LOGGER.error("", cghe);
+            MessageDialog.openError(getShell(), DIALOG_TITLE, cghe.getLocalizedMessage());
         }
     }
 
@@ -429,9 +429,9 @@ public class SignalProcessorWindow extends ApplicationWindow {
                     changeControlState(false);
                     watcherService.setProgressObserver(uiProgressObserver);
                     watcherService.startWatchService(txtWatchDir.getText());
-                } catch (CGHProcessorException nhse) {
-                    LOGGER.error("", nhse);
-                    MessageDialog.openError(getShell(), DIALOG_TITLE, nhse.getLocalizedMessage());
+                } catch (CGHProcessorException cghe) {
+                    LOGGER.error("", cghe);
+                    MessageDialog.openError(getShell(), DIALOG_TITLE, cghe.getLocalizedMessage());
                 }
             }
         });
@@ -444,9 +444,9 @@ public class SignalProcessorWindow extends ApplicationWindow {
                 try {
                     watcherService.stopWatchService();
                     changeControlState(true);
-                } catch (CGHProcessorException nhse) {
-                    LOGGER.error("", nhse);
-                    MessageDialog.openError(getShell(), DIALOG_TITLE, nhse.getLocalizedMessage());
+                } catch (CGHProcessorException cghe) {
+                    LOGGER.error("", cghe);
+                    MessageDialog.openError(getShell(), DIALOG_TITLE, cghe.getLocalizedMessage());
                 }
             }
         });
@@ -627,7 +627,7 @@ public class SignalProcessorWindow extends ApplicationWindow {
         });
 
         btnUpdateSchema = new Button(grpDatabaseSettings, SWT.PUSH);
-        btnUpdateSchema.setText("Update Schema");
+        btnUpdateSchema.setText("Update Schema");        
         btnUpdateSchema.addSelectionListener(new SelectionAdapter() {
 
             @Override
@@ -668,9 +668,9 @@ public class SignalProcessorWindow extends ApplicationWindow {
         Properties props = null;
         try {
             props = SignalProcessorHelper.getProperties(SystemConfiguration.class);
-        } catch (CGHProcessorException nhse) {
-            LOGGER.error("", nhse);
-            MessageDialog.openError(getShell(), DIALOG_TITLE, nhse.getLocalizedMessage());
+        } catch (CGHProcessorException cghe) {
+            LOGGER.error("", cghe);
+            MessageDialog.openError(getShell(), DIALOG_TITLE, cghe.getLocalizedMessage());
         }
 
         if (props == null || props.isEmpty()) {
@@ -699,9 +699,9 @@ public class SignalProcessorWindow extends ApplicationWindow {
         Properties props = null;
         try {
             props = SignalProcessorHelper.getProperties(DbConfiguration.class);
-        } catch (CGHProcessorException nhse) {
-            LOGGER.error("", nhse);
-            MessageDialog.openError(getShell(), DIALOG_TITLE, nhse.getLocalizedMessage());
+        } catch (CGHProcessorException cghe) {
+            LOGGER.error("", cghe);
+            MessageDialog.openError(getShell(), DIALOG_TITLE, cghe.getLocalizedMessage());
         }
 
         for (final Field classField : DbConfiguration.class.getDeclaredFields()) {
@@ -898,9 +898,9 @@ public class SignalProcessorWindow extends ApplicationWindow {
             if (showDialog) {
                 MessageDialog.openInformation(shell, DIALOG_TITLE, "Schema updated successfully.");
             }
-        } catch (CGHProcessorException nhse) {
-            LOGGER.error("An error occurred while starting the Signal processor", nhse);
-            MessageDialog.openError(shell, DIALOG_TITLE, "An error occurred while starting the Signal processor \n"+nhse.toString());
+        } catch (CGHProcessorException cghe) {
+            LOGGER.error("An error occurred while starting the Signal processor", cghe);
+            MessageDialog.openError(shell, DIALOG_TITLE, "An error occurred while starting the Signal processor \n"+cghe.toString());
             return;
         }
     }

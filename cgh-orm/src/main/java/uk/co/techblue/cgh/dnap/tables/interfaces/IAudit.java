@@ -10,42 +10,42 @@ package uk.co.techblue.cgh.dnap.tables.interfaces;
 public interface IAudit extends java.io.Serializable {
 
 	/**
-	 * Setter for <code>nhs-cgh.audit.audit_id</code>. 
+	 * Setter for <code>cgh-cgh.audit.audit_id</code>. 
 	 */
 	public void setAuditId(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.audit.audit_id</code>. 
+	 * Getter for <code>cgh-cgh.audit.audit_id</code>. 
 	 */
 	public java.lang.Long getAuditId();
 
 	/**
-	 * Setter for <code>nhs-cgh.audit.filename</code>. 
+	 * Setter for <code>cgh-cgh.audit.filename</code>. 
 	 */
 	public void setFilename(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.audit.filename</code>. 
+	 * Getter for <code>cgh-cgh.audit.filename</code>. 
 	 */
 	public java.lang.String getFilename();
 
 	/**
-	 * Setter for <code>nhs-cgh.audit.processed_date</code>. 
+	 * Setter for <code>cgh-cgh.audit.processed_date</code>. 
 	 */
 	public void setProcessedDate(java.sql.Timestamp value);
 
 	/**
-	 * Getter for <code>nhs-cgh.audit.processed_date</code>. 
+	 * Getter for <code>cgh-cgh.audit.processed_date</code>. 
 	 */
 	public java.sql.Timestamp getProcessedDate();
 
 	/**
-	 * Setter for <code>nhs-cgh.audit.processed</code>. 
+	 * Setter for <code>cgh-cgh.audit.processed</code>. 
 	 */
 	public void setProcessed(java.lang.Boolean value);
 
 	/**
-	 * Getter for <code>nhs-cgh.audit.processed</code>. 
+	 * Getter for <code>cgh-cgh.audit.processed</code>. 
 	 */
 	public java.lang.Boolean getProcessed();
 

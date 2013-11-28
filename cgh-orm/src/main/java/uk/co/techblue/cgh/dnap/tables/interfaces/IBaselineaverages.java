@@ -10,172 +10,172 @@ package uk.co.techblue.cgh.dnap.tables.interfaces;
 public interface IBaselineaverages extends java.io.Serializable {
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BaselineAveragesId</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BaselineAveragesId</code>. 
 	 */
 	public void setBaselineaveragesid(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BaselineAveragesId</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BaselineAveragesId</code>. 
 	 */
 	public java.lang.Long getBaselineaveragesid();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.RegionId</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.RegionId</code>. 
 	 */
 	public void setRegionid(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.RegionId</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.RegionId</code>. 
 	 */
 	public java.lang.Long getRegionid();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.Chromosome</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.Chromosome</code>. 
 	 */
 	public void setChromosome(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.Chromosome</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.Chromosome</code>. 
 	 */
 	public java.lang.String getChromosome();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.StartPosition</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.StartPosition</code>. 
 	 */
 	public void setStartposition(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.StartPosition</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.StartPosition</code>. 
 	 */
 	public java.lang.Long getStartposition();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.StopPosition</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.StopPosition</code>. 
 	 */
 	public void setStopposition(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.StopPosition</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.StopPosition</code>. 
 	 */
 	public java.lang.Long getStopposition();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanGreenSignal</code>. 
 	 */
 	public void setBmeangreensignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanGreenSignal</code>. 
 	 */
 	public java.lang.Double getBmeangreensignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanGreenSignalSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanGreenSignalSD</code>. 
 	 */
 	public void setBmeangreensignalsd(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanGreenSignalSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanGreenSignalSD</code>. 
 	 */
 	public java.lang.Double getBmeangreensignalsd();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianGreenSignal</code>. 
 	 */
 	public void setBmediangreensignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianGreenSignal</code>. 
 	 */
 	public java.lang.Double getBmediangreensignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianGreenSignalSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianGreenSignalSD</code>. 
 	 */
 	public void setBmediangreensignalsd(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianGreenSignalSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianGreenSignalSD</code>. 
 	 */
 	public java.lang.Double getBmediangreensignalsd();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanRedSignal</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanRedSignal</code>. 
 	 */
 	public void setBmeanredsignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanRedSignal</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanRedSignal</code>. 
 	 */
 	public java.lang.Double getBmeanredsignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanRedSignalSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanRedSignalSD</code>. 
 	 */
 	public void setBmeanredsignalsd(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanRedSignalSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanRedSignalSD</code>. 
 	 */
 	public java.lang.Double getBmeanredsignalsd();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianRedSignal</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianRedSignal</code>. 
 	 */
 	public void setBmedianredsignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianRedSignal</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianRedSignal</code>. 
 	 */
 	public java.lang.Double getBmedianredsignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianRedSignalSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianRedSignalSD</code>. 
 	 */
 	public void setBmedianredsignalsd(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianRedSignalSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianRedSignalSD</code>. 
 	 */
 	public java.lang.Double getBmedianredsignalsd();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanLogRatio</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanLogRatio</code>. 
 	 */
 	public void setBmeanlogratio(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanLogRatio</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanLogRatio</code>. 
 	 */
 	public java.lang.Double getBmeanlogratio();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMeanLogRatioSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanLogRatioSD</code>. 
 	 */
 	public void setBmeanlogratiosd(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMeanLogRatioSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanLogRatioSD</code>. 
 	 */
 	public java.lang.Double getBmeanlogratiosd();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianLogRatio</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianLogRatio</code>. 
 	 */
 	public void setBmedianlogratio(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianLogRatio</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianLogRatio</code>. 
 	 */
 	public java.lang.Double getBmedianlogratio();
 
 	/**
-	 * Setter for <code>nhs-cgh.baselineaverages.BMedianLogRatioSD</code>. 
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianLogRatioSD</code>. 
 	 */
 	public void setBmedianlogratiosd(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.baselineaverages.BMedianLogRatioSD</code>. 
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianLogRatioSD</code>. 
 	 */
 	public java.lang.Double getBmedianlogratiosd();
 

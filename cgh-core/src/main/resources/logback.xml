@@ -17,11 +17,11 @@
             <level>INFO</level> </filter> -->
         <append>true</append>
         <!-- Support multiple-JVM writing to the same log file -->
-        <file>${java.io.tmpdir}/NHS_Logs/nhslog.log</file>
+        <file>${java.io.tmpdir}/CGH_Logs/cghlog.log</file>
         <rollingPolicy
             class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- Roll-over daily -->
-            <fileNamePattern>${java.io.tmpdir}/NHS_Logs/archive/nhslog-%d{yyyy-MM-dd}.%i.log
+            <fileNamePattern>${java.io.tmpdir}/CGH_Logs/archive/cghlog-%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                 class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">

@@ -87,9 +87,9 @@ public class StartProcess implements Runnable {
         try {
             ApplicationWatcher.setThreadAlive(true);
             processDataFiles();
-        } catch (CGHProcessorException nhse) {
-            uiProgressObserver.publishProgressError(nhse.getLocalizedMessage());
-            throw new RuntimeException("", nhse);
+        } catch (CGHProcessorException cghe) {
+            uiProgressObserver.publishProgressError(cghe.getLocalizedMessage());
+            throw new RuntimeException("", cghe);
         } finally {
             ApplicationWatcher.setThreadAlive(false);
         }
@@ -203,8 +203,8 @@ public class StartProcess implements Runnable {
         logger.debug("Get short array id from feature extractor barcode {}", feParams.getFeatureExtractorBarcode());
         try {
             feParams.setShortArrayId(SignalProcessorHelper.getFEShortArrayId(feParams.getFeatureExtractorBarcode()));
-        } catch (CGHProcessorException nhse) {
-            throw nhse;
+        } catch (CGHProcessorException cghe) {
+            throw cghe;
         }
 
         logger.info("Reading FE Stats from tab delimited text data file: {}", dataFilePath);

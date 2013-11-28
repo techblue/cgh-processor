@@ -33,7 +33,7 @@ import uk.co.techblue.cgh.dnap.tables.records.SignalRecord;
 public class SignalProcessorDaoImpl implements SignalProcessorDao {
 
     /* (non-Javadoc)
-     * @see uk.co.techblue.nhs.dnap.dao.SignalProcessorDao#getSignalData(org.jooq.Configuration, uk.co.techblue.nhs.dnap.tables.records.RegionRecord, java.lang.String)
+     * @see uk.co.techblue.cgh.dnap.dao.SignalProcessorDao#getSignalData(org.jooq.Configuration, uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.String)
      */
     @Override
     public List<SignalRecord> getSignalData(final Configuration configuration, final RegionRecord region, final String featureExtractorBarcode) {
@@ -79,7 +79,7 @@ public class SignalProcessorDaoImpl implements SignalProcessorDao {
     }
     
     /* (non-Javadoc)
-     * @see uk.co.techblue.nhs.dnap.dao.SignalProcessorDao#getRegions(org.jooq.Configuration)
+     * @see uk.co.techblue.cgh.dnap.dao.SignalProcessorDao#getRegions(org.jooq.Configuration)
      */
     public List<RegionRecord> getRegions(final Configuration configuration) {
         Result<RegionRecord> regions = fetchRegions(configuration);
@@ -102,7 +102,7 @@ public class SignalProcessorDaoImpl implements SignalProcessorDao {
     }
     
     /* (non-Javadoc)
-     * @see uk.co.techblue.nhs.dnap.dao.SignalProcessorDao#getRegionIntensities(org.jooq.Configuration, uk.co.techblue.nhs.dnap.tables.records.RegionRecord)
+     * @see uk.co.techblue.cgh.dnap.dao.SignalProcessorDao#getRegionIntensities(org.jooq.Configuration, uk.co.techblue.cgh.dnap.tables.records.RegionRecord)
      */
     @Override
     public List<RegionintensityRecord> getRegionIntensities(final Configuration configuration, final RegionRecord regionRecord) {
@@ -130,7 +130,7 @@ public class SignalProcessorDaoImpl implements SignalProcessorDao {
     }
 
     /* (non-Javadoc)
-     * @see uk.co.techblue.nhs.dnap.dao.SignalProcessorDao#getDistinctFeatureBarcodes(org.jooq.Configuration)
+     * @see uk.co.techblue.cgh.dnap.dao.SignalProcessorDao#getDistinctFeatureBarcodes(org.jooq.Configuration)
      */
     public List<String> getDistinctFeatureBarcodes(final Configuration configuration) {
         DSLContext dslCtx = DSL.using(configuration);
@@ -138,7 +138,7 @@ public class SignalProcessorDaoImpl implements SignalProcessorDao {
     }
     
     /* (non-Javadoc)
-     * @see uk.co.techblue.nhs.dnap.dao.SignalProcessorDao#saveZScores(org.jooq.Configuration)
+     * @see uk.co.techblue.cgh.dnap.dao.SignalProcessorDao#saveZScores(org.jooq.Configuration)
      */
     @Override
     public void saveZScores(final Configuration configuration) {
@@ -183,7 +183,7 @@ public class SignalProcessorDaoImpl implements SignalProcessorDao {
     }
 
     /* (non-Javadoc)
-     * @see uk.co.techblue.nhs.dnap.dao.SignalProcessorDao#deleteAllRegions(org.jooq.Configuration)
+     * @see uk.co.techblue.cgh.dnap.dao.SignalProcessorDao#deleteAllRegions(org.jooq.Configuration)
      */
     @Override
     public void deleteAllRegions(final Configuration configuration) {
@@ -192,7 +192,7 @@ public class SignalProcessorDaoImpl implements SignalProcessorDao {
     }
 
 	/* (non-Javadoc)
-	 * @see uk.co.techblue.nhs.dnap.dao.SignalProcessorDao#updateAudit(org.jooq.Configuration)
+	 * @see uk.co.techblue.cgh.dnap.dao.SignalProcessorDao#updateAudit(org.jooq.Configuration)
 	 */
 	@Override
 	public void updateAudit(Configuration configuration) {

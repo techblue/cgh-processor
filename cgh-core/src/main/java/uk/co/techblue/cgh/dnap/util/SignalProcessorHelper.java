@@ -51,7 +51,7 @@ public class SignalProcessorHelper {
      * 
      * @param featureExtractorBarCode the feature extractor bar code
      * @return the fE short array id
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     public static double getFEShortArrayId(final String featureExtractorBarCode) throws CGHProcessorException {
 
@@ -176,7 +176,7 @@ public class SignalProcessorHelper {
      * @param <T> the generic type
      * @param typeClass the type class
      * @return the configuration properties
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     public static <T> T getConfigurationProperties(Class<T> typeClass) throws CGHProcessorException {
         Properties props = getProperties(typeClass);
@@ -251,7 +251,7 @@ public class SignalProcessorHelper {
      * @param <T> the generic type
      * @param typeClass the type class
      * @return the properties
-     * @throws CGHProcessorException the nHS processor exception
+     * @throws CGHProcessorException the cGH processor exception
      */
     public static <T> Properties getProperties(Class<T> typeClass) throws CGHProcessorException {
         if (!typeClass.isAnnotationPresent(PersistProperties.class)) {

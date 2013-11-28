@@ -12,7 +12,7 @@ public class Regionintensity extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.
 	private static final long serialVersionUID = 456980551;
 
 	/**
-	 * The singleton instance of <code>nhs-cgh.regionintensity</code>
+	 * The singleton instance of <code>cgh-processor.regionintensity</code>
 	 */
 	public static final uk.co.techblue.cgh.dnap.tables.Regionintensity REGIONINTENSITY = new uk.co.techblue.cgh.dnap.tables.Regionintensity();
 
@@ -25,77 +25,77 @@ public class Regionintensity extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.
 	}
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.RegionIntensityId</code>. 
+	 * The column <code>cgh-processor.regionintensity.RegionIntensityId</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> REGIONINTENSITYID = createField("RegionIntensityId", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.RegionId</code>. 
+	 * The column <code>cgh-processor.regionintensity.RegionId</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> REGIONID = createField("RegionId", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.Chromosome</code>. 
+	 * The column <code>cgh-processor.regionintensity.Chromosome</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.String> CHROMOSOME = createField("Chromosome", org.jooq.impl.SQLDataType.VARCHAR.length(10), this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.StartPosition</code>. 
+	 * The column <code>cgh-processor.regionintensity.StartPosition</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> STARTPOSITION = createField("StartPosition", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.StopPosition</code>. 
+	 * The column <code>cgh-processor.regionintensity.StopPosition</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> STOPPOSITION = createField("StopPosition", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.FeatureExtractor_Barcode</code>. 
+	 * The column <code>cgh-processor.regionintensity.FeatureExtractor_Barcode</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.String> FEATUREEXTRACTOR_BARCODE = createField("FeatureExtractor_Barcode", org.jooq.impl.SQLDataType.VARCHAR.length(22), this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.MeanGreenSignal</code>. 
+	 * The column <code>cgh-processor.regionintensity.MeanGreenSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Double> MEANGREENSIGNAL = createField("MeanGreenSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.MedianGreenSignal</code>. 
+	 * The column <code>cgh-processor.regionintensity.MedianGreenSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Double> MEDIANGREENSIGNAL = createField("MedianGreenSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.MeanRedSignal</code>. 
+	 * The column <code>cgh-processor.regionintensity.MeanRedSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Double> MEANREDSIGNAL = createField("MeanRedSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.MedianRedSignal</code>. 
+	 * The column <code>cgh-processor.regionintensity.MedianRedSignal</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Double> MEDIANREDSIGNAL = createField("MedianRedSignal", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.MeanLogRatio</code>. 
+	 * The column <code>cgh-processor.regionintensity.MeanLogRatio</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Double> MEANLOGRATIO = createField("MeanLogRatio", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.regionintensity.MedianLogRatio</code>. 
+	 * The column <code>cgh-processor.regionintensity.MedianLogRatio</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Double> MEDIANLOGRATIO = createField("MedianLogRatio", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * Create a <code>nhs-cgh.regionintensity</code> table reference
+	 * Create a <code>cgh-processor.regionintensity</code> table reference
 	 */
 	public Regionintensity() {
-		super("regionintensity", uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH);
+		super("regionintensity", uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR);
 	}
 
 	/**
-	 * Create an aliased <code>nhs-cgh.regionintensity</code> table reference
+	 * Create an aliased <code>cgh-processor.regionintensity</code> table reference
 	 */
 	public Regionintensity(java.lang.String alias) {
-		super(alias, uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH, uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY);
+		super(alias, uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR, uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY);
 	}
 
 	/**

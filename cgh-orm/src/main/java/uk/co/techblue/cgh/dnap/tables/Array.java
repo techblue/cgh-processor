@@ -12,7 +12,7 @@ public class Array extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.table
 	private static final long serialVersionUID = 38098933;
 
 	/**
-	 * The singleton instance of <code>nhs-cgh.array</code>
+	 * The singleton instance of <code>cgh-processor.array</code>
 	 */
 	public static final uk.co.techblue.cgh.dnap.tables.Array ARRAY = new uk.co.techblue.cgh.dnap.tables.Array();
 
@@ -25,67 +25,67 @@ public class Array extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.table
 	}
 
 	/**
-	 * The column <code>nhs-cgh.array.ArrayID</code>. 
+	 * The column <code>cgh-processor.array.ArrayID</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Long> ARRAYID = createField("ArrayID", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.array.FeatureExtractor_barcode</code>. 
+	 * The column <code>cgh-processor.array.FeatureExtractor_barcode</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.String> FEATUREEXTRACTOR_BARCODE = createField("FeatureExtractor_barcode", org.jooq.impl.SQLDataType.VARCHAR.length(22), this);
 
 	/**
-	 * The column <code>nhs-cgh.array.AnyColorPrcntFeatNonUnifOL</code>. 
+	 * The column <code>cgh-processor.array.AnyColorPrcntFeatNonUnifOL</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Double> ANYCOLORPRCNTFEATNONUNIFOL = createField("AnyColorPrcntFeatNonUnifOL", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.array.DerivativeLR_spread</code>. 
+	 * The column <code>cgh-processor.array.DerivativeLR_spread</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Double> DERIVATIVELR_SPREAD = createField("DerivativeLR_spread", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.array.g_Signal2Noise</code>. 
+	 * The column <code>cgh-processor.array.g_Signal2Noise</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Double> G_SIGNAL2NOISE = createField("g_Signal2Noise", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.array.g_SignalIntensity</code>. 
+	 * The column <code>cgh-processor.array.g_SignalIntensity</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Double> G_SIGNALINTENSITY = createField("g_SignalIntensity", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.array.r_Signal2Noise</code>. 
+	 * The column <code>cgh-processor.array.r_Signal2Noise</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Double> R_SIGNAL2NOISE = createField("r_Signal2Noise", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.array.r_SignalIntensity</code>. 
+	 * The column <code>cgh-processor.array.r_SignalIntensity</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Double> R_SIGNALINTENSITY = createField("r_SignalIntensity", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * The column <code>nhs-cgh.array.Scan_Date</code>. 
+	 * The column <code>cgh-processor.array.Scan_Date</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.String> SCAN_DATE = createField("Scan_Date", org.jooq.impl.SQLDataType.VARCHAR.length(30), this);
 
 	/**
-	 * The column <code>nhs-cgh.array.ShortArrayId</code>. 
+	 * The column <code>cgh-processor.array.ShortArrayId</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Double> SHORTARRAYID = createField("ShortArrayId", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
-	 * Create a <code>nhs-cgh.array</code> table reference
+	 * Create a <code>cgh-processor.array</code> table reference
 	 */
 	public Array() {
-		super("array", uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH);
+		super("array", uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR);
 	}
 
 	/**
-	 * Create an aliased <code>nhs-cgh.array</code> table reference
+	 * Create an aliased <code>cgh-processor.array</code> table reference
 	 */
 	public Array(java.lang.String alias) {
-		super(alias, uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH, uk.co.techblue.cgh.dnap.tables.Array.ARRAY);
+		super(alias, uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR, uk.co.techblue.cgh.dnap.tables.Array.ARRAY);
 	}
 
 	/**

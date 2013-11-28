@@ -12,7 +12,7 @@ public class Region extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	private static final long serialVersionUID = 2192601;
 
 	/**
-	 * The singleton instance of <code>nhs-cgh.region</code>
+	 * The singleton instance of <code>cgh-processor.region</code>
 	 */
 	public static final uk.co.techblue.cgh.dnap.tables.Region REGION = new uk.co.techblue.cgh.dnap.tables.Region();
 
@@ -25,37 +25,37 @@ public class Region extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	}
 
 	/**
-	 * The column <code>nhs-cgh.region.RegionID</code>. 
+	 * The column <code>cgh-processor.region.RegionID</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.Long> REGIONID = createField("RegionID", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.region.Chromosome</code>. 
+	 * The column <code>cgh-processor.region.Chromosome</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.String> CHROMOSOME = createField("Chromosome", org.jooq.impl.SQLDataType.VARCHAR.length(10), this);
 
 	/**
-	 * The column <code>nhs-cgh.region.StartPosition</code>. 
+	 * The column <code>cgh-processor.region.StartPosition</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.Long> STARTPOSITION = createField("StartPosition", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>nhs-cgh.region.StopPosition</code>. 
+	 * The column <code>cgh-processor.region.StopPosition</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.Long> STOPPOSITION = createField("StopPosition", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * Create a <code>nhs-cgh.region</code> table reference
+	 * Create a <code>cgh-processor.region</code> table reference
 	 */
 	public Region() {
-		super("region", uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH);
+		super("region", uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR);
 	}
 
 	/**
-	 * Create an aliased <code>nhs-cgh.region</code> table reference
+	 * Create an aliased <code>cgh-processor.region</code> table reference
 	 */
 	public Region(java.lang.String alias) {
-		super(alias, uk.co.techblue.cgh.dnap.NhsCgh.NHS_CGH, uk.co.techblue.cgh.dnap.tables.Region.REGION);
+		super(alias, uk.co.techblue.cgh.dnap.CghProcessor.CGH_PROCESSOR, uk.co.techblue.cgh.dnap.tables.Region.REGION);
 	}
 
 	/**

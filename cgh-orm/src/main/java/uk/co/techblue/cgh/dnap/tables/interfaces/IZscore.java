@@ -10,82 +10,82 @@ package uk.co.techblue.cgh.dnap.tables.interfaces;
 public interface IZscore extends java.io.Serializable {
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZScoreId</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZScoreId</code>. 
 	 */
 	public void setZscoreid(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZScoreId</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZScoreId</code>. 
 	 */
 	public java.lang.Long getZscoreid();
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.RegionIntensityId</code>. 
+	 * Setter for <code>cgh-processor.zscore.RegionIntensityId</code>. 
 	 */
 	public void setRegionintensityid(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.RegionIntensityId</code>. 
+	 * Getter for <code>cgh-processor.zscore.RegionIntensityId</code>. 
 	 */
 	public java.lang.Long getRegionintensityid();
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMeanGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMeanGreenSignal</code>. 
 	 */
 	public void setZmeangreensignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMeanGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMeanGreenSignal</code>. 
 	 */
 	public java.lang.Double getZmeangreensignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMedianGreenSignal</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMedianGreenSignal</code>. 
 	 */
 	public void setZmediangreensignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMedianGreenSignal</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMedianGreenSignal</code>. 
 	 */
 	public java.lang.Double getZmediangreensignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMeanRedSignal</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMeanRedSignal</code>. 
 	 */
 	public void setZmeanredsignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMeanRedSignal</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMeanRedSignal</code>. 
 	 */
 	public java.lang.Double getZmeanredsignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMedianRedSignal</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMedianRedSignal</code>. 
 	 */
 	public void setZmedianredsignal(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMedianRedSignal</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMedianRedSignal</code>. 
 	 */
 	public java.lang.Double getZmedianredsignal();
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMeanLogRatio</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMeanLogRatio</code>. 
 	 */
 	public void setZmeanlogratio(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMeanLogRatio</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMeanLogRatio</code>. 
 	 */
 	public java.lang.Double getZmeanlogratio();
 
 	/**
-	 * Setter for <code>nhs-cgh.zscore.ZMedianLogRatio</code>. 
+	 * Setter for <code>cgh-processor.zscore.ZMedianLogRatio</code>. 
 	 */
 	public void setZmedianlogratio(java.lang.Double value);
 
 	/**
-	 * Getter for <code>nhs-cgh.zscore.ZMedianLogRatio</code>. 
+	 * Getter for <code>cgh-processor.zscore.ZMedianLogRatio</code>. 
 	 */
 	public java.lang.Double getZmedianlogratio();
 

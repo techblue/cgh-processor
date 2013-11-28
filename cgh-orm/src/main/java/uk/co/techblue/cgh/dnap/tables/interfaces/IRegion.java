@@ -10,42 +10,42 @@ package uk.co.techblue.cgh.dnap.tables.interfaces;
 public interface IRegion extends java.io.Serializable {
 
 	/**
-	 * Setter for <code>nhs-cgh.region.RegionID</code>. 
+	 * Setter for <code>cgh-processor.region.RegionID</code>. 
 	 */
 	public void setRegionid(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.region.RegionID</code>. 
+	 * Getter for <code>cgh-processor.region.RegionID</code>. 
 	 */
 	public java.lang.Long getRegionid();
 
 	/**
-	 * Setter for <code>nhs-cgh.region.Chromosome</code>. 
+	 * Setter for <code>cgh-processor.region.Chromosome</code>. 
 	 */
 	public void setChromosome(java.lang.String value);
 
 	/**
-	 * Getter for <code>nhs-cgh.region.Chromosome</code>. 
+	 * Getter for <code>cgh-processor.region.Chromosome</code>. 
 	 */
 	public java.lang.String getChromosome();
 
 	/**
-	 * Setter for <code>nhs-cgh.region.StartPosition</code>. 
+	 * Setter for <code>cgh-processor.region.StartPosition</code>. 
 	 */
 	public void setStartposition(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.region.StartPosition</code>. 
+	 * Getter for <code>cgh-processor.region.StartPosition</code>. 
 	 */
 	public java.lang.Long getStartposition();
 
 	/**
-	 * Setter for <code>nhs-cgh.region.StopPosition</code>. 
+	 * Setter for <code>cgh-processor.region.StopPosition</code>. 
 	 */
 	public void setStopposition(java.lang.Long value);
 
 	/**
-	 * Getter for <code>nhs-cgh.region.StopPosition</code>. 
+	 * Getter for <code>cgh-processor.region.StopPosition</code>. 
 	 */
 	public java.lang.Long getStopposition();
 
