@@ -20,6 +20,10 @@ public class SystemConfiguration implements IConfiguration {
 	@Property(name = "watch.folder.path")
 	private String watchDirectory;
 	
+    /** The Reference watch directory. */
+    @Property(name = "refwatch.folder.path")
+    private String refWatchDirectory;
+
 	/** The archive directory. */
 	@Property(name = "archive.folder.path")
 	private String archiveDirectory;
@@ -81,4 +85,24 @@ public class SystemConfiguration implements IConfiguration {
     public void setToggleState(String toggleState) {
         this.toggleState = toggleState;
     }
+
+    /**
+     * Gets the ReferenceDataDirectory state.
+     * 
+     * @return refWatchDirectory
+     */
+    public String getRefWatchDirectory() {
+        return refWatchDirectory;
+    }
+
+    // added by shiva
+    /**
+     * Sets the ReferenceDataDirectory
+     * 
+     * @param refWatchDirectory the new ReferenceDataDirectory
+     */
+    public void setRefWatchDirectory(String refWatchDirectory) {
+        this.refWatchDirectory = refWatchDirectory;
+    }
+
 }

@@ -9,12 +9,13 @@ package uk.co.techblue.cgh.dnap.tables.pojos;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Region implements uk.co.techblue.cgh.dnap.tables.interfaces.IRegion {
 
-	private static final long serialVersionUID = -1297915641;
+	private static final long serialVersionUID = -2004031691;
 
 	private java.lang.Long   regionid;
 	private java.lang.String chromosome;
 	private java.lang.Long   startposition;
 	private java.lang.Long   stopposition;
+	private java.lang.String region;
 
 	@Override
 	public java.lang.Long getRegionid() {
@@ -56,6 +57,16 @@ public class Region implements uk.co.techblue.cgh.dnap.tables.interfaces.IRegion
 		this.stopposition = stopposition;
 	}
 
+	@Override
+	public java.lang.String getRegion() {
+		return this.region;
+	}
+
+	@Override
+	public void setRegion(java.lang.String region) {
+		this.region = region;
+	}
+
 	// -------------------------------------------------------------------------
 	// FROM and INTO
 	// -------------------------------------------------------------------------
@@ -69,6 +80,7 @@ public class Region implements uk.co.techblue.cgh.dnap.tables.interfaces.IRegion
 		setChromosome(from.getChromosome());
 		setStartposition(from.getStartposition());
 		setStopposition(from.getStopposition());
+		setRegion(from.getRegion());
 	}
 
 	/**

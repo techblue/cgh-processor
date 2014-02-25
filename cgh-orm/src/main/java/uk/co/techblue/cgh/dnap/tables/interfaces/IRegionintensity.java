@@ -30,46 +30,6 @@ public interface IRegionintensity extends java.io.Serializable {
 	public java.lang.Long getRegionid();
 
 	/**
-	 * Setter for <code>cgh-processor.regionintensity.Chromosome</code>. 
-	 */
-	public void setChromosome(java.lang.String value);
-
-	/**
-	 * Getter for <code>cgh-processor.regionintensity.Chromosome</code>. 
-	 */
-	public java.lang.String getChromosome();
-
-	/**
-	 * Setter for <code>cgh-processor.regionintensity.StartPosition</code>. 
-	 */
-	public void setStartposition(java.lang.Long value);
-
-	/**
-	 * Getter for <code>cgh-processor.regionintensity.StartPosition</code>. 
-	 */
-	public java.lang.Long getStartposition();
-
-	/**
-	 * Setter for <code>cgh-processor.regionintensity.StopPosition</code>. 
-	 */
-	public void setStopposition(java.lang.Long value);
-
-	/**
-	 * Getter for <code>cgh-processor.regionintensity.StopPosition</code>. 
-	 */
-	public java.lang.Long getStopposition();
-
-	/**
-	 * Setter for <code>cgh-processor.regionintensity.FeatureExtractor_Barcode</code>. 
-	 */
-	public void setFeatureextractorBarcode(java.lang.String value);
-
-	/**
-	 * Getter for <code>cgh-processor.regionintensity.FeatureExtractor_Barcode</code>. 
-	 */
-	public java.lang.String getFeatureextractorBarcode();
-
-	/**
 	 * Setter for <code>cgh-processor.regionintensity.MeanGreenSignal</code>. 
 	 */
 	public void setMeangreensignal(java.lang.Double value);
@@ -128,6 +88,16 @@ public interface IRegionintensity extends java.io.Serializable {
 	 * Getter for <code>cgh-processor.regionintensity.MedianLogRatio</code>. 
 	 */
 	public java.lang.Double getMedianlogratio();
+
+	/**
+	 * Setter for <code>cgh-processor.regionintensity.ArrayId</code>. 
+	 */
+	public void setArrayid(java.lang.Long value);
+
+	/**
+	 * Getter for <code>cgh-processor.regionintensity.ArrayId</code>. 
+	 */
+	public java.lang.Long getArrayid();
 
 	// -------------------------------------------------------------------------
 	// FROM and INTO

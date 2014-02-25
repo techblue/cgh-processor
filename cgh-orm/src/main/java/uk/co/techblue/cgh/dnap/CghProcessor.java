@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class CghProcessor extends org.jooq.impl.SchemaImpl {
 
-	private static final long serialVersionUID = 1951636746;
+	private static final long serialVersionUID = -521909800;
 
 	/**
 	 * The singleton instance of <code>cgh-processor</code>
@@ -30,14 +30,15 @@ public class CghProcessor extends org.jooq.impl.SchemaImpl {
 		return result;
 	}
 
-	private final java.util.List<org.jooq.Table<?>> getTables0() {
-		return java.util.Arrays.<org.jooq.Table<?>>asList(
-			uk.co.techblue.cgh.dnap.tables.Array.ARRAY,
-			uk.co.techblue.cgh.dnap.tables.Audit.AUDIT,
-			uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES,
-			uk.co.techblue.cgh.dnap.tables.Region.REGION,
-			uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY,
-			uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL,
-			uk.co.techblue.cgh.dnap.tables.Zscore.ZSCORE);
-	}
+    private final java.util.List<org.jooq.Table<?>> getTables0() {
+        return java.util.Arrays.<org.jooq.Table<?>> asList(uk.co.techblue.cgh.dnap.tables.Array.ARRAY,
+                uk.co.techblue.cgh.dnap.tables.Arrayreference.ARRAYREFERENCE, uk.co.techblue.cgh.dnap.tables.Audit.AUDIT,
+                uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES,
+                uk.co.techblue.cgh.dnap.tables.Databasechangelog.DATABASECHANGELOG,
+                uk.co.techblue.cgh.dnap.tables.Databasechangeloglock.DATABASECHANGELOGLOCK,
+                uk.co.techblue.cgh.dnap.tables.Region.REGION, uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY,
+                uk.co.techblue.cgh.dnap.tables.Regionintensityreference.REGIONINTENSITYREFERENCE,
+                uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL, uk.co.techblue.cgh.dnap.tables.Signalreference.SIGNALREFERENCE,
+                uk.co.techblue.cgh.dnap.tables.Zscore.ZSCORE);
+    }
 }

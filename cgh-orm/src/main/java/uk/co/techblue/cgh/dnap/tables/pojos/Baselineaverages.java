@@ -9,13 +9,10 @@ package uk.co.techblue.cgh.dnap.tables.pojos;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Baselineaverages implements uk.co.techblue.cgh.dnap.tables.interfaces.IBaselineaverages {
 
-	private static final long serialVersionUID = 1373893726;
+	private static final long serialVersionUID = 1555306902;
 
 	private java.lang.Long   baselineaveragesid;
 	private java.lang.Long   regionid;
-	private java.lang.String chromosome;
-	private java.lang.Long   startposition;
-	private java.lang.Long   stopposition;
 	private java.lang.Double bmeangreensignal;
 	private java.lang.Double bmeangreensignalsd;
 	private java.lang.Double bmediangreensignal;
@@ -28,6 +25,18 @@ public class Baselineaverages implements uk.co.techblue.cgh.dnap.tables.interfac
 	private java.lang.Double bmeanlogratiosd;
 	private java.lang.Double bmedianlogratio;
 	private java.lang.Double bmedianlogratiosd;
+	private java.lang.Double bmeangreensignalM;
+	private java.lang.Double bmeangreensignalsdM;
+	private java.lang.Double bmediangreensignalM;
+	private java.lang.Double bmediangreensignalsdM;
+	private java.lang.Double bmeanredsignalM;
+	private java.lang.Double bmeanredsignalsdM;
+	private java.lang.Double bmedianredsignalM;
+	private java.lang.Double bmedianredsignalsdM;
+	private java.lang.Double bmeanlogratioM;
+	private java.lang.Double bmeanlogratiosdM;
+	private java.lang.Double bmedianlogratioM;
+	private java.lang.Double bmedianlogratiosdM;
 
 	@Override
 	public java.lang.Long getBaselineaveragesid() {
@@ -47,36 +56,6 @@ public class Baselineaverages implements uk.co.techblue.cgh.dnap.tables.interfac
 	@Override
 	public void setRegionid(java.lang.Long regionid) {
 		this.regionid = regionid;
-	}
-
-	@Override
-	public java.lang.String getChromosome() {
-		return this.chromosome;
-	}
-
-	@Override
-	public void setChromosome(java.lang.String chromosome) {
-		this.chromosome = chromosome;
-	}
-
-	@Override
-	public java.lang.Long getStartposition() {
-		return this.startposition;
-	}
-
-	@Override
-	public void setStartposition(java.lang.Long startposition) {
-		this.startposition = startposition;
-	}
-
-	@Override
-	public java.lang.Long getStopposition() {
-		return this.stopposition;
-	}
-
-	@Override
-	public void setStopposition(java.lang.Long stopposition) {
-		this.stopposition = stopposition;
 	}
 
 	@Override
@@ -199,6 +178,126 @@ public class Baselineaverages implements uk.co.techblue.cgh.dnap.tables.interfac
 		this.bmedianlogratiosd = bmedianlogratiosd;
 	}
 
+	@Override
+	public java.lang.Double getBmeangreensignalM() {
+		return this.bmeangreensignalM;
+	}
+
+	@Override
+	public void setBmeangreensignalM(java.lang.Double bmeangreensignalM) {
+		this.bmeangreensignalM = bmeangreensignalM;
+	}
+
+	@Override
+	public java.lang.Double getBmeangreensignalsdM() {
+		return this.bmeangreensignalsdM;
+	}
+
+	@Override
+	public void setBmeangreensignalsdM(java.lang.Double bmeangreensignalsdM) {
+		this.bmeangreensignalsdM = bmeangreensignalsdM;
+	}
+
+	@Override
+	public java.lang.Double getBmediangreensignalM() {
+		return this.bmediangreensignalM;
+	}
+
+	@Override
+	public void setBmediangreensignalM(java.lang.Double bmediangreensignalM) {
+		this.bmediangreensignalM = bmediangreensignalM;
+	}
+
+	@Override
+	public java.lang.Double getBmediangreensignalsdM() {
+		return this.bmediangreensignalsdM;
+	}
+
+	@Override
+	public void setBmediangreensignalsdM(java.lang.Double bmediangreensignalsdM) {
+		this.bmediangreensignalsdM = bmediangreensignalsdM;
+	}
+
+	@Override
+	public java.lang.Double getBmeanredsignalM() {
+		return this.bmeanredsignalM;
+	}
+
+	@Override
+	public void setBmeanredsignalM(java.lang.Double bmeanredsignalM) {
+		this.bmeanredsignalM = bmeanredsignalM;
+	}
+
+	@Override
+	public java.lang.Double getBmeanredsignalsdM() {
+		return this.bmeanredsignalsdM;
+	}
+
+	@Override
+	public void setBmeanredsignalsdM(java.lang.Double bmeanredsignalsdM) {
+		this.bmeanredsignalsdM = bmeanredsignalsdM;
+	}
+
+	@Override
+	public java.lang.Double getBmedianredsignalM() {
+		return this.bmedianredsignalM;
+	}
+
+	@Override
+	public void setBmedianredsignalM(java.lang.Double bmedianredsignalM) {
+		this.bmedianredsignalM = bmedianredsignalM;
+	}
+
+	@Override
+	public java.lang.Double getBmedianredsignalsdM() {
+		return this.bmedianredsignalsdM;
+	}
+
+	@Override
+	public void setBmedianredsignalsdM(java.lang.Double bmedianredsignalsdM) {
+		this.bmedianredsignalsdM = bmedianredsignalsdM;
+	}
+
+	@Override
+	public java.lang.Double getBmeanlogratioM() {
+		return this.bmeanlogratioM;
+	}
+
+	@Override
+	public void setBmeanlogratioM(java.lang.Double bmeanlogratioM) {
+		this.bmeanlogratioM = bmeanlogratioM;
+	}
+
+	@Override
+	public java.lang.Double getBmeanlogratiosdM() {
+		return this.bmeanlogratiosdM;
+	}
+
+	@Override
+	public void setBmeanlogratiosdM(java.lang.Double bmeanlogratiosdM) {
+		this.bmeanlogratiosdM = bmeanlogratiosdM;
+	}
+
+	@Override
+	public java.lang.Double getBmedianlogratioM() {
+		return this.bmedianlogratioM;
+	}
+
+	@Override
+	public void setBmedianlogratioM(java.lang.Double bmedianlogratioM) {
+		this.bmedianlogratioM = bmedianlogratioM;
+	}
+
+	@Override
+	public java.lang.Double getBmedianlogratiosdM() {
+		return this.bmedianlogratiosdM;
+	}
+
+	@Override
+	public void setBmedianlogratiosdM(java.lang.Double bmedianlogratiosdM) {
+		this.bmedianlogratiosdM = bmedianlogratiosdM;
+	}
+
 	// -------------------------------------------------------------------------
 	// FROM and INTO
 	// -------------------------------------------------------------------------
@@ -210,9 +309,6 @@ public class Baselineaverages implements uk.co.techblue.cgh.dnap.tables.interfac
 	public void from(uk.co.techblue.cgh.dnap.tables.interfaces.IBaselineaverages from) {
 		setBaselineaveragesid(from.getBaselineaveragesid());
 		setRegionid(from.getRegionid());
-		setChromosome(from.getChromosome());
-		setStartposition(from.getStartposition());
-		setStopposition(from.getStopposition());
 		setBmeangreensignal(from.getBmeangreensignal());
 		setBmeangreensignalsd(from.getBmeangreensignalsd());
 		setBmediangreensignal(from.getBmediangreensignal());
@@ -225,6 +321,18 @@ public class Baselineaverages implements uk.co.techblue.cgh.dnap.tables.interfac
 		setBmeanlogratiosd(from.getBmeanlogratiosd());
 		setBmedianlogratio(from.getBmedianlogratio());
 		setBmedianlogratiosd(from.getBmedianlogratiosd());
+		setBmeangreensignalM(from.getBmeangreensignalM());
+		setBmeangreensignalsdM(from.getBmeangreensignalsdM());
+		setBmediangreensignalM(from.getBmediangreensignalM());
+		setBmediangreensignalsdM(from.getBmediangreensignalsdM());
+		setBmeanredsignalM(from.getBmeanredsignalM());
+		setBmeanredsignalsdM(from.getBmeanredsignalsdM());
+		setBmedianredsignalM(from.getBmedianredsignalM());
+		setBmedianredsignalsdM(from.getBmedianredsignalsdM());
+		setBmeanlogratioM(from.getBmeanlogratioM());
+		setBmeanlogratiosdM(from.getBmeanlogratiosdM());
+		setBmedianlogratioM(from.getBmedianlogratioM());
+		setBmedianlogratiosdM(from.getBmedianlogratiosdM());
 	}
 
 	/**

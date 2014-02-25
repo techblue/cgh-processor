@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables.pojos;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Array implements uk.co.techblue.cgh.dnap.tables.interfaces.IArray {
 
-	private static final long serialVersionUID = 812473009;
+	private static final long serialVersionUID = 1271288269;
 
 	private java.lang.Long   arrayid;
 	private java.lang.String featureextractorBarcode;
@@ -21,6 +21,11 @@ public class Array implements uk.co.techblue.cgh.dnap.tables.interfaces.IArray {
 	private java.lang.Double rSignalintensity;
 	private java.lang.String scanDate;
 	private java.lang.Double shortarrayid;
+	private java.lang.String protocolName;
+	private java.lang.String gridGenomicbuild;
+	private java.lang.String featureextractorScanfilename;
+	private java.lang.String featureextractorDesignfilename;
+	private java.lang.String sex;
 
 	@Override
 	public java.lang.Long getArrayid() {
@@ -122,6 +127,56 @@ public class Array implements uk.co.techblue.cgh.dnap.tables.interfaces.IArray {
 		this.shortarrayid = shortarrayid;
 	}
 
+	@Override
+	public java.lang.String getProtocolName() {
+		return this.protocolName;
+	}
+
+	@Override
+	public void setProtocolName(java.lang.String protocolName) {
+		this.protocolName = protocolName;
+	}
+
+	@Override
+	public java.lang.String getGridGenomicbuild() {
+		return this.gridGenomicbuild;
+	}
+
+	@Override
+	public void setGridGenomicbuild(java.lang.String gridGenomicbuild) {
+		this.gridGenomicbuild = gridGenomicbuild;
+	}
+
+	@Override
+	public java.lang.String getFeatureextractorScanfilename() {
+		return this.featureextractorScanfilename;
+	}
+
+	@Override
+	public void setFeatureextractorScanfilename(java.lang.String featureextractorScanfilename) {
+		this.featureextractorScanfilename = featureextractorScanfilename;
+	}
+
+	@Override
+	public java.lang.String getFeatureextractorDesignfilename() {
+		return this.featureextractorDesignfilename;
+	}
+
+	@Override
+	public void setFeatureextractorDesignfilename(java.lang.String featureextractorDesignfilename) {
+		this.featureextractorDesignfilename = featureextractorDesignfilename;
+	}
+
+	@Override
+	public java.lang.String getSex() {
+		return this.sex;
+	}
+
+	@Override
+	public void setSex(java.lang.String sex) {
+		this.sex = sex;
+	}
+
 	// -------------------------------------------------------------------------
 	// FROM and INTO
 	// -------------------------------------------------------------------------
@@ -141,6 +196,11 @@ public class Array implements uk.co.techblue.cgh.dnap.tables.interfaces.IArray {
 		setRSignalintensity(from.getRSignalintensity());
 		setScanDate(from.getScanDate());
 		setShortarrayid(from.getShortarrayid());
+		setProtocolName(from.getProtocolName());
+		setGridGenomicbuild(from.getGridGenomicbuild());
+		setFeatureextractorScanfilename(from.getFeatureextractorScanfilename());
+		setFeatureextractorDesignfilename(from.getFeatureextractorDesignfilename());
+		setSex(from.getSex());
 	}
 
 	/**

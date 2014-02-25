@@ -5,6 +5,7 @@ import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.ARCHIVE_
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.CGH_LOG_PATH;
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.DB_PASSWORD;
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.DIALOG_TITLE;
+import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.REF_DATA_DIR_PATH;
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.TOGGLE_STATE;
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.WATCH_DIR_PATH;
 
@@ -35,6 +36,7 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.FormLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.program.Program;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -53,6 +55,10 @@ import org.eclipse.swt.widgets.ToolTip;
 import org.eclipse.swt.widgets.Tray;
 import org.eclipse.swt.widgets.TrayItem;
 import org.eclipse.wb.swt.SWTResourceManager;
+import org.jooq.Configuration;
+import org.jooq.DSLContext;
+import org.jooq.SQLDialect;
+import org.jooq.impl.DSL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -68,6 +74,8 @@ import uk.co.techblue.cgh.dnap.db.connection.ConnectionProviderImpl;
 import uk.co.techblue.cgh.dnap.exception.CGHProcessorException;
 import uk.co.techblue.cgh.dnap.progressobserver.ProgressObserver;
 import uk.co.techblue.cgh.dnap.progressobserver.UIProgressObserver;
+import uk.co.techblue.cgh.dnap.services.SignalProcessorService;
+import uk.co.techblue.cgh.dnap.services.impl.SignalProcessorServiceImpl;
 import uk.co.techblue.cgh.dnap.util.SignalProcessorHelper;
 import uk.co.techblue.cgh.dnap.util.UIHelper;
 import uk.co.techblue.cgh.dnap.watcher.WatcherService;
@@ -82,6 +90,9 @@ public class SignalProcessorWindow extends ApplicationWindow {
 
     /** The txt watch dir. */
     private Text txtWatchDir;
+
+    /** The txt watch dir. */
+    private Text txtRefernceDataDir;
 
     /** The txt archive dir. */
     private Text txtArchiveDir;
@@ -107,6 +118,8 @@ public class SignalProcessorWindow extends ApplicationWindow {
     private Button btnArchivedFolder;
 
     private Button btnWatchedDirectory;
+    
+    private Button btnReferenceDataDirectory;
 
     private Button btnCsvColumnSettings;
 
@@ -115,6 +128,8 @@ public class SignalProcessorWindow extends ApplicationWindow {
     private Button btnValidateConnection;
 
     private Button btnUpdateSchema;
+    
+    private Button btnDeleteDatabase;
     
     private Tray tray = null;
     
@@ -427,6 +442,7 @@ public class SignalProcessorWindow extends ApplicationWindow {
                         return;
                     }
                     changeControlState(false);
+                    watcherService.setRefDataFilesPath(txtRefernceDataDir.getText());
                     watcherService.setProgressObserver(uiProgressObserver);
                     watcherService.startWatchService(txtWatchDir.getText());
                 } catch (CGHProcessorException cghe) {
@@ -457,6 +473,8 @@ public class SignalProcessorWindow extends ApplicationWindow {
         btnArchivedFolder.setEnabled(enable);
         btnCsvColumnSettings.setEnabled(enable);
         btnGeneralSettings.setEnabled(enable);
+        btnReferenceDataDirectory.setEnabled(enable);
+       
         Control[] controls = grpDatabaseSettings.getChildren();
         for (Control control : controls) {
             if (control.getClass().equals(Text.class)) {
@@ -468,6 +486,7 @@ public class SignalProcessorWindow extends ApplicationWindow {
         btnStartWatcherService.setEnabled(enable);
         btnStopWatcherService.setEnabled(!enable);
         btnUpdateSchema.setEnabled(enable);
+        btnDeleteDatabase.setEnabled(enable);
     }
 
     private String validateInput() {
@@ -531,6 +550,24 @@ public class SignalProcessorWindow extends ApplicationWindow {
             @Override
             public void widgetSelected(SelectionEvent e) {
                 txtWatchDir.setText(StringUtils.trimToEmpty(openDirectoryDialog(container.getShell(), txtWatchDir.getText())));
+            }
+        });
+
+        Label lblRefernceDataFolder = new Label(cmpDirDialogs, SWT.NONE);
+        lblRefernceDataFolder.setText("Reference Data Folder: ");
+
+        txtRefernceDataDir = new Text(cmpDirDialogs, SWT.BORDER);
+        txtRefernceDataDir.setEnabled(false);
+        txtRefernceDataDir.setEditable(false);
+        txtRefernceDataDir.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+
+        btnReferenceDataDirectory = new Button(cmpDirDialogs, SWT.NONE);
+        btnReferenceDataDirectory.setImage(SWTResourceManager.getImage(SignalProcessorWindow.class, "/images/settings.ico"));
+        btnReferenceDataDirectory.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                txtRefernceDataDir.setText(StringUtils.trimToEmpty(openDirectoryDialog(container.getShell(),
+                        txtRefernceDataDir.getText())));
             }
         });
 
@@ -610,7 +647,17 @@ public class SignalProcessorWindow extends ApplicationWindow {
 
         populateDbConfiguration();
 
-        btnValidateConnection = new Button(grpDatabaseSettings, SWT.PUSH);
+        Composite cmpDBSettings = new Composite(grpDatabaseSettings, SWT.NONE);
+        cmpDBSettings.setBackground(cmpBody.getShell().getDisplay().getSystemColor(SWT.COLOR_WHITE));
+        GridData gd_DBSettings = new GridData();
+        gd_DBSettings.horizontalAlignment = GridData.FILL;
+        gd_DBSettings.horizontalSpan = 2;
+        cmpDBSettings.setLayoutData(gd_DBSettings);
+        RowLayout rl_cmpDBSettings = new RowLayout();
+        rl_cmpDBSettings.wrap = true;
+        rl_cmpDBSettings.pack = false;
+        cmpDBSettings.setLayout(rl_cmpDBSettings);
+        btnValidateConnection = new Button(cmpDBSettings, SWT.PUSH);
         btnValidateConnection.setText("Validate Settings");
         btnValidateConnection.addSelectionListener(new SelectionAdapter() {
 
@@ -626,7 +673,7 @@ public class SignalProcessorWindow extends ApplicationWindow {
 
         });
 
-        btnUpdateSchema = new Button(grpDatabaseSettings, SWT.PUSH);
+        btnUpdateSchema = new Button(cmpDBSettings, SWT.PUSH);
         btnUpdateSchema.setText("Update Schema");        
         btnUpdateSchema.addSelectionListener(new SelectionAdapter() {
 
@@ -641,6 +688,18 @@ public class SignalProcessorWindow extends ApplicationWindow {
                 updateSchema(getShell(), true);
             }
 
+        });
+
+        btnDeleteDatabase = new Button(cmpDBSettings, SWT.PUSH);
+        btnDeleteDatabase.setText("Truncate Database");
+        btnDeleteDatabase.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                if (MessageDialog.openQuestion(getShell(), "Delete Database",
+                        "Do you want to delete all records from database.")) {
+                    deleteDatabase();
+                }
+            }
         });
     }
 
@@ -676,19 +735,24 @@ public class SignalProcessorWindow extends ApplicationWindow {
         if (props == null || props.isEmpty()) {
             return;
         }
-
-        for (final Field classField : SystemConfiguration.class.getDeclaredFields()) {
-            if (classField.isAnnotationPresent(Property.class)) {
-                final Property property = classField.getAnnotation(Property.class);
-                final String propertyName = property.name();
-                if (WATCH_DIR_PATH.equals(propertyName)) {
-                    txtWatchDir.setText(props.getProperty(WATCH_DIR_PATH));
-                } else if (ARCHIVE_DIR_PATH.equals(propertyName)) {
-                    txtArchiveDir.setText(props.getProperty(ARCHIVE_DIR_PATH));
-                } else if (TOGGLE_STATE.equals(propertyName)) {
-                    toggleState = BooleanUtils.toBoolean(props.getProperty(TOGGLE_STATE));
+        try {
+            for (final Field classField : SystemConfiguration.class.getDeclaredFields()) {
+                if (classField.isAnnotationPresent(Property.class)) {
+                    final Property property = classField.getAnnotation(Property.class);
+                    final String propertyName = property.name();
+                    if (WATCH_DIR_PATH.equals(propertyName)) {
+                        txtWatchDir.setText(props.getProperty(WATCH_DIR_PATH));
+                    } else if (ARCHIVE_DIR_PATH.equals(propertyName)) {
+                        txtArchiveDir.setText(props.getProperty(ARCHIVE_DIR_PATH));
+                    } else if (TOGGLE_STATE.equals(propertyName)) {
+                        toggleState = BooleanUtils.toBoolean(props.getProperty(TOGGLE_STATE));
+                    } else if (REF_DATA_DIR_PATH.equals(propertyName)) {
+                        txtRefernceDataDir.setText(props.getProperty(REF_DATA_DIR_PATH));
+                    }
                 }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -814,6 +878,7 @@ public class SignalProcessorWindow extends ApplicationWindow {
     private void saveSystemProperties() throws IOException {
         Properties systemProperties = new Properties();
         systemProperties.setProperty(WATCH_DIR_PATH, txtWatchDir.getText());
+        systemProperties.setProperty(REF_DATA_DIR_PATH, txtRefernceDataDir.getText());
         systemProperties.setProperty(ARCHIVE_DIR_PATH, txtArchiveDir.getText());
         systemProperties.setProperty(TOGGLE_STATE, BooleanUtils.toStringTrueFalse(toggleState));
         SignalProcessorHelper.storePropertiesFile(systemProperties, new SystemConfiguration());
@@ -953,6 +1018,30 @@ public class SignalProcessorWindow extends ApplicationWindow {
     protected void setShellStyle(int style) {
         super.setShellStyle(SWT.TITLE | SWT.CLOSE);
     }
+    
+    private void deleteDatabase() {
 
+        new Thread() {
+            public void run() {
+                final Connection connection = ConnectionProviderImpl.getInstance().acquire();
+                try {
+
+                    if (connection != null && !connection.isClosed()) {
+                        final DSLContext obj = DSL.using(connection, SQLDialect.MYSQL);
+                        final Configuration configuration = obj.configuration();
+                        final SignalProcessorService service = new SignalProcessorServiceImpl();
+                        service.deleteDatabase(configuration);
+                        uiProgressObserver.publishProgressInfo("Database truncated successfully");
+                    }
+                } catch (Exception exception) {
+                    LOGGER.error("", exception);
+                    MessageDialog.openError(getShell(), DIALOG_TITLE, exception.toString());
+                } finally {
+                    ConnectionProviderImpl.getInstance().release(connection);
+                }
+            }
+        }.start();
+
+    }
  
 }

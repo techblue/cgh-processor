@@ -15,6 +15,14 @@ public class FeatureExtractorParameters extends BaseDto{
     /** The short array id. */
     private double shortArrayId;
     
+    private String protocolName;
+
+    private String Grid_GenomicBuild;
+
+    private String FeatureExtractor_ScanFileName;
+
+    private String FeatureExtractor_DesignFileName;
+
     /**
      * Gets the feature extractor barcode.
      *
@@ -68,4 +76,38 @@ public class FeatureExtractorParameters extends BaseDto{
     public void setShortArrayId(double shortArrayId) {
         this.shortArrayId = shortArrayId;
     }
+
+
+    public String getProtocolName() {
+        return protocolName;
+    }
+
+    public void setProtocolName(String protocolName) {
+        this.protocolName = protocolName;
+    }
+
+    public String getGrid_GenomicBuild() {
+        return Grid_GenomicBuild;
+    }
+
+    public void setGrid_GenomicBuild(String grid_GenomicBuild) {
+        Grid_GenomicBuild = grid_GenomicBuild;
+    }
+
+    public String getFeatureExtractor_ScanFileName() {
+        return FeatureExtractor_ScanFileName;
+    }
+
+    public void setFeatureExtractor_ScanFileName(String featureExtractor_ScanFileName) {
+        FeatureExtractor_ScanFileName = featureExtractor_ScanFileName;
+    }
+
+    public String getFeatureExtractor_DesignFileName() {
+        return FeatureExtractor_DesignFileName;
+    }
+
+    public void setFeatureExtractor_DesignFileName(String featureExtractor_DesignFileName) {
+        FeatureExtractor_DesignFileName = featureExtractor_DesignFileName;
+    }
+
 }

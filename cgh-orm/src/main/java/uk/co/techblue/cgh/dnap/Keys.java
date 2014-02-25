@@ -17,11 +17,14 @@ public class Keys {
 	// -------------------------------------------------------------------------
 
 	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Long> IDENTITY_ARRAY = Identities0.IDENTITY_ARRAY;
+	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.ArrayreferenceRecord, java.lang.Long> IDENTITY_ARRAYREFERENCE = Identities0.IDENTITY_ARRAYREFERENCE;
 	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.AuditRecord, java.lang.Long> IDENTITY_AUDIT = Identities0.IDENTITY_AUDIT;
 	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Long> IDENTITY_BASELINEAVERAGES = Identities0.IDENTITY_BASELINEAVERAGES;
 	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.Long> IDENTITY_REGION = Identities0.IDENTITY_REGION;
 	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> IDENTITY_REGIONINTENSITY = Identities0.IDENTITY_REGIONINTENSITY;
+	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.RegionintensityreferenceRecord, java.lang.Long> IDENTITY_REGIONINTENSITYREFERENCE = Identities0.IDENTITY_REGIONINTENSITYREFERENCE;
 	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Long> IDENTITY_SIGNAL = Identities0.IDENTITY_SIGNAL;
+	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.SignalreferenceRecord, java.lang.Long> IDENTITY_SIGNALREFERENCE = Identities0.IDENTITY_SIGNALREFERENCE;
 	public static final org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Long> IDENTITY_ZSCORE = Identities0.IDENTITY_ZSCORE;
 
 	// -------------------------------------------------------------------------
@@ -29,11 +32,16 @@ public class Keys {
 	// -------------------------------------------------------------------------
 
 	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord> KEY_ARRAY_PRIMARY = UniqueKeys0.KEY_ARRAY_PRIMARY;
+	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.ArrayreferenceRecord> KEY_ARRAYREFERENCE_PRIMARY = UniqueKeys0.KEY_ARRAYREFERENCE_PRIMARY;
 	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.AuditRecord> KEY_AUDIT_PRIMARY = UniqueKeys0.KEY_AUDIT_PRIMARY;
 	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord> KEY_BASELINEAVERAGES_PRIMARY = UniqueKeys0.KEY_BASELINEAVERAGES_PRIMARY;
+	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.DatabasechangelogRecord> KEY_DATABASECHANGELOG_PRIMARY = UniqueKeys0.KEY_DATABASECHANGELOG_PRIMARY;
+	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.DatabasechangeloglockRecord> KEY_DATABASECHANGELOGLOCK_PRIMARY = UniqueKeys0.KEY_DATABASECHANGELOGLOCK_PRIMARY;
 	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.RegionRecord> KEY_REGION_PRIMARY = UniqueKeys0.KEY_REGION_PRIMARY;
 	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord> KEY_REGIONINTENSITY_PRIMARY = UniqueKeys0.KEY_REGIONINTENSITY_PRIMARY;
+	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.RegionintensityreferenceRecord> KEY_REGIONINTENSITYREFERENCE_PRIMARY = UniqueKeys0.KEY_REGIONINTENSITYREFERENCE_PRIMARY;
 	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.SignalRecord> KEY_SIGNAL_PRIMARY = UniqueKeys0.KEY_SIGNAL_PRIMARY;
+	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.SignalreferenceRecord> KEY_SIGNALREFERENCE_PRIMARY = UniqueKeys0.KEY_SIGNALREFERENCE_PRIMARY;
 	public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord> KEY_ZSCORE_PRIMARY = UniqueKeys0.KEY_ZSCORE_PRIMARY;
 
 	// -------------------------------------------------------------------------
@@ -47,21 +55,29 @@ public class Keys {
 
 	private static class Identities0 extends org.jooq.impl.AbstractKeys {
 		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Long> IDENTITY_ARRAY = createIdentity(uk.co.techblue.cgh.dnap.tables.Array.ARRAY, uk.co.techblue.cgh.dnap.tables.Array.ARRAY.ARRAYID);
+		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.ArrayreferenceRecord, java.lang.Long> IDENTITY_ARRAYREFERENCE = createIdentity(uk.co.techblue.cgh.dnap.tables.Arrayreference.ARRAYREFERENCE, uk.co.techblue.cgh.dnap.tables.Arrayreference.ARRAYREFERENCE.ARRAYID);
 		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.AuditRecord, java.lang.Long> IDENTITY_AUDIT = createIdentity(uk.co.techblue.cgh.dnap.tables.Audit.AUDIT, uk.co.techblue.cgh.dnap.tables.Audit.AUDIT.AUDIT_ID);
 		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Long> IDENTITY_BASELINEAVERAGES = createIdentity(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES, uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BASELINEAVERAGESID);
 		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.Long> IDENTITY_REGION = createIdentity(uk.co.techblue.cgh.dnap.tables.Region.REGION, uk.co.techblue.cgh.dnap.tables.Region.REGION.REGIONID);
 		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> IDENTITY_REGIONINTENSITY = createIdentity(uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY, uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY.REGIONINTENSITYID);
+		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.RegionintensityreferenceRecord, java.lang.Long> IDENTITY_REGIONINTENSITYREFERENCE = createIdentity(uk.co.techblue.cgh.dnap.tables.Regionintensityreference.REGIONINTENSITYREFERENCE, uk.co.techblue.cgh.dnap.tables.Regionintensityreference.REGIONINTENSITYREFERENCE.REGIONINTENSITYID);
 		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Long> IDENTITY_SIGNAL = createIdentity(uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL, uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL.SIGNALID);
+		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.SignalreferenceRecord, java.lang.Long> IDENTITY_SIGNALREFERENCE = createIdentity(uk.co.techblue.cgh.dnap.tables.Signalreference.SIGNALREFERENCE, uk.co.techblue.cgh.dnap.tables.Signalreference.SIGNALREFERENCE.SIGNALID);
 		public static org.jooq.Identity<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord, java.lang.Long> IDENTITY_ZSCORE = createIdentity(uk.co.techblue.cgh.dnap.tables.Zscore.ZSCORE, uk.co.techblue.cgh.dnap.tables.Zscore.ZSCORE.ZSCOREID);
 	}
 
 	private static class UniqueKeys0 extends org.jooq.impl.AbstractKeys {
 		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord> KEY_ARRAY_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Array.ARRAY, uk.co.techblue.cgh.dnap.tables.Array.ARRAY.ARRAYID);
+		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.ArrayreferenceRecord> KEY_ARRAYREFERENCE_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Arrayreference.ARRAYREFERENCE, uk.co.techblue.cgh.dnap.tables.Arrayreference.ARRAYREFERENCE.ARRAYID);
 		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.AuditRecord> KEY_AUDIT_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Audit.AUDIT, uk.co.techblue.cgh.dnap.tables.Audit.AUDIT.AUDIT_ID);
 		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord> KEY_BASELINEAVERAGES_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES, uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BASELINEAVERAGESID);
+		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.DatabasechangelogRecord> KEY_DATABASECHANGELOG_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Databasechangelog.DATABASECHANGELOG, uk.co.techblue.cgh.dnap.tables.Databasechangelog.DATABASECHANGELOG.ID, uk.co.techblue.cgh.dnap.tables.Databasechangelog.DATABASECHANGELOG.AUTHOR, uk.co.techblue.cgh.dnap.tables.Databasechangelog.DATABASECHANGELOG.FILENAME);
+		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.DatabasechangeloglockRecord> KEY_DATABASECHANGELOGLOCK_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Databasechangeloglock.DATABASECHANGELOGLOCK, uk.co.techblue.cgh.dnap.tables.Databasechangeloglock.DATABASECHANGELOGLOCK.ID);
 		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.RegionRecord> KEY_REGION_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Region.REGION, uk.co.techblue.cgh.dnap.tables.Region.REGION.REGIONID);
 		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord> KEY_REGIONINTENSITY_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY, uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY.REGIONINTENSITYID);
+		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.RegionintensityreferenceRecord> KEY_REGIONINTENSITYREFERENCE_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Regionintensityreference.REGIONINTENSITYREFERENCE, uk.co.techblue.cgh.dnap.tables.Regionintensityreference.REGIONINTENSITYREFERENCE.REGIONINTENSITYID);
 		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.SignalRecord> KEY_SIGNAL_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL, uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL.SIGNALID);
+		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.SignalreferenceRecord> KEY_SIGNALREFERENCE_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Signalreference.SIGNALREFERENCE, uk.co.techblue.cgh.dnap.tables.Signalreference.SIGNALREFERENCE.SIGNALID);
 		public static final org.jooq.UniqueKey<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord> KEY_ZSCORE_PRIMARY = createUniqueKey(uk.co.techblue.cgh.dnap.tables.Zscore.ZSCORE, uk.co.techblue.cgh.dnap.tables.Zscore.ZSCORE.ZSCOREID);
 	}
 }

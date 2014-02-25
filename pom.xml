@@ -18,7 +18,8 @@
     <description>A processor to process DNA Signal variations</description>
 
     <properties>
-        <application.version>1.0.1</application.version>
+        <application.version>1.0.2</application.version>
+        <techblue.maven.repo.baseurl>http://backup.propco.co.uk:8180/nexus-webapp-1.9.2/content/repositories</techblue.maven.repo.baseurl>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>        
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,6 +31,7 @@
         <webstart-offline-allowed>true</webstart-offline-allowed>
         <webstart-security-all-permissions>true</webstart-security-all-permissions>
         <webstart-codebase-url>$$codebase</webstart-codebase-url>
+        <changeLogFile>uk/co/techblue/cgh/liquibase/changeset-1.0.xml</changeLogFile>
     </properties>
 
 

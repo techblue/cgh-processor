@@ -1,5 +1,7 @@
 package uk.co.techblue.cgh.dnap.constant;
 
+import uk.co.techblue.cgh.dnap.annotation.Property;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Interface SignalProcessorConstants.
@@ -40,6 +42,18 @@ public interface SignalProcessorConstants {
     /** The feature extractor barcode. */
     String FEATURE_EXTRACTOR_BARCODE = "featureExtractorBarcode";
     
+    /** The feature protoclolName. */
+    String FEATURE_PROTOCOL_NAME = "protocolName";
+
+    /** The feature GRID GENOMIC BUILD. */
+    String GRID_GENOMIC_BUILD = "Grid_GenomicBuild";
+
+    /** The feature Feature Extractor ScanFileName */
+    String FEATURE_EXTRACTOR_SCANFILENAME = "FeatureExtractor_ScanFileName";
+
+    /** The feature Feature Extractor DesignFileName */
+    String FEATURE_EXTRACTOR_DESIGNFILENAME = "FeatureExtractor_DesignFileName";
+
     /** The scan date. */
     String SCAN_DATE = "scanDate";
 
@@ -60,6 +74,14 @@ public interface SignalProcessorConstants {
     
     /** The metric r signal intensity. */
     String METRIC_R_SIGNAL_INTENSITY = "metricRSignalIntensity";
+
+    String GREEN_NUM_NON_UNIF_BGOL = "gNumNonUnifBGOL";
+
+    String RED_NUM_NON_UNIF_BGOL = "rNumNonUnifBGOL";
+
+    String TOTAL_NUM_FEATURES = "TotalNumFeatures";
+    
+    
 
     /** The probe name. */
     String PROBE_NAME = "probeName";
@@ -136,6 +158,9 @@ public interface SignalProcessorConstants {
     /** The watch dir path. */
     String WATCH_DIR_PATH = "watch.folder.path";
     
+    /** The referenceData dir path. */
+    String REF_DATA_DIR_PATH = "refwatch.folder.path";
+    
     /** The archive dir path. */
     String ARCHIVE_DIR_PATH = "archive.folder.path";
     
@@ -155,5 +180,11 @@ public interface SignalProcessorConstants {
     String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
     
     String DB_DRIVER_PROP_NAME = "db.driver";
+
+    String GREEN_IS_WELL_ABOVE_BG = "gIsWellAboveBG";
+
+    String RED_IS_WELL_ABOVE_BG = "rIsWellAboveBG";
+
+    String SEX = "sex";
 }
 

@@ -20,12 +20,12 @@ public interface IRegion extends java.io.Serializable {
 	public java.lang.Long getRegionid();
 
 	/**
-	 * Setter for <code>cgh-processor.region.Chromosome</code>. 
+	 * Setter for <code>cgh-processor.region.Chromosome</code>. it defines genes
 	 */
 	public void setChromosome(java.lang.String value);
 
 	/**
-	 * Getter for <code>cgh-processor.region.Chromosome</code>. 
+	 * Getter for <code>cgh-processor.region.Chromosome</code>. it defines genes
 	 */
 	public java.lang.String getChromosome();
 
@@ -48,6 +48,16 @@ public interface IRegion extends java.io.Serializable {
 	 * Getter for <code>cgh-processor.region.StopPosition</code>. 
 	 */
 	public java.lang.Long getStopposition();
+
+	/**
+	 * Setter for <code>cgh-processor.region.region</code>. 
+	 */
+	public void setRegion(java.lang.String value);
+
+	/**
+	 * Getter for <code>cgh-processor.region.region</code>. 
+	 */
+	public java.lang.String getRegion();
 
 	// -------------------------------------------------------------------------
 	// FROM and INTO

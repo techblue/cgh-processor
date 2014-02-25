@@ -9,20 +9,17 @@ package uk.co.techblue.cgh.dnap.tables.pojos;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Regionintensity implements uk.co.techblue.cgh.dnap.tables.interfaces.IRegionintensity {
 
-	private static final long serialVersionUID = 1639289637;
+	private static final long serialVersionUID = 167482274;
 
 	private java.lang.Long   regionintensityid;
 	private java.lang.Long   regionid;
-	private java.lang.String chromosome;
-	private java.lang.Long   startposition;
-	private java.lang.Long   stopposition;
-	private java.lang.String featureextractorBarcode;
 	private java.lang.Double meangreensignal;
 	private java.lang.Double mediangreensignal;
 	private java.lang.Double meanredsignal;
 	private java.lang.Double medianredsignal;
 	private java.lang.Double meanlogratio;
 	private java.lang.Double medianlogratio;
+	private java.lang.Long   arrayid;
 
 	@Override
 	public java.lang.Long getRegionintensityid() {
@@ -42,46 +39,6 @@ public class Regionintensity implements uk.co.techblue.cgh.dnap.tables.interface
 	@Override
 	public void setRegionid(java.lang.Long regionid) {
 		this.regionid = regionid;
-	}
-
-	@Override
-	public java.lang.String getChromosome() {
-		return this.chromosome;
-	}
-
-	@Override
-	public void setChromosome(java.lang.String chromosome) {
-		this.chromosome = chromosome;
-	}
-
-	@Override
-	public java.lang.Long getStartposition() {
-		return this.startposition;
-	}
-
-	@Override
-	public void setStartposition(java.lang.Long startposition) {
-		this.startposition = startposition;
-	}
-
-	@Override
-	public java.lang.Long getStopposition() {
-		return this.stopposition;
-	}
-
-	@Override
-	public void setStopposition(java.lang.Long stopposition) {
-		this.stopposition = stopposition;
-	}
-
-	@Override
-	public java.lang.String getFeatureextractorBarcode() {
-		return this.featureextractorBarcode;
-	}
-
-	@Override
-	public void setFeatureextractorBarcode(java.lang.String featureextractorBarcode) {
-		this.featureextractorBarcode = featureextractorBarcode;
 	}
 
 	@Override
@@ -144,6 +101,16 @@ public class Regionintensity implements uk.co.techblue.cgh.dnap.tables.interface
 		this.medianlogratio = medianlogratio;
 	}
 
+	@Override
+	public java.lang.Long getArrayid() {
+		return this.arrayid;
+	}
+
+	@Override
+	public void setArrayid(java.lang.Long arrayid) {
+		this.arrayid = arrayid;
+	}
+
 	// -------------------------------------------------------------------------
 	// FROM and INTO
 	// -------------------------------------------------------------------------
@@ -155,16 +122,13 @@ public class Regionintensity implements uk.co.techblue.cgh.dnap.tables.interface
 	public void from(uk.co.techblue.cgh.dnap.tables.interfaces.IRegionintensity from) {
 		setRegionintensityid(from.getRegionintensityid());
 		setRegionid(from.getRegionid());
-		setChromosome(from.getChromosome());
-		setStartposition(from.getStartposition());
-		setStopposition(from.getStopposition());
-		setFeatureextractorBarcode(from.getFeatureextractorBarcode());
 		setMeangreensignal(from.getMeangreensignal());
 		setMediangreensignal(from.getMediangreensignal());
 		setMeanredsignal(from.getMeanredsignal());
 		setMedianredsignal(from.getMedianredsignal());
 		setMeanlogratio(from.getMeanlogratio());
 		setMedianlogratio(from.getMedianlogratio());
+		setArrayid(from.getArrayid());
 	}
 
 	/**

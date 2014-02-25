@@ -53,34 +53,6 @@ public class RegionintensityDao extends org.jooq.impl.DAOImpl<uk.co.techblue.cgh
 	}
 
 	/**
-	 * Fetch records that have <code>Chromosome IN (values)</code>
-	 */
-	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Regionintensity> fetchByChromosome(java.lang.String... values) {
-		return fetch(uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY.CHROMOSOME, values);
-	}
-
-	/**
-	 * Fetch records that have <code>StartPosition IN (values)</code>
-	 */
-	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Regionintensity> fetchByStartposition(java.lang.Long... values) {
-		return fetch(uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY.STARTPOSITION, values);
-	}
-
-	/**
-	 * Fetch records that have <code>StopPosition IN (values)</code>
-	 */
-	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Regionintensity> fetchByStopposition(java.lang.Long... values) {
-		return fetch(uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY.STOPPOSITION, values);
-	}
-
-	/**
-	 * Fetch records that have <code>FeatureExtractor_Barcode IN (values)</code>
-	 */
-	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Regionintensity> fetchByFeatureextractorBarcode(java.lang.String... values) {
-		return fetch(uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY.FEATUREEXTRACTOR_BARCODE, values);
-	}
-
-	/**
 	 * Fetch records that have <code>MeanGreenSignal IN (values)</code>
 	 */
 	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Regionintensity> fetchByMeangreensignal(java.lang.Double... values) {
@@ -120,5 +92,12 @@ public class RegionintensityDao extends org.jooq.impl.DAOImpl<uk.co.techblue.cgh
 	 */
 	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Regionintensity> fetchByMedianlogratio(java.lang.Double... values) {
 		return fetch(uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY.MEDIANLOGRATIO, values);
+	}
+
+	/**
+	 * Fetch records that have <code>ArrayId IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Regionintensity> fetchByArrayid(java.lang.Long... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY.ARRAYID, values);
 	}
 }

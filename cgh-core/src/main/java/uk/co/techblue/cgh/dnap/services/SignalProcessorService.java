@@ -7,12 +7,14 @@ import org.jooq.Configuration;
 import uk.co.techblue.cgh.dnap.dto.FeatureExtractorParameters;
 import uk.co.techblue.cgh.dnap.dto.FeatureExtractorStatistics;
 import uk.co.techblue.cgh.dnap.dto.Region;
+import uk.co.techblue.cgh.dnap.dto.RegionIntensityCustom;
 import uk.co.techblue.cgh.dnap.dto.SignalFeatures;
 import uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages;
 import uk.co.techblue.cgh.dnap.tables.pojos.Regionintensity;
+import uk.co.techblue.cgh.dnap.tables.pojos.Regionintensityreference;
 import uk.co.techblue.cgh.dnap.tables.records.RegionRecord;
-import uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord;
 import uk.co.techblue.cgh.dnap.tables.records.SignalRecord;
+import uk.co.techblue.cgh.dnap.tables.records.SignalreferenceRecord;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -29,7 +31,7 @@ public interface SignalProcessorService {
      * @param feParams the fe params
      * @param feStats the fe stats
      */
-    void saveArray(final Configuration configuration, final FeatureExtractorParameters feParams, final FeatureExtractorStatistics feStats);
+    long saveArray(final Configuration configuration, final FeatureExtractorParameters feParams, final FeatureExtractorStatistics feStats, final String sex);
 
     /**
      * Save signals.
@@ -38,7 +40,7 @@ public interface SignalProcessorService {
      * @param featureExtractorBarcode the feature extractor barcode
      * @param signalFeatures the signal features
      */
-    void saveSignals(final Configuration configuration, final String featureExtractorBarcode, final List<SignalFeatures> signalFeatures);
+    void saveSignals(final Configuration configuration, final List<SignalFeatures> signalFeatures);
 
     /**
      * Gets the regions.
@@ -56,7 +58,7 @@ public interface SignalProcessorService {
      * @param featureExtractorBarcode the feature extractor barcode
      * @return the signal data
      */
-    List<SignalRecord> getSignalData(final Configuration configuration, final RegionRecord region, final String featureExtractorBarcode);
+    List<SignalRecord> getSignalData(final Configuration configuration, final RegionRecord region, final Long arrayId);
 
     /**
      * Save region intensities.
@@ -73,7 +75,7 @@ public interface SignalProcessorService {
      * @param regionRecord the region record
      * @return the region intensities
      */
-    List<RegionintensityRecord> getRegionIntensities(final Configuration configuration, final RegionRecord regionRecord);
+    List<RegionIntensityCustom> getRegionIntensities(final Configuration configuration, final RegionRecord regionRecord);
 
     /**
      * Gets the distinct feature barcodes.
@@ -81,7 +83,7 @@ public interface SignalProcessorService {
      * @param configuration the configuration
      * @return the distinct feature barcodes
      */
-    List<String> getDistinctFeatureBarcodes(final Configuration configuration);
+    List<Long> getDistinctFeatureBarcodes(final Configuration configuration);
 
     /**
      * Save baseline averages.
@@ -127,5 +129,18 @@ public interface SignalProcessorService {
 	 * @param configuration the configuration
 	 */
 	void updateAudit(final Configuration configuration);
+
+    void saveSignalsReference(Configuration configuration, List<SignalFeatures> signalFeatures);
+
+    long saveArrayReference(Configuration configuration, FeatureExtractorParameters feParams,
+            FeatureExtractorStatistics feStats, String sex);
+
+    List<SignalreferenceRecord> getSignalReferenceData(Configuration configuration, RegionRecord region, Long arrayId);
+
+    List<Long> getDistinctFeatureBarcodesForReference(Configuration configuration);
+
+    void saveRegionIntensitiesReferences(Configuration configuration, List<Regionintensityreference> regionIntensities);
+
+    void deleteDatabase(Configuration configuration);
 
 }

@@ -92,6 +92,7 @@ public class UIHelper {
         cmpFooter.setLayoutData(data);
         RowLayout layout = new RowLayout();
         layout.spacing = 20;
+        layout.marginBottom = 30;
         cmpFooter.setLayout(layout);
         cmpFooter.setBackground(grpModalControls.getBackground());
         

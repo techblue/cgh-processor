@@ -107,4 +107,39 @@ public class ArrayDao extends org.jooq.impl.DAOImpl<uk.co.techblue.cgh.dnap.tabl
 	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Array> fetchByShortarrayid(java.lang.Double... values) {
 		return fetch(uk.co.techblue.cgh.dnap.tables.Array.ARRAY.SHORTARRAYID, values);
 	}
+
+	/**
+	 * Fetch records that have <code>Protocol_Name IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Array> fetchByProtocolName(java.lang.String... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Array.ARRAY.PROTOCOL_NAME, values);
+	}
+
+	/**
+	 * Fetch records that have <code>Grid_GenomicBuild IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Array> fetchByGridGenomicbuild(java.lang.String... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Array.ARRAY.GRID_GENOMICBUILD, values);
+	}
+
+	/**
+	 * Fetch records that have <code>FeatureExtractor_ScanFileName IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Array> fetchByFeatureextractorScanfilename(java.lang.String... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Array.ARRAY.FEATUREEXTRACTOR_SCANFILENAME, values);
+	}
+
+	/**
+	 * Fetch records that have <code>FeatureExtractor_DesignFileName IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Array> fetchByFeatureextractorDesignfilename(java.lang.String... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Array.ARRAY.FEATUREEXTRACTOR_DESIGNFILENAME, values);
+	}
+
+	/**
+	 * Fetch records that have <code>Sex IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Array> fetchBySex(java.lang.String... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Array.ARRAY.SEX, values);
+	}
 }

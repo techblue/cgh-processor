@@ -39,8 +39,13 @@ public class WatcherService {
     /** The data files. */
     private List<String> dataFiles;
 
+    /** The data files. */
+    private List<String> refDataFiles = null;
     /** The attributes. */
     private List<Attribute> attributes = null;
+    
+    /** The attributes. */
+    private List<Attribute> refAttributes = null;
 
     /** The regions. */
     private List<Region> regions = null;
@@ -50,6 +55,9 @@ public class WatcherService {
 
     /** The ui progress observer. */
     private ProgressObserver uiProgressObserver;
+    
+    /** Path for Reference data files. */
+    private String refDataFilesPath=null;    //added by shiva
 
     /**
      * The main method.
@@ -128,13 +136,28 @@ public class WatcherService {
                 }
 
                 if (validateDataFiles() && !ApplicationWatcher.isThreadAlive()) {
+                    if (!readFileFromReferenceDirectory()) {
+                        uiProgressObserver.publishProgressError("No file in Reference Data Folder");
+                        return;
+                    }
+                    if (!validateRefDataFiles()) {
+                        uiProgressObserver
+                                .publishProgressError("Data files defined in attrib_ref.txt are missing in ref data folder");
+                        return;
+                    }
+
                     StartProcess process = new StartProcess(new ArrayList<Attribute>(attributes), new ArrayList<String>(
-                            dataFiles), new ArrayList<Region>(regions));
+                            dataFiles), new ArrayList<Attribute>(refAttributes), new ArrayList<String>(refDataFiles),
+                            new ArrayList<Region>(regions));
                     // process.setProgressObserverDelegate(getProgressObserverWrapper());
                     process.setProgressObserver(uiProgressObserver);
                     new Thread(process).start();
                     releaseResources();
+                } else {
+                    uiProgressObserver.publishProgressError("Data files defined in attrib.txt are missing in data folder");
+                    return;
                 }
+
             }
 
             public void onFileDelete(File file) {
@@ -206,6 +229,31 @@ public class WatcherService {
         return attributes.size() == dataFiles.size();
     }
 
+    private boolean validateRefDataFiles() {
+        logger.debug("Validating the number of refdata files in the refData directory with the entries in attrib.txt");
+        List<String> finalDatafiles = null;
+        finalDatafiles = new ArrayList<String>();
+        for (Attribute refAttribute : refAttributes) {
+            String arrayId = refAttribute.getArrayId();
+            String prefix = StringUtils.substringBefore(arrayId, "_");
+            String suffix = StringUtils.substring(arrayId, arrayId.length() - 3, arrayId.length());
+            for (String dataFilePath : refDataFiles) {
+                String dataFileBaseName = null;
+                dataFileBaseName = FilenameUtils.getBaseName(dataFilePath);// 252846911642_S01_Guys121919_CGH_1100_Jul11_2_2_3
+                if (dataFileBaseName.startsWith(prefix) && dataFileBaseName.endsWith(suffix)) {
+                    System.out.println("dataFilepathadded="+dataFileBaseName);
+                    finalDatafiles.add(dataFilePath);
+                    break;
+                }
+
+            }
+
+        }
+
+        refDataFiles = finalDatafiles;
+        return refAttributes.size() == refDataFiles.size();
+    }
+
     /**
      * Parses the attributes.
      * 
@@ -271,6 +319,46 @@ public class WatcherService {
      */
     public void setProgressObserver(final ProgressObserver uiProgressObserver) {
         this.uiProgressObserver = uiProgressObserver;
+    }
+    
+    public ProgressObserver getProgressObserver()
+    {
+        return this.uiProgressObserver;
+    }
+    
+    public boolean readFileFromReferenceDirectory() {
+        File folder = new File(getRefDataFilesPath());
+        File[] listOfFiles = folder.listFiles();
+        refDataFiles = new ArrayList<String>();
+
+        for (int i = 0; i < listOfFiles.length; i++) {
+            if (listOfFiles[i].isFile()) {
+                System.out.println("File " + listOfFiles[i].getName());
+                if (listOfFiles[i].getName().equals(generalProperties.getAttribRefFileName())) {
+                    try {
+                        refAttributes = parseAttributes(listOfFiles[i].getAbsolutePath());
+                    } catch (CGHProcessorException cghe) {
+                        throw new RuntimeException("", cghe);
+                    }
+                } else {
+                    refDataFiles.add(listOfFiles[i].getAbsolutePath());
+                }
+            }
+        }
+        if(refDataFiles.isEmpty())
+        {
+            return false;
+        }
+        return true;
+
+    }
+
+    public String getRefDataFilesPath() {
+        return refDataFilesPath;
+    }
+
+    public void setRefDataFilesPath(String refDataFilesPath) {
+        this.refDataFilesPath = refDataFilesPath;
     }
 
 }

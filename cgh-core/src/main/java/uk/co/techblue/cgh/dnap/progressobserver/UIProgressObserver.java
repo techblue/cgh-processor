@@ -2,6 +2,7 @@ package uk.co.techblue.cgh.dnap.progressobserver;
 
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.ARCHIVE_DIR_PATH;
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.WATCH_DIR_PATH;
+import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.REF_DATA_DIR_PATH;
 
 import java.io.File;
 import java.io.IOException;
@@ -88,6 +89,7 @@ public class UIProgressObserver implements ProgressObserver {
     private void archiveDataFiles() {
         String watchDirectoryPath = null;
         String archiveDirectoryPath = null;
+        String refDataDirectoryPath = null;
         Properties props = null;
         try {
             props = SignalProcessorHelper.getProperties(SystemConfiguration.class);
@@ -106,18 +108,23 @@ public class UIProgressObserver implements ProgressObserver {
                     watchDirectoryPath = props.getProperty(WATCH_DIR_PATH);
                 } else if (ARCHIVE_DIR_PATH.equals(propertyName)) {
                     archiveDirectoryPath = props.getProperty(ARCHIVE_DIR_PATH);
+                } else if (REF_DATA_DIR_PATH.equals(propertyName)) {
+                    refDataDirectoryPath = props.getProperty(REF_DATA_DIR_PATH);
                 }
             }
         }
 
         File watchDirectory = new File(watchDirectoryPath);
+        File refDataDirectory = new File(refDataDirectoryPath);
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String destDirectoryName = df.format(new Date());
 
         File destDirectory = new File(archiveDirectoryPath, destDirectoryName);
+        File refDataDestDirectory = new File(archiveDirectoryPath, "Ref_" + destDirectoryName);
 
         File[] dataFiles = watchDirectory.listFiles();
+        File[] refDataFiles = refDataDirectory.listFiles();
 
         for (File file : dataFiles) {
             try {
@@ -126,6 +133,16 @@ public class UIProgressObserver implements ProgressObserver {
                 publishProgressError("An error occurred while archiving the data files " + e.getMessage());
                 e.printStackTrace();
             }
+
+        }
+        for (File file : refDataFiles) {
+            try {
+                FileUtils.moveFileToDirectory(file.getAbsoluteFile(), refDataDestDirectory, true);
+            } catch (IOException e) {
+                publishProgressError("An error occurred while archiving the data files " + e.getMessage());
+                e.printStackTrace();
+            }
+
         }
     }
 

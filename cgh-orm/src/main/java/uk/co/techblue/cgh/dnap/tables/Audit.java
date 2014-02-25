@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Audit extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tables.records.AuditRecord> {
 
-	private static final long serialVersionUID = -553891557;
+	private static final long serialVersionUID = -1940315742;
 
 	/**
 	 * The singleton instance of <code>cgh-processor.audit</code>

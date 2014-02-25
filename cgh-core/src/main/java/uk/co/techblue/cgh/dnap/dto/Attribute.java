@@ -21,6 +21,9 @@ public class Attribute extends BaseDto {
     /** The polarity. */
     private String polarity;
 
+    /** The sex of the person. */
+    private String sex;
+
     /**
      * Gets the array id.
      *
@@ -111,5 +114,12 @@ public class Attribute extends BaseDto {
         this.polarity = polarity;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 
 }

@@ -24,6 +24,13 @@ import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.R_PROCES
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.R_SATURATED;
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.SCAN_DATE;
 import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.SYSTEMATIC_NAME;
+import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.FEATURE_PROTOCOL_NAME;
+import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.GRID_GENOMIC_BUILD;
+import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.FEATURE_EXTRACTOR_DESIGNFILENAME;
+import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.FEATURE_EXTRACTOR_SCANFILENAME;
+import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.GREEN_IS_WELL_ABOVE_BG;
+import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.RED_IS_WELL_ABOVE_BG;
+import static uk.co.techblue.cgh.dnap.constant.SignalProcessorConstants.SEX;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -44,8 +51,8 @@ import uk.co.techblue.cgh.dnap.dto.FeatureExtractorParameters;
 import uk.co.techblue.cgh.dnap.dto.FeatureExtractorStatistics;
 import uk.co.techblue.cgh.dnap.dto.Region;
 import uk.co.techblue.cgh.dnap.dto.SignalFeatures;
-import uk.co.techblue.cgh.dnap.exception.CsvToBeanException;
 import uk.co.techblue.cgh.dnap.exception.CGHProcessorException;
+import uk.co.techblue.cgh.dnap.exception.CsvToBeanException;
 import uk.co.techblue.cgh.dnap.util.SignalProcessorHelper;
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.bean.ColumnPositionMappingStrategy;
@@ -104,6 +111,7 @@ public class SignalExtractionProcessor {
         map.put(csvMappingConfiguration.getRedSample(), RED_SAMPLE);
         map.put(csvMappingConfiguration.getGreenSample(), GREEN_SAMPLE);
         map.put(csvMappingConfiguration.getPolarity(), POLARITY);
+        map.put(csvMappingConfiguration.getSex(), SEX);
 
         try {
             CsvToBeanIterator<Attribute> csvIterator = null;
@@ -144,7 +152,7 @@ public class SignalExtractionProcessor {
         try {
             ColumnPositionMappingStrategy<Region> columnPostitionMappingStrategy = new ColumnPositionMappingStrategy<Region>();
             columnPostitionMappingStrategy.setType(Region.class);
-            String[] columns = new String[] { "chromosome", "startPosition", "stopPosition" };
+            String[] columns = new String[] { "chromosome", "startPosition", "stopPosition" , "regionName" };
             columnPostitionMappingStrategy.setColumnMapping(columns);
 
             CsvToBean<Region> csv = new CsvToBean<Region>();
@@ -180,6 +188,10 @@ public class SignalExtractionProcessor {
         Map<String, String> map = new Hashtable<String, String>();
         map.put(csvMappingConfiguration.getFeatureExtractorBarcode(), FEATURE_EXTRACTOR_BARCODE);
         map.put(csvMappingConfiguration.getScanDate(), SCAN_DATE);
+        map.put(csvMappingConfiguration.getProtocolName(), FEATURE_PROTOCOL_NAME);
+        map.put(csvMappingConfiguration.getGridGenomicBuild(), GRID_GENOMIC_BUILD);
+        map.put(csvMappingConfiguration.getFeatureExtractorScanFilename(), FEATURE_EXTRACTOR_SCANFILENAME);
+        map.put(csvMappingConfiguration.getFeatureExtractorDesignFilename(), FEATURE_EXTRACTOR_DESIGNFILENAME);
         try {
             CsvToBeanIterator<FeatureExtractorParameters> csvIterator = null;
             try {
@@ -230,6 +242,7 @@ public class SignalExtractionProcessor {
         map.put(csvMappingConfiguration.getMetricGSignalIntensity(), METRIC_G_SIGNAL_INTENSITY);
         map.put(csvMappingConfiguration.getMetricRSignal2Noise(), METRIC_R_SIGNAL2NOISE);
         map.put(csvMappingConfiguration.getMetricRSignalIntensity(), METRIC_R_SIGNAL_INTENSITY);
+
         try {
             CsvToBeanIterator<FeatureExtractorStatistics> csvIterator = null;
             try {
@@ -284,6 +297,8 @@ public class SignalExtractionProcessor {
         map.put(csvMappingConfiguration.getIsRFeatNonUnifOL(), R_FEAT_NON_UNIF_OL);
         map.put(csvMappingConfiguration.getIsGBGNonUnifOL(), G_BG_NON_UNIF_OL);
         map.put(csvMappingConfiguration.getIsRBGNonUnifOL(), R_BG_NON_UNIF_OL);
+        map.put(csvMappingConfiguration.getgIsWellAboveBG(), GREEN_IS_WELL_ABOVE_BG);
+        map.put(csvMappingConfiguration.getrIsWellAboveBG(), RED_IS_WELL_ABOVE_BG);
 
         try {
             CsvToBeanIterator<SignalFeatures> csvIterator = null;

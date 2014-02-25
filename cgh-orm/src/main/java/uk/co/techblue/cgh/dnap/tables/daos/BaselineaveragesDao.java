@@ -53,27 +53,6 @@ public class BaselineaveragesDao extends org.jooq.impl.DAOImpl<uk.co.techblue.cg
 	}
 
 	/**
-	 * Fetch records that have <code>Chromosome IN (values)</code>
-	 */
-	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByChromosome(java.lang.String... values) {
-		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.CHROMOSOME, values);
-	}
-
-	/**
-	 * Fetch records that have <code>StartPosition IN (values)</code>
-	 */
-	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByStartposition(java.lang.Long... values) {
-		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.STARTPOSITION, values);
-	}
-
-	/**
-	 * Fetch records that have <code>StopPosition IN (values)</code>
-	 */
-	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByStopposition(java.lang.Long... values) {
-		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.STOPPOSITION, values);
-	}
-
-	/**
 	 * Fetch records that have <code>BMeanGreenSignal IN (values)</code>
 	 */
 	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmeangreensignal(java.lang.Double... values) {
@@ -155,5 +134,89 @@ public class BaselineaveragesDao extends org.jooq.impl.DAOImpl<uk.co.techblue.cg
 	 */
 	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmedianlogratiosd(java.lang.Double... values) {
 		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEDIANLOGRATIOSD, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMeanGreenSignal_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmeangreensignalM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEANGREENSIGNAL_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMeanGreenSignalSD_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmeangreensignalsdM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEANGREENSIGNALSD_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMedianGreenSignal_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmediangreensignalM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEDIANGREENSIGNAL_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMedianGreenSignalSD_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmediangreensignalsdM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEDIANGREENSIGNALSD_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMeanRedSignal_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmeanredsignalM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEANREDSIGNAL_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMeanRedSignalSD_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmeanredsignalsdM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEANREDSIGNALSD_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMedianRedSignal_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmedianredsignalM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEDIANREDSIGNAL_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMedianRedSignalSD_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmedianredsignalsdM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEDIANREDSIGNALSD_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMeanLogRatio_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmeanlogratioM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEANLOGRATIO_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMeanLogRatioSD_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmeanlogratiosdM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEANLOGRATIOSD_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMedianLogRatio_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmedianlogratioM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEDIANLOGRATIO_M, values);
+	}
+
+	/**
+	 * Fetch records that have <code>BMedianLogRatioSD_M IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages> fetchByBmedianlogratiosdM(java.lang.Double... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES.BMEDIANLOGRATIOSD_M, values);
 	}
 }

@@ -48,6 +48,12 @@ public class SignalFeatures extends BaseDto{
     /** The stop position. */
     private long stopPosition;
 
+    private String gIsWellAboveBG;
+
+    private String rIsWellAboveBG;
+
+    private long arrayId;
+
     /**
      * Gets the probe name.
      *
@@ -299,5 +305,30 @@ public class SignalFeatures extends BaseDto{
     public void setStopPosition(long stopPosition) {
         this.stopPosition = stopPosition;
     }
+
+    public String getgIsWellAboveBG() {
+        return gIsWellAboveBG;
+    }
+
+    public void setgIsWellAboveBG(String gIsWellAboveBG) {
+        this.gIsWellAboveBG = gIsWellAboveBG;
+    }
+
+    public String getrIsWellAboveBG() {
+        return rIsWellAboveBG;
+    }
+
+    public void setrIsWellAboveBG(String rIsWellAboveBG) {
+        this.rIsWellAboveBG = rIsWellAboveBG;
+    }
+
+    public long getArrayId() {
+        return arrayId;
+    }
+
+    public void setArrayId(long arrayId) {
+        this.arrayId = arrayId;
+    }
+   
 
 }

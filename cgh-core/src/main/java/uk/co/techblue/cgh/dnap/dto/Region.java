@@ -11,6 +11,8 @@ public class Region extends BaseDto{
     private long startPosition;
     
     private long stopPosition;
+    
+    private String regionName;
 
     public String getChromosome() {
         return chromosome;
@@ -34,6 +36,14 @@ public class Region extends BaseDto{
 
     public void setStopPosition(long stopPosition) {
         this.stopPosition = stopPosition;
+    }
+
+    public String getRegionName() {
+        return regionName;
+    }
+
+    public void setRegionName(String regionName) {
+        this.regionName = regionName;
     }
     
 }
