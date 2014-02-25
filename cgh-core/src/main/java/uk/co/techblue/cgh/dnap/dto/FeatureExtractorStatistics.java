@@ -24,6 +24,12 @@ public class FeatureExtractorStatistics extends BaseDto{
 
     /** The metric r signal intensity. */
     private double metricRSignalIntensity;
+    
+    private long gNumNonUnifBGOL;
+
+    private long rNumNonUnifBGOL;
+
+    private long TotalNumFeatures;
 
     /**
      * Gets the metric any color prcnt feat non unif ol.
@@ -122,6 +128,30 @@ public class FeatureExtractorStatistics extends BaseDto{
      */
     public double getMetricRSignalIntensity() {
         return metricRSignalIntensity;
+    }
+
+    public long getgNumNonUnifBGOL() {
+        return gNumNonUnifBGOL;
+    }
+
+    public void setgNumNonUnifBGOL(long gNumNonUnifBGOL) {
+        this.gNumNonUnifBGOL = gNumNonUnifBGOL;
+    }
+
+    public long getrNumNonUnifBGOL() {
+        return rNumNonUnifBGOL;
+    }
+
+    public void setrNumNonUnifBGOL(long rNumNonUnifBGOL) {
+        this.rNumNonUnifBGOL = rNumNonUnifBGOL;
+    }
+
+    public long getTotalNumFeatures() {
+        return TotalNumFeatures;
+    }
+
+    public void setTotalNumFeatures(long totalNumFeatures) {
+        TotalNumFeatures = totalNumFeatures;
     }
 
     /**

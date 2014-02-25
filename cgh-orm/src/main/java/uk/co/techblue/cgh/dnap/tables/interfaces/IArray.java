@@ -109,6 +109,56 @@ public interface IArray extends java.io.Serializable {
 	 */
 	public java.lang.Double getShortarrayid();
 
+	/**
+	 * Setter for <code>cgh-processor.array.Protocol_Name</code>. 
+	 */
+	public void setProtocolName(java.lang.String value);
+
+	/**
+	 * Getter for <code>cgh-processor.array.Protocol_Name</code>. 
+	 */
+	public java.lang.String getProtocolName();
+
+	/**
+	 * Setter for <code>cgh-processor.array.Grid_GenomicBuild</code>. 
+	 */
+	public void setGridGenomicbuild(java.lang.String value);
+
+	/**
+	 * Getter for <code>cgh-processor.array.Grid_GenomicBuild</code>. 
+	 */
+	public java.lang.String getGridGenomicbuild();
+
+	/**
+	 * Setter for <code>cgh-processor.array.FeatureExtractor_ScanFileName</code>. 
+	 */
+	public void setFeatureextractorScanfilename(java.lang.String value);
+
+	/**
+	 * Getter for <code>cgh-processor.array.FeatureExtractor_ScanFileName</code>. 
+	 */
+	public java.lang.String getFeatureextractorScanfilename();
+
+	/**
+	 * Setter for <code>cgh-processor.array.FeatureExtractor_DesignFileName</code>. 
+	 */
+	public void setFeatureextractorDesignfilename(java.lang.String value);
+
+	/**
+	 * Getter for <code>cgh-processor.array.FeatureExtractor_DesignFileName</code>. 
+	 */
+	public java.lang.String getFeatureextractorDesignfilename();
+
+	/**
+	 * Setter for <code>cgh-processor.array.Sex</code>. 
+	 */
+	public void setSex(java.lang.String value);
+
+	/**
+	 * Getter for <code>cgh-processor.array.Sex</code>. 
+	 */
+	public java.lang.String getSex();
+
 	// -------------------------------------------------------------------------
 	// FROM and INTO
 	// -------------------------------------------------------------------------

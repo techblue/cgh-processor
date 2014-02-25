@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Signal extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tables.records.SignalRecord> {
 
-	private static final long serialVersionUID = 518906428;
+	private static final long serialVersionUID = 1065146741;
 
 	/**
 	 * The singleton instance of <code>cgh-processor.signal</code>
@@ -85,11 +85,6 @@ public class Signal extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Boolean> RISBGNONUNIFOL = createField("rIsBGNonUnifOL", org.jooq.impl.SQLDataType.BOOLEAN, this);
 
 	/**
-	 * The column <code>cgh-processor.signal.FeatureExtractor_barcode</code>. 
-	 */
-	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.String> FEATUREEXTRACTOR_BARCODE = createField("FeatureExtractor_barcode", org.jooq.impl.SQLDataType.VARCHAR.length(22), this);
-
-	/**
 	 * The column <code>cgh-processor.signal.Chromosome</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.String> CHROMOSOME = createField("Chromosome", org.jooq.impl.SQLDataType.VARCHAR.length(10), this);
@@ -103,6 +98,21 @@ public class Signal extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	 * The column <code>cgh-processor.signal.StopPosition</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Long> STOPPOSITION = createField("StopPosition", org.jooq.impl.SQLDataType.BIGINT, this);
+
+	/**
+	 * The column <code>cgh-processor.signal.gIsWellAboveBG</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Byte> GISWELLABOVEBG = createField("gIsWellAboveBG", org.jooq.impl.SQLDataType.TINYINT, this);
+
+	/**
+	 * The column <code>cgh-processor.signal.rIsWellAboveBG</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Byte> RISWELLABOVEBG = createField("rIsWellAboveBG", org.jooq.impl.SQLDataType.TINYINT, this);
+
+	/**
+	 * The column <code>cgh-processor.signal.ArrayId</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.SignalRecord, java.lang.Long> ARRAYID = createField("ArrayId", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
 	 * Create a <code>cgh-processor.signal</code> table reference

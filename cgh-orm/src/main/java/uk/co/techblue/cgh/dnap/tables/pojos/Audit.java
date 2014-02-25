@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables.pojos;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Audit implements uk.co.techblue.cgh.dnap.tables.interfaces.IAudit {
 
-	private static final long serialVersionUID = 1735924325;
+	private static final long serialVersionUID = -1460949211;
 
 	private java.lang.Long     auditId;
 	private java.lang.String   filename;

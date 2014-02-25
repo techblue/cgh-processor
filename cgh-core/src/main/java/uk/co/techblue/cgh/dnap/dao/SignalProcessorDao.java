@@ -4,9 +4,10 @@ import java.util.List;
 
 import org.jooq.Configuration;
 
+import uk.co.techblue.cgh.dnap.dto.RegionIntensityCustom;
 import uk.co.techblue.cgh.dnap.tables.records.RegionRecord;
-import uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord;
 import uk.co.techblue.cgh.dnap.tables.records.SignalRecord;
+import uk.co.techblue.cgh.dnap.tables.records.SignalreferenceRecord;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -23,7 +24,7 @@ public interface SignalProcessorDao {
      * @param featureExtractorBarcode the feature extractor barcode
      * @return the signal data
      */
-    List<SignalRecord> getSignalData(final Configuration configuration, final RegionRecord region, final String featureExtractorBarcode);
+    List<SignalRecord> getSignalData(final Configuration configuration, final RegionRecord region, final Long arrayId);
     
     /**
      * Gets the regions.
@@ -40,7 +41,7 @@ public interface SignalProcessorDao {
      * @param regionRecord the region record
      * @return the region intensities
      */
-    List<RegionintensityRecord> getRegionIntensities(final Configuration configuration, final RegionRecord regionRecord);
+    List<RegionIntensityCustom> getRegionIntensities(final Configuration configuration, final RegionRecord regionRecord);
 
     /**
      * Gets the distinct feature barcodes.
@@ -48,7 +49,7 @@ public interface SignalProcessorDao {
      * @param configuration the configuration
      * @return the distinct feature barcodes
      */
-    List<String> getDistinctFeatureBarcodes(final Configuration configuration);
+    List<Long> getDistinctFeatureBarcodes(final Configuration configuration);
 
     /**
      * Save z scores.
@@ -70,5 +71,9 @@ public interface SignalProcessorDao {
 	 * @param configuration the configuration
 	 */
 	void updateAudit(final Configuration configuration);
+
+    List<SignalreferenceRecord> getSignalReferenceData(Configuration configuration, RegionRecord region, Long arrayId);
+
+    List<Long> getDistinctFeatureBarcodesForRef(final Configuration configuration);
 
 }

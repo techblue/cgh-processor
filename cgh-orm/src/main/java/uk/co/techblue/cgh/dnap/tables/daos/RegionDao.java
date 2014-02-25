@@ -65,4 +65,11 @@ public class RegionDao extends org.jooq.impl.DAOImpl<uk.co.techblue.cgh.dnap.tab
 	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Region> fetchByStopposition(java.lang.Long... values) {
 		return fetch(uk.co.techblue.cgh.dnap.tables.Region.REGION.STOPPOSITION, values);
 	}
+
+	/**
+	 * Fetch records that have <code>region IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Region> fetchByRegion(java.lang.String... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Region.REGION.REGION_, values);
+	}
 }

@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Array extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord> {
 
-	private static final long serialVersionUID = 38098933;
+	private static final long serialVersionUID = 82551666;
 
 	/**
 	 * The singleton instance of <code>cgh-processor.array</code>
@@ -73,6 +73,31 @@ public class Array extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.table
 	 * The column <code>cgh-processor.array.ShortArrayId</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.Double> SHORTARRAYID = createField("ShortArrayId", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.array.Protocol_Name</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.String> PROTOCOL_NAME = createField("Protocol_Name", org.jooq.impl.SQLDataType.VARCHAR.length(50), this);
+
+	/**
+	 * The column <code>cgh-processor.array.Grid_GenomicBuild</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.String> GRID_GENOMICBUILD = createField("Grid_GenomicBuild", org.jooq.impl.SQLDataType.VARCHAR.length(30), this);
+
+	/**
+	 * The column <code>cgh-processor.array.FeatureExtractor_ScanFileName</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.String> FEATUREEXTRACTOR_SCANFILENAME = createField("FeatureExtractor_ScanFileName", org.jooq.impl.SQLDataType.VARCHAR.length(50), this);
+
+	/**
+	 * The column <code>cgh-processor.array.FeatureExtractor_DesignFileName</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.String> FEATUREEXTRACTOR_DESIGNFILENAME = createField("FeatureExtractor_DesignFileName", org.jooq.impl.SQLDataType.VARCHAR.length(50), this);
+
+	/**
+	 * The column <code>cgh-processor.array.Sex</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.ArrayRecord, java.lang.String> SEX = createField("Sex", org.jooq.impl.SQLDataType.VARCHAR.length(1), this);
 
 	/**
 	 * Create a <code>cgh-processor.array</code> table reference

@@ -1,166 +1,263 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
-
-	<!-- Database schema for cgh-processor (master) -->
-	<changeSet id="1" author="dheeraj">
-
-
-		<createTable tableName="Array">
-			<column autoIncrement="true" name="ArrayID" type="BIGINT">
-				<constraints primaryKey="true" nullable="false" />
-			</column>
-			<column name="FeatureExtractor_barcode" type="VARCHAR(22)"></column>
-			<column name="AnyColorPrcntFeatNonUnifOL" type="DOUBLE"></column>
-			<column name="DerivativeLR_spread" type="DOUBLE"></column>
-			<column name="g_Signal2Noise" type="DOUBLE"></column>
-			<column name="g_SignalIntensity" type="DOUBLE"></column>
-			<column name="r_Signal2Noise" type="DOUBLE"></column>
-			<column name="r_SignalIntensity" type="DOUBLE"></column>
-			<column name="Scan_Date" type="VARCHAR(30)"></column>
-			<column name="ShortArrayId" type="DOUBLE"></column>
-		</createTable>
-
-		<createIndex tableName="Array" indexName="barcodeID">
-			<column name="featureExtractor_barcode"></column>
-		</createIndex>
-
-
-
-		<createTable tableName="Signal">
-			<column autoIncrement="true" name="SignalId" type="BIGINT">
-				<constraints primaryKey="true" nullable="false" />
-			</column>
-			<column name="ProbeName" type="VARCHAR(30)"></column>
-			<column name="SystematicName" type="VARCHAR(50)"></column>
-			<column name="LogRatio" type="DOUBLE"></column>
-			<column name="gProcessedSignal" type="DOUBLE"></column>
-			<column name="rProcessedSignal" type="DOUBLE"></column>
-			<column name="gIsSaturated" type="BOOLEAN"
-				defaultValueBoolean="true"></column>
-			<column name="rIsSaturated" type="BOOLEAN"></column>
-			<column name="gIsFeatNonUnifOL" type="BOOLEAN"></column>
-			<column name="rIsFeatNonUnifOL" type="BOOLEAN"></column>
-			<column name="gIsBGNonUnifOL" type="BOOLEAN"></column>
-			<column name="rIsBGNonUnifOL" type="BOOLEAN"></column>
-			<column name="FeatureExtractor_barcode" type="VARCHAR(22)"></column>
-			<column name="Chromosome" type="VARCHAR(10)"></column>
-			<column name="StartPosition" type="BIGINT"></column>
-			<column name="StopPosition" type="BIGINT"></column>
-		</createTable>
-
-		<createIndex tableName="Signal" indexName="chromosomeIndex">
-			<column name="Chromosome"></column>
-		</createIndex>
-
-
-
-		<createTable tableName="Region">
-			<column autoIncrement="true" name="RegionID" type="BIGINT">
-				<constraints primaryKey="true" nullable="false" />
-			</column>
-			<column name="Chromosome" type="VARCHAR(10)"></column>
-			<column name="StartPosition" type="BIGINT"></column>
-			<column name="StopPosition" type="BIGINT"></column>
-		</createTable>
-
-		<createIndex tableName="Region" indexName="chromosomeIndex">
-			<column name="Chromosome"></column>
-		</createIndex>
-
-
-
-		<createTable tableName="RegionIntensity">
-			<column autoIncrement="true" name="RegionIntensityId" type="BIGINT">
-				<constraints primaryKey="true" nullable="false" />
-			</column>
-			<column name="RegionId" type="BIGINT"></column>
-			<column name="Chromosome" type="VARCHAR(10)"></column>
-			<column name="StartPosition" type="BIGINT"></column>
-			<column name="StopPosition" type="BIGINT"></column>
-			<column name="FeatureExtractor_Barcode" type="VARCHAR(22)"></column>
-			<column name="MeanGreenSignal" type="DOUBLE"></column>
-			<column name="MedianGreenSignal" type="DOUBLE"></column>
-			<column name="MeanRedSignal" type="DOUBLE"></column>
-			<column name="MedianRedSignal" type="DOUBLE"></column>
-			<column name="MeanLogRatio" type="DOUBLE"></column>
-			<column name="MedianLogRatio" type="DOUBLE"></column>
-		</createTable>
-
-		<createIndex tableName="RegionIntensity" indexName="RegionIdIndex">
-			<column name="RegionId"></column>
-		</createIndex>
-		<createIndex tableName="RegionIntensity" indexName="ChromosomeIndex">
-			<column name="Chromosome"></column>
-		</createIndex>
-		<createIndex tableName="RegionIntensity" indexName="BarcodeIndex">
-			<column name="FeatureExtractor_Barcode"></column>
-		</createIndex>
-
-
-		<createTable tableName="BaselineAverages">
-			<column autoIncrement="true" name="BaselineAveragesId" type="BIGINT">
-				<constraints primaryKey="true" nullable="false" />
-			</column>
-			<column name="RegionId" type="BIGINT"></column>
-			<column name="Chromosome" type="VARCHAR(10)"></column>
-			<column name="StartPosition" type="BIGINT"></column>
-			<column name="StopPosition" type="BIGINT"></column>
-			<column name="BMeanGreenSignal" type="DOUBLE"></column>
-			<column name="BMeanGreenSignalSD" type="DOUBLE"></column>
-			<column name="BMedianGreenSignal" type="DOUBLE"></column>
-			<column name="BMedianGreenSignalSD" type="DOUBLE"></column>
-			<column name="BMeanRedSignal" type="DOUBLE"></column>
-			<column name="BMeanRedSignalSD" type="DOUBLE"></column>
-			<column name="BMedianRedSignal" type="DOUBLE"></column>
-			<column name="BMedianRedSignalSD" type="DOUBLE"></column>
-			<column name="BMeanLogRatio" type="DOUBLE"></column>
-			<column name="BMeanLogRatioSD" type="DOUBLE"></column>
-			<column name="BMedianLogRatio" type="DOUBLE"></column>
-			<column name="BMedianLogRatioSD" type="DOUBLE"></column>
-		</createTable>
-		<createIndex tableName="BaselineAverages" indexName="RegionIdIndex">
-			<column name="RegionId"></column>
-		</createIndex>
-
-		<createIndex tableName="BaselineAverages" indexName="ChromosomeIndex">
-			<column name="Chromosome"></column>
-		</createIndex>
-
-
-		<createTable tableName="ZScore">
-			<column autoIncrement="true" name="ZScoreId" type="BIGINT">
-				<constraints primaryKey="true" nullable="false" />
-			</column>
-			<column name="RegionIntensityId" type="BIGINT"></column>
-			<column name="ZMeanGreenSignal" type="DOUBLE"></column>
-			<column name="ZMedianGreenSignal" type="DOUBLE"></column>
-			<column name="ZMeanRedSignal" type="DOUBLE"></column>
-			<column name="ZMedianRedSignal" type="DOUBLE"></column>
-			<column name="ZMeanLogRatio" type="DOUBLE"></column>
-			<column name="ZMedianLogRatio" type="DOUBLE"></column>
-		</createTable>
-
-		<createIndex tableName="ZScore" indexName="RegionIntensityIndex">
-			<column name="RegionIntensityId"></column>
-		</createIndex>
-
-
-		<createTable tableName="Audit">
-			<column autoIncrement="true" name="audit_id" type="BIGINT">
-				<constraints primaryKey="true" nullable="false" />
-			</column>
-			<column name="filename" type="VARCHAR(100)"></column>
-			<column name="processed_date" type="TIMESTAMP"></column>
-			<column name="processed" type="BOOLEAN"></column>
-		</createTable>
-
-		<createIndex tableName="Audit" indexName="filename">
-			<column name="filename"></column>
-		</createIndex>
-
-	</changeSet>
-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+   
+    <changeSet author="shiva (generated)" id="1393082277427-1">
+        <createTable tableName="array">
+            <column autoIncrement="true" name="ArrayID" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="FeatureExtractor_barcode" type="VARCHAR(22)"/>
+            <column name="AnyColorPrcntFeatNonUnifOL" type="DOUBLE"/>
+            <column name="DerivativeLR_spread" type="DOUBLE"/>
+            <column name="g_Signal2Noise" type="DOUBLE"/>
+            <column name="g_SignalIntensity" type="DOUBLE"/>
+            <column name="r_Signal2Noise" type="DOUBLE"/>
+            <column name="r_SignalIntensity" type="DOUBLE"/>
+            <column name="Scan_Date" type="VARCHAR(30)"/>
+            <column name="ShortArrayId" type="DOUBLE"/>
+            <column name="Protocol_Name" type="VARCHAR(50)"/>
+            <column name="Grid_GenomicBuild" type="VARCHAR(30)"/>
+            <column name="FeatureExtractor_ScanFileName" type="VARCHAR(50)"/>
+            <column name="FeatureExtractor_DesignFileName" type="VARCHAR(50)"/>
+            <column name="Sex" type="VARCHAR(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-2">
+        <createTable tableName="arrayreference">
+            <column autoIncrement="true" name="ArrayID" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="FeatureExtractor_barcode" type="VARCHAR(22)"/>
+            <column name="AnyColorPrcntFeatNonUnifOL" type="DOUBLE"/>
+            <column name="DerivativeLR_spread" type="DOUBLE"/>
+            <column name="g_Signal2Noise" type="DOUBLE"/>
+            <column name="g_SignalIntensity" type="DOUBLE"/>
+            <column name="r_Signal2Noise" type="DOUBLE"/>
+            <column name="r_SignalIntensity" type="DOUBLE"/>
+            <column name="Scan_Date" type="VARCHAR(30)"/>
+            <column name="ShortArrayId" type="DOUBLE"/>
+            <column name="Protocol_Name" type="VARCHAR(50)"/>
+            <column name="Grid_GenomicBuild" type="VARCHAR(30)"/>
+            <column name="FeatureExtractor_ScanFileName" type="VARCHAR(50)"/>
+            <column name="FeatureExtractor_DesignFileName" type="VARCHAR(50)"/>
+            <column name="Sex" type="VARCHAR(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-3">
+        <createTable tableName="audit">
+            <column autoIncrement="true" name="audit_id" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="filename" type="VARCHAR(100)"/>
+            <column defaultValueComputed="CURRENT_TIMESTAMP" name="processed_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="processed" type="BIT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-4">
+        <createTable tableName="baselineaverages">
+            <column autoIncrement="true" name="BaselineAveragesId" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="RegionId" type="BIGINT(19)"/>
+            <column name="BMeanGreenSignal" type="DOUBLE"/>
+            <column name="BMeanGreenSignalSD" type="DOUBLE"/>
+            <column name="BMedianGreenSignal" type="DOUBLE"/>
+            <column name="BMedianGreenSignalSD" type="DOUBLE"/>
+            <column name="BMeanRedSignal" type="DOUBLE"/>
+            <column name="BMeanRedSignalSD" type="DOUBLE"/>
+            <column name="BMedianRedSignal" type="DOUBLE"/>
+            <column name="BMedianRedSignalSD" type="DOUBLE"/>
+            <column name="BMeanLogRatio" type="DOUBLE"/>
+            <column name="BMeanLogRatioSD" type="DOUBLE"/>
+            <column name="BMedianLogRatio" type="DOUBLE"/>
+            <column name="BMedianLogRatioSD" type="DOUBLE"/>
+            <column name="BMeanGreenSignal_M" type="DOUBLE"/>
+            <column name="BMeanGreenSignalSD_M" type="DOUBLE"/>
+            <column name="BMedianGreenSignal_M" type="DOUBLE"/>
+            <column name="BMedianGreenSignalSD_M" type="DOUBLE"/>
+            <column name="BMeanRedSignal_M" type="DOUBLE"/>
+            <column name="BMeanRedSignalSD_M" type="DOUBLE"/>
+            <column name="BMedianRedSignal_M" type="DOUBLE"/>
+            <column name="BMedianRedSignalSD_M" type="DOUBLE"/>
+            <column name="BMeanLogRatio_M" type="DOUBLE"/>
+            <column name="BMeanLogRatioSD_M" type="DOUBLE"/>
+            <column name="BMedianLogRatio_M" type="DOUBLE"/>
+            <column name="BMedianLogRatioSD_M" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-5">
+        <createTable tableName="region">
+            <column autoIncrement="true" name="RegionID" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Chromosome" remarks="it defines genes" type="VARCHAR(10)"/>
+            <column name="StartPosition" type="BIGINT(19)"/>
+            <column name="StopPosition" type="BIGINT(19)"/>
+            <column name="region" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-6">
+        <createTable tableName="regionintensity">
+            <column autoIncrement="true" name="RegionIntensityId" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="RegionId" type="BIGINT(19)"/>
+            <column name="MeanGreenSignal" type="DOUBLE"/>
+            <column name="MedianGreenSignal" type="DOUBLE"/>
+            <column name="MeanRedSignal" type="DOUBLE"/>
+            <column name="MedianRedSignal" type="DOUBLE"/>
+            <column name="MeanLogRatio" type="DOUBLE"/>
+            <column name="MedianLogRatio" type="DOUBLE"/>
+            <column name="ArrayId" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-7">
+        <createTable tableName="regionintensityreference">
+            <column autoIncrement="true" name="RegionIntensityId" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="RegionId" type="BIGINT(19)"/>
+            <column name="MeanGreenSignal" type="DOUBLE"/>
+            <column name="MedianGreenSignal" type="DOUBLE"/>
+            <column name="MeanRedSignal" type="DOUBLE"/>
+            <column name="MedianRedSignal" type="DOUBLE"/>
+            <column name="MeanLogRatio" type="DOUBLE"/>
+            <column name="MedianLogRatio" type="DOUBLE"/>
+            <column name="ArrayId" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-8">
+        <createTable tableName="signal">
+            <column autoIncrement="true" name="SignalId" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="ProbeName" type="VARCHAR(30)"/>
+            <column name="SystematicName" type="VARCHAR(50)"/>
+            <column name="LogRatio" type="DOUBLE"/>
+            <column name="gProcessedSignal" type="DOUBLE"/>
+            <column name="rProcessedSignal" type="DOUBLE"/>
+            <column defaultValueNumeric="1" name="gIsSaturated" type="BIT"/>
+            <column name="rIsSaturated" type="BIT"/>
+            <column name="gIsFeatNonUnifOL" type="BIT"/>
+            <column name="rIsFeatNonUnifOL" type="BIT"/>
+            <column name="gIsBGNonUnifOL" type="BIT"/>
+            <column name="rIsBGNonUnifOL" type="BIT"/>
+            <column name="Chromosome" type="VARCHAR(10)"/>
+            <column name="StartPosition" type="BIGINT(19)"/>
+            <column name="StopPosition" type="BIGINT(19)"/>
+            <column name="gIsWellAboveBG" type="BIT"/>
+            <column name="rIsWellAboveBG" type="BIT"/>
+            <column name="ArrayId" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-9">
+        <createTable tableName="signalreference">
+            <column autoIncrement="true" name="SignalId" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="ProbeName" type="VARCHAR(30)"/>
+            <column name="SystematicName" type="VARCHAR(50)"/>
+            <column name="LogRatio" type="DOUBLE"/>
+            <column name="gProcessedSignal" type="DOUBLE"/>
+            <column name="rProcessedSignal" type="DOUBLE"/>
+            <column defaultValueNumeric="1" name="gIsSaturated" type="BIT"/>
+            <column name="rIsSaturated" type="BIT"/>
+            <column name="gIsFeatNonUnifOL" type="BIT"/>
+            <column name="rIsFeatNonUnifOL" type="BIT"/>
+            <column name="gIsBGNonUnifOL" type="BIT"/>
+            <column name="rIsBGNonUnifOL" type="BIT"/>
+            <column name="Chromosome" type="VARCHAR(10)"/>
+            <column name="StartPosition" type="BIGINT(19)"/>
+            <column name="StopPosition" type="BIGINT(19)"/>
+            <column name="gIsWellAboveBG" type="BIT"/>
+            <column name="rIsWellAboveBG" type="BIT"/>
+            <column name="ArrayId" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-10">
+        <createTable tableName="zscore">
+            <column autoIncrement="true" name="ZScoreId" type="BIGINT(19)">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="RegionIntensityId" type="BIGINT(19)"/>
+            <column name="ZMeanGreenSignal" type="DOUBLE"/>
+            <column name="ZMedianGreenSignal" type="DOUBLE"/>
+            <column name="ZMeanRedSignal" type="DOUBLE"/>
+            <column name="ZMedianRedSignal" type="DOUBLE"/>
+            <column name="ZMeanLogRatio" type="DOUBLE"/>
+            <column name="ZMedianLogRatio" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-11">
+        <createIndex indexName="RegionIdIndex" tableName="baselineaverages" unique="false">
+            <column name="RegionId"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-12">
+        <createIndex indexName="RegionIdIndex" tableName="regionintensity" unique="false">
+            <column name="RegionId"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-13">
+        <createIndex indexName="RegionIdIndex" tableName="regionintensityreference" unique="false">
+            <column name="RegionId"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-14">
+        <createIndex indexName="RegionIntensityIndex" tableName="zscore" unique="false">
+            <column name="RegionIntensityId"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-15">
+        <createIndex indexName="arrayidindex" tableName="regionintensity" unique="false">
+            <column name="ArrayId"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-16">
+        <createIndex indexName="arrayidindex" tableName="regionintensityreference" unique="false">
+            <column name="ArrayId"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-17">
+        <createIndex indexName="arrayidindex" tableName="signal" unique="false">
+            <column name="ArrayId"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-18">
+        <createIndex indexName="arrayidindex" tableName="signalreference" unique="false">
+            <column name="ArrayId"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-19">
+        <createIndex indexName="barcodeID" tableName="array" unique="false">
+            <column name="FeatureExtractor_barcode"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-20">
+        <createIndex indexName="barcodeID" tableName="arrayreference" unique="false">
+            <column name="FeatureExtractor_barcode"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-21">
+        <createIndex indexName="chromosomeIndex" tableName="region" unique="false">
+            <column name="Chromosome"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-22">
+        <createIndex indexName="chromosomeIndex" tableName="signal" unique="false">
+            <column name="Chromosome"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-23">
+        <createIndex indexName="chromosomeIndex" tableName="signalreference" unique="false">
+            <column name="Chromosome"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="shiva (generated)" id="1393082277427-24">
+        <createIndex indexName="filename" tableName="audit" unique="false">
+            <column name="filename"/>
+        </createIndex>
+    </changeSet>
 </databaseChangeLog>

@@ -30,36 +30,6 @@ public interface IBaselineaverages extends java.io.Serializable {
 	public java.lang.Long getRegionid();
 
 	/**
-	 * Setter for <code>cgh-processor.baselineaverages.Chromosome</code>. 
-	 */
-	public void setChromosome(java.lang.String value);
-
-	/**
-	 * Getter for <code>cgh-processor.baselineaverages.Chromosome</code>. 
-	 */
-	public java.lang.String getChromosome();
-
-	/**
-	 * Setter for <code>cgh-processor.baselineaverages.StartPosition</code>. 
-	 */
-	public void setStartposition(java.lang.Long value);
-
-	/**
-	 * Getter for <code>cgh-processor.baselineaverages.StartPosition</code>. 
-	 */
-	public java.lang.Long getStartposition();
-
-	/**
-	 * Setter for <code>cgh-processor.baselineaverages.StopPosition</code>. 
-	 */
-	public void setStopposition(java.lang.Long value);
-
-	/**
-	 * Getter for <code>cgh-processor.baselineaverages.StopPosition</code>. 
-	 */
-	public java.lang.Long getStopposition();
-
-	/**
 	 * Setter for <code>cgh-processor.baselineaverages.BMeanGreenSignal</code>. 
 	 */
 	public void setBmeangreensignal(java.lang.Double value);
@@ -178,6 +148,126 @@ public interface IBaselineaverages extends java.io.Serializable {
 	 * Getter for <code>cgh-processor.baselineaverages.BMedianLogRatioSD</code>. 
 	 */
 	public java.lang.Double getBmedianlogratiosd();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanGreenSignal_M</code>. 
+	 */
+	public void setBmeangreensignalM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanGreenSignal_M</code>. 
+	 */
+	public java.lang.Double getBmeangreensignalM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanGreenSignalSD_M</code>. 
+	 */
+	public void setBmeangreensignalsdM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanGreenSignalSD_M</code>. 
+	 */
+	public java.lang.Double getBmeangreensignalsdM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianGreenSignal_M</code>. 
+	 */
+	public void setBmediangreensignalM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianGreenSignal_M</code>. 
+	 */
+	public java.lang.Double getBmediangreensignalM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianGreenSignalSD_M</code>. 
+	 */
+	public void setBmediangreensignalsdM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianGreenSignalSD_M</code>. 
+	 */
+	public java.lang.Double getBmediangreensignalsdM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanRedSignal_M</code>. 
+	 */
+	public void setBmeanredsignalM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanRedSignal_M</code>. 
+	 */
+	public java.lang.Double getBmeanredsignalM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanRedSignalSD_M</code>. 
+	 */
+	public void setBmeanredsignalsdM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanRedSignalSD_M</code>. 
+	 */
+	public java.lang.Double getBmeanredsignalsdM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianRedSignal_M</code>. 
+	 */
+	public void setBmedianredsignalM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianRedSignal_M</code>. 
+	 */
+	public java.lang.Double getBmedianredsignalM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianRedSignalSD_M</code>. 
+	 */
+	public void setBmedianredsignalsdM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianRedSignalSD_M</code>. 
+	 */
+	public java.lang.Double getBmedianredsignalsdM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanLogRatio_M</code>. 
+	 */
+	public void setBmeanlogratioM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanLogRatio_M</code>. 
+	 */
+	public java.lang.Double getBmeanlogratioM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMeanLogRatioSD_M</code>. 
+	 */
+	public void setBmeanlogratiosdM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMeanLogRatioSD_M</code>. 
+	 */
+	public java.lang.Double getBmeanlogratiosdM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianLogRatio_M</code>. 
+	 */
+	public void setBmedianlogratioM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianLogRatio_M</code>. 
+	 */
+	public java.lang.Double getBmedianlogratioM();
+
+	/**
+	 * Setter for <code>cgh-processor.baselineaverages.BMedianLogRatioSD_M</code>. 
+	 */
+	public void setBmedianlogratiosdM(java.lang.Double value);
+
+	/**
+	 * Getter for <code>cgh-processor.baselineaverages.BMedianLogRatioSD_M</code>. 
+	 */
+	public java.lang.Double getBmedianlogratiosdM();
 
 	// -------------------------------------------------------------------------
 	// FROM and INTO

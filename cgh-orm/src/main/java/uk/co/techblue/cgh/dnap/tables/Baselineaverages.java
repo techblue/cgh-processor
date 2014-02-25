@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Baselineaverages extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord> {
 
-	private static final long serialVersionUID = -1515922482;
+	private static final long serialVersionUID = 188683367;
 
 	/**
 	 * The singleton instance of <code>cgh-processor.baselineaverages</code>
@@ -33,21 +33,6 @@ public class Baselineaverages extends org.jooq.impl.TableImpl<uk.co.techblue.cgh
 	 * The column <code>cgh-processor.baselineaverages.RegionId</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Long> REGIONID = createField("RegionId", org.jooq.impl.SQLDataType.BIGINT, this);
-
-	/**
-	 * The column <code>cgh-processor.baselineaverages.Chromosome</code>. 
-	 */
-	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.String> CHROMOSOME = createField("Chromosome", org.jooq.impl.SQLDataType.VARCHAR.length(10), this);
-
-	/**
-	 * The column <code>cgh-processor.baselineaverages.StartPosition</code>. 
-	 */
-	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Long> STARTPOSITION = createField("StartPosition", org.jooq.impl.SQLDataType.BIGINT, this);
-
-	/**
-	 * The column <code>cgh-processor.baselineaverages.StopPosition</code>. 
-	 */
-	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Long> STOPPOSITION = createField("StopPosition", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
 	 * The column <code>cgh-processor.baselineaverages.BMeanGreenSignal</code>. 
@@ -108,6 +93,66 @@ public class Baselineaverages extends org.jooq.impl.TableImpl<uk.co.techblue.cgh
 	 * The column <code>cgh-processor.baselineaverages.BMedianLogRatioSD</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEDIANLOGRATIOSD = createField("BMedianLogRatioSD", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMeanGreenSignal_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEANGREENSIGNAL_M = createField("BMeanGreenSignal_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMeanGreenSignalSD_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEANGREENSIGNALSD_M = createField("BMeanGreenSignalSD_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMedianGreenSignal_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEDIANGREENSIGNAL_M = createField("BMedianGreenSignal_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMedianGreenSignalSD_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEDIANGREENSIGNALSD_M = createField("BMedianGreenSignalSD_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMeanRedSignal_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEANREDSIGNAL_M = createField("BMeanRedSignal_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMeanRedSignalSD_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEANREDSIGNALSD_M = createField("BMeanRedSignalSD_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMedianRedSignal_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEDIANREDSIGNAL_M = createField("BMedianRedSignal_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMedianRedSignalSD_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEDIANREDSIGNALSD_M = createField("BMedianRedSignalSD_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMeanLogRatio_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEANLOGRATIO_M = createField("BMeanLogRatio_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMeanLogRatioSD_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEANLOGRATIOSD_M = createField("BMeanLogRatioSD_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMedianLogRatio_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEDIANLOGRATIO_M = createField("BMedianLogRatio_M", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.baselineaverages.BMedianLogRatioSD_M</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.BaselineaveragesRecord, java.lang.Double> BMEDIANLOGRATIOSD_M = createField("BMedianLogRatioSD_M", org.jooq.impl.SQLDataType.DOUBLE, this);
 
 	/**
 	 * Create a <code>cgh-processor.baselineaverages</code> table reference

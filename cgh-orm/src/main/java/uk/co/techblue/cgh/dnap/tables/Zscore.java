@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Zscore extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tables.records.ZscoreRecord> {
 
-	private static final long serialVersionUID = -309914703;
+	private static final long serialVersionUID = 1760350766;
 
 	/**
 	 * The singleton instance of <code>cgh-processor.zscore</code>

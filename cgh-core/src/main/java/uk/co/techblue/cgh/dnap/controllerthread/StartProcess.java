@@ -22,6 +22,7 @@ import uk.co.techblue.cgh.dnap.dto.Attribute;
 import uk.co.techblue.cgh.dnap.dto.FeatureExtractorParameters;
 import uk.co.techblue.cgh.dnap.dto.FeatureExtractorStatistics;
 import uk.co.techblue.cgh.dnap.dto.Region;
+import uk.co.techblue.cgh.dnap.dto.RegionIntensityCustom;
 import uk.co.techblue.cgh.dnap.dto.SignalFeatures;
 import uk.co.techblue.cgh.dnap.exception.CGHProcessorException;
 import uk.co.techblue.cgh.dnap.progressobserver.ProgressObserver;
@@ -30,9 +31,10 @@ import uk.co.techblue.cgh.dnap.services.impl.SignalProcessorServiceImpl;
 import uk.co.techblue.cgh.dnap.signalprocessor.SignalExtractionProcessor;
 import uk.co.techblue.cgh.dnap.tables.pojos.Baselineaverages;
 import uk.co.techblue.cgh.dnap.tables.pojos.Regionintensity;
+import uk.co.techblue.cgh.dnap.tables.pojos.Regionintensityreference;
 import uk.co.techblue.cgh.dnap.tables.records.RegionRecord;
-import uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord;
 import uk.co.techblue.cgh.dnap.tables.records.SignalRecord;
+import uk.co.techblue.cgh.dnap.tables.records.SignalreferenceRecord;
 import uk.co.techblue.cgh.dnap.util.SignalProcessorHelper;
 import uk.co.techblue.cgh.dnap.watcher.ApplicationWatcher;
 
@@ -48,6 +50,12 @@ public class StartProcess implements Runnable {
 
     /** The attributes. */
     private final List<Attribute> attributes;
+
+    /** The data files. */
+    private final List<String> refDataFiles;
+
+    /** The attributes. */
+    private final List<Attribute> refAttributes;
 
     private final List<Region> regions;
 
@@ -70,9 +78,12 @@ public class StartProcess implements Runnable {
      * @param attributes the attributes
      * @param files the files
      */
-    public StartProcess(final List<Attribute> attributes, final List<String> files, final List<Region> regions) {
+    public StartProcess(final List<Attribute> attributes, final List<String> files, final List<Attribute> refAttributes,
+            final List<String> refFiles, final List<Region> regions) {
         this.attributes = attributes;
         this.dataFiles = files;
+        this.refDataFiles = refFiles;
+        this.refAttributes = refAttributes;
         this.service = new SignalProcessorServiceImpl();
         this.regions = regions;
     }
@@ -105,7 +116,7 @@ public class StartProcess implements Runnable {
         logger.info("Acquiring database connection.");
         uiProgressObserver.publishProgressInfo("Acquiring database connection.");
         Connection connection = null;
-        try{
+        try {
             connection = connectionProvider.acquire();
         } catch(DataAccessException dae) {
             uiProgressObserver.publishProgressError("An error occurred while acquiring database connection, Please check the log file.");
@@ -122,17 +133,8 @@ public class StartProcess implements Runnable {
         List<RegionRecord> regionRecords = service.getRegions(configuration);
 
         try {
-            logger.info("Reading data files...");
-            uiProgressObserver.publishProgressInfo("Reading data files...");
-            for (final String dataFilePath : dataFiles) {
-                processArraysAndSignals(dataFilePath, configuration);
-                auditDataFile(configuration, dataFilePath);
-            }
-            processRegionIntensities(configuration, regionRecords);
-            processBaselineAverages(configuration, regionRecords);
-            processZScores(configuration);
-            truncateRegions(configuration);
-            updateAudit(configuration);
+            processWatchDataFiles(configuration, regionRecords, connection);
+            processReferenceDataFiles(configuration, regionRecords, connection);
             connection.commit();
         } catch (SQLException sqlexception) {
             try {
@@ -144,6 +146,46 @@ public class StartProcess implements Runnable {
         } finally {
             connectionProvider.release(connection);
         }
+
+    }
+
+    private void processWatchDataFiles(Configuration configuration, List<RegionRecord> regionRecords, Connection connection)
+            throws CGHProcessorException {
+
+        logger.info("Reading data files...");
+        uiProgressObserver.publishProgressInfo("Reading data files...");
+        for (final String dataFilePath : dataFiles) {
+            try {
+                processArraysAndSignals(dataFilePath, configuration);
+                auditDataFile(configuration, dataFilePath);
+            } catch (Exception e) {
+                System.out.println("=" + e);
+            }
+        }
+        processRegionIntensities(configuration, regionRecords);
+        updateAudit(configuration);
+
+    }
+
+    private void processReferenceDataFiles(Configuration configuration, List<RegionRecord> regionRecords, Connection connection)
+            throws CGHProcessorException {
+
+        logger.info("Reading refdata files...");
+        uiProgressObserver.publishProgressInfo("Reading refdata files...");
+        for (final String refDataFilePath : refDataFiles) {
+            try {
+                processArraysAndSignalsReference(refDataFilePath, configuration);
+                auditDataFile(configuration, refDataFilePath);
+            } catch (Exception e) {
+                System.out.println("=" + e);
+            }
+        }
+        processRegionIntensitiesReferences(configuration, regionRecords);
+        processBaselineAverages(configuration, regionRecords);
+        processZScores(configuration);
+        truncateRegions(configuration);
+        updateAudit(configuration);
+
     }
 
     private void updateAudit(final Configuration configuration) {
@@ -196,6 +238,7 @@ public class StartProcess implements Runnable {
      */
     private void processArraysAndSignals(final String dataFilePath, final Configuration configuration)
             throws CGHProcessorException {
+        String sex = null;
         logger.debug("Reading tab delimited text data file: {}", dataFilePath);
         logger.debug("Reading FE parameters from tab delimited text data file: {}", dataFilePath);
         FeatureExtractorParameters feParams = SignalExtractionProcessor.getFEParams(dataFilePath);
@@ -211,10 +254,21 @@ public class StartProcess implements Runnable {
         uiProgressObserver.publishProgressInfo("Reading FE Stats from tab delimited text data file: " + dataFilePath);
         FeatureExtractorStatistics feStats = SignalExtractionProcessor.getFEStats(dataFilePath);
 
+        for (Attribute attribute : attributes) {
+            String arrayId = attribute.getArrayId();
+            String prefix = StringUtils.substringBefore(arrayId, "_");
+            String suffix = StringUtils.substring(arrayId, arrayId.length() - 3, arrayId.length());
+            String dataFileBaseName = FilenameUtils.getBaseName(dataFilePath);
+            if (dataFileBaseName.startsWith(prefix) && dataFileBaseName.endsWith(suffix)) {
+                sex = attribute.getSex();
+                break;
+            }
+        }
+
         logger.info("Saving FE Params and FE Stats in the Array table in database for data file {}", dataFilePath);
         uiProgressObserver.publishProgressInfo("Saving FE Params and FE Stats in the Array table in database for data file "
                 + dataFilePath);
-        saveArray(feParams, feStats, configuration);
+        long arrayId = saveArray(feParams, feStats, configuration, sex);
 
         logger.debug("Reading FE Features from tab delimited text data file: {}", dataFilePath);
         List<SignalFeatures> signalFeatures = SignalExtractionProcessor.getFEFeatures(dataFilePath);
@@ -222,12 +276,70 @@ public class StartProcess implements Runnable {
         logger.debug("parsing systematic name into three parts, chromosome, start position and stop position.");
         for (final SignalFeatures feature : signalFeatures) {
             SignalProcessorHelper.processSystematicName(feature);
+            feature.setArrayId(arrayId);
         }
 
         logger.info("Saving FE Features in the Signal table in database for data file {}", dataFilePath);
         uiProgressObserver.publishProgressInfo("Saving FE Features in the Signal table in database for data file "
                 + dataFilePath);
-        saveSignals(feParams.getFeatureExtractorBarcode(), signalFeatures, configuration);
+        saveSignals(signalFeatures, configuration);
+    }
+
+    /**
+     * Read refdata file.
+     * 
+     * @param refdataFilePath the data file path
+     * @param configuration the configuration
+     * @throws CGHProcessorException
+     */
+    private void processArraysAndSignalsReference(final String dataFilePath, final Configuration configuration)
+            throws CGHProcessorException {
+        String sex = null;
+        logger.debug("Reading tab delimited text data file: {}", dataFilePath);
+        logger.debug("Reading FE parameters from tab delimited text refdata file: {}", dataFilePath);
+        FeatureExtractorParameters feParams = SignalExtractionProcessor.getFEParams(dataFilePath);
+
+        logger.debug("Get short array id from feature extractor barcode {}", feParams.getFeatureExtractorBarcode());
+        try {
+            feParams.setShortArrayId(SignalProcessorHelper.getFEShortArrayId(feParams.getFeatureExtractorBarcode()));
+        } catch (CGHProcessorException cghe) {
+            throw cghe;
+        }
+
+        logger.info("Reading FE Stats from tab delimited text refdata file: {}", dataFilePath);
+        uiProgressObserver.publishProgressInfo("Reading FE Stats from tab delimited text refdata file: " + dataFilePath);
+        FeatureExtractorStatistics feStats = SignalExtractionProcessor.getFEStats(dataFilePath);
+
+        for (Attribute attribute : refAttributes) {
+            String arrayId = attribute.getArrayId();
+            String prefix = StringUtils.substringBefore(arrayId, "_");
+            String suffix = StringUtils.substring(arrayId, arrayId.length() - 3, arrayId.length());
+            String dataFileBaseName = FilenameUtils.getBaseName(dataFilePath);
+            if (dataFileBaseName.startsWith(prefix) && dataFileBaseName.endsWith(suffix)) {
+                sex = attribute.getSex();
+                break;
+            }
+        }
+
+        logger.info("Saving FE Params and FE Stats in the ArrayReference table in database for data file {}", dataFilePath);
+        uiProgressObserver
+                .publishProgressInfo("Saving FE Params and FE Stats in the ArrayReference table in database for data file "
+                        + dataFilePath);
+        long arrayId = saveArrayReference(feParams, feStats, configuration, sex);
+
+        logger.debug("Reading FE Features from tab delimited text refdata file: {}", dataFilePath);
+        List<SignalFeatures> signalFeatures = SignalExtractionProcessor.getFEFeatures(dataFilePath);
+
+        logger.debug("parsing systematic name into three parts, chromosome, start position and stop position.");
+        for (final SignalFeatures feature : signalFeatures) {
+            SignalProcessorHelper.processSystematicName(feature);
+            feature.setArrayId(arrayId);
+        }
+
+        logger.info("Saving FE Features in the SignalReference table in database for data file {}", dataFilePath);
+        uiProgressObserver.publishProgressInfo("Saving FE Features in the ReferenceSignal table in database for data file "
+                + dataFilePath);
+        saveSignalsReference(signalFeatures, configuration);
     }
 
     /**
@@ -237,9 +349,21 @@ public class StartProcess implements Runnable {
      * @param feStats the fe stats
      * @param configuration the configuration
      */
-    private void saveArray(final FeatureExtractorParameters feParams, final FeatureExtractorStatistics feStats,
-            final Configuration configuration) {
-        service.saveArray(configuration, feParams, feStats);
+    private long saveArray(final FeatureExtractorParameters feParams, final FeatureExtractorStatistics feStats,
+            final Configuration configuration, String sex) {
+        return service.saveArray(configuration, feParams, feStats, sex);
+    }
+
+    /**
+     * Save arrayReference.
+     * 
+     * @param feParams the fe params
+     * @param feStats the fe stats
+     * @param configuration the configuration
+     */
+    private long saveArrayReference(final FeatureExtractorParameters feParams, final FeatureExtractorStatistics feStats,
+            final Configuration configuration, String sex) {
+        return service.saveArrayReference(configuration, feParams, feStats, sex);
     }
 
     /**
@@ -249,9 +373,12 @@ public class StartProcess implements Runnable {
      * @param signalFeatures the signal features
      * @param configuration the configuration
      */
-    private void saveSignals(final String featureExtractorBarcode, final List<SignalFeatures> signalFeatures,
-            final Configuration configuration) {
-        service.saveSignals(configuration, featureExtractorBarcode, signalFeatures);
+    private void saveSignals(final List<SignalFeatures> signalFeatures, final Configuration configuration) {
+        service.saveSignals(configuration, signalFeatures);
+    }
+
+    private void saveSignalsReference(final List<SignalFeatures> signalFeatures, final Configuration configuration) {
+        service.saveSignalsReference(configuration, signalFeatures);
     }
 
     private void processRegionIntensities(final Configuration configuration, final List<RegionRecord> regionRecords) {
@@ -259,33 +386,57 @@ public class StartProcess implements Runnable {
         uiProgressObserver.publishProgressInfo("Processing Region intensities...");
 
         logger.debug("Getting all distinct feature extract bar codes from database.");
-        List<String> featureBarcodes = service.getDistinctFeatureBarcodes(configuration);
+        List<Long> featureBarcodes = service.getDistinctFeatureBarcodes(configuration);
 
         logger.info("Saving Region intensities in the database.");
         uiProgressObserver.publishProgressInfo("Saving Region intensities in the database.");
 
-        for (String feBarcode : featureBarcodes) {
+        for (Long arrayId : featureBarcodes) {
             List<Regionintensity> regionIntensities = new ArrayList<Regionintensity>();
             for (RegionRecord regionRecord : regionRecords) {
-                Regionintensity regionIntensity = processRegionIntensity(configuration, regionRecord, feBarcode);
+                Regionintensity regionIntensity = processRegionIntensity(configuration, regionRecord, arrayId);
                 if (regionIntensity != null) {
                     regionIntensities.add(regionIntensity);
                 }
             }
-            logger.info("Saving region intensities for feature extractor barcode, '{}'", feBarcode);
-            uiProgressObserver.publishProgressInfo("Saving region intensities for feature extractor barcode, " + feBarcode);
+            logger.info("Saving region intensities for feature extractor barcode, '{}'", arrayId);
+            uiProgressObserver.publishProgressInfo("Saving region intensities for feature extractor barcode, " + arrayId);
             service.saveRegionIntensities(configuration, regionIntensities);
         }
     }
 
+    private void processRegionIntensitiesReferences(final Configuration configuration, final List<RegionRecord> regionRecords) {
+        logger.info("Processing Region intensities reference...");
+        uiProgressObserver.publishProgressInfo("Processing Region intensities reference...");
+
+        logger.debug("Getting all distinct feature extract bar codes from database.");
+        List<Long> featureBarcodes = service.getDistinctFeatureBarcodesForReference(configuration);
+
+        logger.info("Saving Region intensities References in the database.");
+        uiProgressObserver.publishProgressInfo("Saving Region intensities References in the database.");
+
+        for (Long arrayId : featureBarcodes) {
+            List<Regionintensityreference> regionIntensities = new ArrayList<Regionintensityreference>();
+            for (RegionRecord regionRecord : regionRecords) {
+                Regionintensityreference regionIntensity = processRegionIntensityReference(configuration, regionRecord, arrayId);
+                if (regionIntensity != null) {
+                    regionIntensities.add(regionIntensity);
+                }
+            }
+            logger.info("Saving region intensities References for feature extractor barcode, '{}'", arrayId);
+            uiProgressObserver.publishProgressInfo("Saving region intensities references for feature extractor barcode, "
+                    + arrayId);
+            service.saveRegionIntensitiesReferences(configuration, regionIntensities);
+        }
+    }
+
     private Regionintensity processRegionIntensity(final Configuration configuration, final RegionRecord regionRecord,
-            final String featureExtractorBarcode) {
+            final Long arrayId) {
         Regionintensity regionIntensity = null;
         logger.debug(
-                "Getting signal data wrt to feature extractor barcode, '{}' and Region[chromosome: {}, start postition: {}, stop postition: {}]",
-                featureExtractorBarcode, regionRecord.getChromosome(), regionRecord.getStartposition(),
-                regionRecord.getStopposition());
-        List<SignalRecord> signalRecords = service.getSignalData(configuration, regionRecord, featureExtractorBarcode);
+                "Getting signal data wrt to feature arrayId , '{}' and Region[chromosome: {}, start postition: {}, stop postition: {}]",
+                arrayId, regionRecord.getChromosome(), regionRecord.getStartposition(), regionRecord.getStopposition());
+        List<SignalRecord> signalRecords = service.getSignalData(configuration, regionRecord, arrayId);
         if (signalRecords != null && !signalRecords.isEmpty()) {
             regionIntensity = new Regionintensity();
             List<Double> rProcessedSignals = new ArrayList<Double>();
@@ -320,8 +471,7 @@ public class StartProcess implements Runnable {
                     .toArray(new Double[0])));
             logger.debug("Calculated median for log ratio is: {}", logRatioMedian);
 
-            regionIntensity.setChromosome(regionRecord.getChromosome());
-            regionIntensity.setFeatureextractorBarcode(featureExtractorBarcode);
+            regionIntensity.setArrayid(arrayId);
             regionIntensity.setMeangreensignal(gProcessedSignalsMean);
             regionIntensity.setMeanlogratio(logRatioMean);
             regionIntensity.setMeanredsignal(rProcessedSignalsMean);
@@ -329,8 +479,60 @@ public class StartProcess implements Runnable {
             regionIntensity.setMedianlogratio(logRatioMedian);
             regionIntensity.setMedianredsignal(rProcessedSignalsMedian);
             regionIntensity.setRegionid(regionRecord.getRegionid().longValue());
-            regionIntensity.setStartposition(regionRecord.getStartposition());
-            regionIntensity.setStopposition(regionRecord.getStopposition());
+        }
+        return regionIntensity;
+    }
+
+    private Regionintensityreference processRegionIntensityReference(final Configuration configuration,
+            final RegionRecord regionRecord, final Long arrayId) {
+        Regionintensityreference regionIntensity = null;
+        logger.debug(
+                "Getting signalReference data wrt to feature arrayId , '{}' and Region[chromosome: {}, start postition: {}, stop postition: {}]",
+                arrayId, regionRecord.getChromosome(), regionRecord.getStartposition(), regionRecord.getStopposition());
+        List<SignalreferenceRecord> signalRecords = service.getSignalReferenceData(configuration, regionRecord, arrayId);
+        if (signalRecords != null && !signalRecords.isEmpty()) {
+            regionIntensity = new Regionintensityreference();
+            List<Double> rProcessedSignals = new ArrayList<Double>();
+            List<Double> gProcessedSignals = new ArrayList<Double>();
+            List<Double> logRatios = new ArrayList<Double>();
+            for (SignalreferenceRecord signalRecord : signalRecords) {
+                gProcessedSignals.add(signalRecord.getGprocessedsignal());
+                rProcessedSignals.add(signalRecord.getRprocessedsignal());
+                logRatios.add(signalRecord.getLogratio());
+            }
+
+            double gProcessedSignalsMean = SignalProcessorHelper.calculateMean(ArrayUtils.toPrimitive(gProcessedSignals
+                    .toArray(new Double[0])));
+            logger.debug("Calculated mean for green processed signalReference is: {}", gProcessedSignalsMean);
+
+            double rProcessedSignalsMean = SignalProcessorHelper.calculateMean(ArrayUtils.toPrimitive(rProcessedSignals
+                    .toArray(new Double[0])));
+            logger.debug("Calculated mean for red processed signalreference is: {}", rProcessedSignalsMean);
+
+            double logRatioMean = SignalProcessorHelper.calculateMean(ArrayUtils.toPrimitive(logRatios.toArray(new Double[0])));
+            logger.debug("Calculated mean for log ratio is: {}", logRatioMean);
+
+            double gProcessedSignalsMedian = SignalProcessorHelper.calculateMedian(ArrayUtils.toPrimitive(gProcessedSignals
+                    .toArray(new Double[0])));
+            logger.debug("Calculated median for green processed signalreference is: {}", gProcessedSignalsMedian);
+
+            double rProcessedSignalsMedian = SignalProcessorHelper.calculateMedian(ArrayUtils.toPrimitive(rProcessedSignals
+                    .toArray(new Double[0])));
+            logger.debug("Calculated median for red processed signalreference is: {}", rProcessedSignalsMedian);
+
+            double logRatioMedian = SignalProcessorHelper.calculateMedian(ArrayUtils.toPrimitive(logRatios
+                    .toArray(new Double[0])));
+            logger.debug("Calculated median for log ratio is: {}", logRatioMedian);
+
+            // regionIntensity.setFeatureextractorBarcode(featureExtractorBarcode);
+            regionIntensity.setArrayid(arrayId);
+            regionIntensity.setMeangreensignal(gProcessedSignalsMean);
+            regionIntensity.setMeanlogratio(logRatioMean);
+            regionIntensity.setMeanredsignal(rProcessedSignalsMean);
+            regionIntensity.setMediangreensignal(gProcessedSignalsMedian);
+            regionIntensity.setMedianlogratio(logRatioMedian);
+            regionIntensity.setMedianredsignal(rProcessedSignalsMedian);
+            regionIntensity.setRegionid(regionRecord.getRegionid().longValue());
         }
         return regionIntensity;
     }
@@ -344,7 +546,7 @@ public class StartProcess implements Runnable {
                     "Getting all region intensities for region:, [chromosome: {}, start postition: {}, stop position: {}]",
                     regionRecord.getChromosome(), regionRecord.getStartposition(), regionRecord.getStopposition());
 
-            List<RegionintensityRecord> regionIntensityRecords = service.getRegionIntensities(configuration, regionRecord);
+            List<RegionIntensityCustom> regionIntensityRecords = service.getRegionIntensities(configuration, regionRecord);
             Baselineaverages baselineAverage = processBaselineAverage(configuration, regionIntensityRecords);
             if (baselineAverage != null) {
                 baselineAverages.add(baselineAverage);
@@ -356,44 +558,77 @@ public class StartProcess implements Runnable {
     }
 
     private Baselineaverages processBaselineAverage(final Configuration configuration,
-            final List<RegionintensityRecord> regionIntensityRecords) {
+            final List<RegionIntensityCustom> regionIntensityRecords) {
 
         Baselineaverages baselineAverage = null;
+        String chromosome;
+        List<RegionIntensityCustom> regionIntensityRecordsDefault;
+        List<RegionIntensityCustom> regionIntensityRecordsForMale;
+
+        boolean fromXorYChromosome = false;
 
         if (regionIntensityRecords == null || regionIntensityRecords.isEmpty()) {
             return baselineAverage;
         }
+        chromosome = regionIntensityRecords.get(0).getChromosome();
+        if (chromosome != null
+                && (chromosome.substring(3).equalsIgnoreCase("X") || chromosome.substring(3).equalsIgnoreCase("Y"))) {
+            fromXorYChromosome = true;
+        }
 
+        baselineAverage = new Baselineaverages();
+        regionIntensityRecordsDefault = new ArrayList<RegionIntensityCustom>();
+        regionIntensityRecordsForMale = new ArrayList<RegionIntensityCustom>();
+
+        if (fromXorYChromosome) {
+            for (RegionIntensityCustom regionIntensityRecord : regionIntensityRecords) {
+                if (regionIntensityRecord.getSex() != null && regionIntensityRecord.getSex().equalsIgnoreCase("F")) {
+                    regionIntensityRecordsDefault.add(regionIntensityRecord);
+                } else if (regionIntensityRecord.getSex() != null && regionIntensityRecord.getSex().equalsIgnoreCase("M")) {
+                    regionIntensityRecordsForMale.add(regionIntensityRecord);
+                }
+            }
+            if(!regionIntensityRecordsForMale.isEmpty())
+            {
+            processBaselineAverageCore(regionIntensityRecordsForMale, baselineAverage, false);
+            }
+            if(!regionIntensityRecordsDefault.isEmpty())
+            {
+            processBaselineAverageCore(regionIntensityRecordsDefault, baselineAverage, true);
+            }
+
+        } else {
+            processBaselineAverageCore(regionIntensityRecords, baselineAverage, true);
+        }
+
+
+        baselineAverage.setRegionid(regionIntensityRecords.get(0).getRegionID());
+
+        return baselineAverage;
+    }
+
+    private void processBaselineAverageCore(final List<RegionIntensityCustom> regionIntensityRecords,
+            Baselineaverages baselineAverage, boolean isDefault) {
         List<Double> meanGreenSignals = new ArrayList<Double>();
         List<Double> meanRedSignals = new ArrayList<Double>();
         List<Double> meanLogRatios = new ArrayList<Double>();
         List<Double> medianGreenSignals = new ArrayList<Double>();
         List<Double> medianRedSignals = new ArrayList<Double>();
         List<Double> medianLogRatios = new ArrayList<Double>();
+        for (RegionIntensityCustom regionIntensityRecord : regionIntensityRecords) {
 
-        baselineAverage = new Baselineaverages();
+            meanGreenSignals.add(regionIntensityRecord.getMeanGreenSignal());
 
-        for (RegionintensityRecord regionIntensityRecord : regionIntensityRecords) {
+            meanRedSignals.add(regionIntensityRecord.getMeanRedSignal());
 
-            meanGreenSignals.add(regionIntensityRecord.getMeangreensignal());
+            meanLogRatios.add(regionIntensityRecord.getMeanLogRatio());
 
-            meanRedSignals.add(regionIntensityRecord.getMeanredsignal());
+            medianGreenSignals.add(regionIntensityRecord.getMedianGreenSignal());
 
-            meanLogRatios.add(regionIntensityRecord.getMeanlogratio());
+            medianRedSignals.add(regionIntensityRecord.getMedianRedSignal());
 
-            medianGreenSignals.add(regionIntensityRecord.getMediangreensignal());
+            medianLogRatios.add(regionIntensityRecord.getMedianLogRatio());
 
-            medianRedSignals.add(regionIntensityRecord.getMedianredsignal());
-
-            medianLogRatios.add(regionIntensityRecord.getMedianlogratio());
-
-            baselineAverage.setChromosome(regionIntensityRecord.getChromosome());
-
-            baselineAverage.setRegionid(regionIntensityRecord.getRegionid());
-
-            baselineAverage.setStartposition(regionIntensityRecord.getStartposition());
-
-            baselineAverage.setStopposition(regionIntensityRecord.getStopposition());
         }
 
         double bMeanGreenSignal = SignalProcessorHelper.calculateMean(ArrayUtils.toPrimitive(meanGreenSignals
@@ -411,8 +646,6 @@ public class StartProcess implements Runnable {
         double bMedianGreenSignalSD = SignalProcessorHelper.calculateMedianSD(ArrayUtils.toPrimitive(medianGreenSignals
                 .toArray(new Double[0])));
         logger.debug("Calculate baseline median standard deviation for green signals: {}", bMedianGreenSignalSD);
-        
-        
 
         double bMeanRedSignal = SignalProcessorHelper.calculateMean(ArrayUtils.toPrimitive(meanRedSignals
                 .toArray(new Double[0])));
@@ -430,8 +663,6 @@ public class StartProcess implements Runnable {
                 .toArray(new Double[0])));
         logger.debug("Calculate baseline median standard deviation for red signals: {}", bMedianRedSignalSD);
 
-        
-        
         double bMeanLogRatio = SignalProcessorHelper
                 .calculateMean(ArrayUtils.toPrimitive(meanLogRatios.toArray(new Double[0])));
         logger.debug("Calculate baseline mean for log ratios: {}", bMeanLogRatio);
@@ -447,26 +678,41 @@ public class StartProcess implements Runnable {
         double bMedianLogRatioSD = SignalProcessorHelper.calculateMedianSD(ArrayUtils.toPrimitive(medianLogRatios
                 .toArray(new Double[0])));
         logger.debug("Calculate baseline median standard deviation for log ratios: {}", bMedianLogRatioSD);
-        
-        
 
-        baselineAverage.setBmeangreensignal(bMeanGreenSignal);
-        baselineAverage.setBmeanredsignal(bMeanRedSignal);
-        baselineAverage.setBmeanlogratio(bMeanLogRatio);
+        if (isDefault) {
+            baselineAverage.setBmeangreensignal(bMeanGreenSignal);
+            baselineAverage.setBmeanredsignal(bMeanRedSignal);
+            baselineAverage.setBmeanlogratio(bMeanLogRatio);
 
-        baselineAverage.setBmeangreensignalsd(bMeanGreenSignalSD);
-        baselineAverage.setBmeanredsignalsd(bMeanRedSignalSD);
-        baselineAverage.setBmeanlogratiosd(bMeanLogRatioSD);
+            baselineAverage.setBmeangreensignalsd(bMeanGreenSignalSD);
+            baselineAverage.setBmeanredsignalsd(bMeanRedSignalSD);
+            baselineAverage.setBmeanlogratiosd(bMeanLogRatioSD);
 
-        baselineAverage.setBmediangreensignal(bMedianGreenSignal);
-        baselineAverage.setBmedianredsignal(bMedianRedSignal);
-        baselineAverage.setBmedianlogratio(bMedianLogRatio);
+            baselineAverage.setBmediangreensignal(bMedianGreenSignal);
+            baselineAverage.setBmedianredsignal(bMedianRedSignal);
+            baselineAverage.setBmedianlogratio(bMedianLogRatio);
 
-        baselineAverage.setBmediangreensignalsd(bMedianGreenSignalSD);
-        baselineAverage.setBmedianredsignalsd(bMedianRedSignalSD);
-        baselineAverage.setBmedianlogratiosd(bMedianLogRatioSD);
+            baselineAverage.setBmediangreensignalsd(bMedianGreenSignalSD);
+            baselineAverage.setBmedianredsignalsd(bMedianRedSignalSD);
+            baselineAverage.setBmedianlogratiosd(bMedianLogRatioSD);
 
-        return baselineAverage;
+        } else {
+            baselineAverage.setBmeangreensignalM(bMeanGreenSignal);
+            baselineAverage.setBmeanredsignalM(bMeanRedSignal);
+            baselineAverage.setBmeanlogratioM(bMeanLogRatio);
+
+            baselineAverage.setBmeangreensignalsdM(bMeanGreenSignalSD);
+            baselineAverage.setBmeanredsignalsdM(bMeanRedSignalSD);
+            baselineAverage.setBmeanlogratiosdM(bMeanLogRatioSD);
+
+            baselineAverage.setBmediangreensignalM(bMedianGreenSignal);
+            baselineAverage.setBmedianredsignalM(bMedianRedSignal);
+            baselineAverage.setBmedianlogratioM(bMedianLogRatio);
+
+            baselineAverage.setBmediangreensignalsdM(bMedianGreenSignalSD);
+            baselineAverage.setBmedianredsignalsdM(bMedianRedSignalSD);
+            baselineAverage.setBmedianlogratiosdM(bMedianLogRatioSD);
+        }
     }
 
     private void processZScores(final Configuration configuration) {

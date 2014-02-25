@@ -130,16 +130,6 @@ public interface ISignal extends java.io.Serializable {
 	public java.lang.Boolean getRisbgnonunifol();
 
 	/**
-	 * Setter for <code>cgh-processor.signal.FeatureExtractor_barcode</code>. 
-	 */
-	public void setFeatureextractorBarcode(java.lang.String value);
-
-	/**
-	 * Getter for <code>cgh-processor.signal.FeatureExtractor_barcode</code>. 
-	 */
-	public java.lang.String getFeatureextractorBarcode();
-
-	/**
 	 * Setter for <code>cgh-processor.signal.Chromosome</code>. 
 	 */
 	public void setChromosome(java.lang.String value);
@@ -168,6 +158,36 @@ public interface ISignal extends java.io.Serializable {
 	 * Getter for <code>cgh-processor.signal.StopPosition</code>. 
 	 */
 	public java.lang.Long getStopposition();
+
+	/**
+	 * Setter for <code>cgh-processor.signal.gIsWellAboveBG</code>. 
+	 */
+	public void setGiswellabovebg(java.lang.Byte value);
+
+	/**
+	 * Getter for <code>cgh-processor.signal.gIsWellAboveBG</code>. 
+	 */
+	public java.lang.Byte getGiswellabovebg();
+
+	/**
+	 * Setter for <code>cgh-processor.signal.rIsWellAboveBG</code>. 
+	 */
+	public void setRiswellabovebg(java.lang.Byte value);
+
+	/**
+	 * Getter for <code>cgh-processor.signal.rIsWellAboveBG</code>. 
+	 */
+	public java.lang.Byte getRiswellabovebg();
+
+	/**
+	 * Setter for <code>cgh-processor.signal.ArrayId</code>. 
+	 */
+	public void setArrayid(java.lang.Long value);
+
+	/**
+	 * Getter for <code>cgh-processor.signal.ArrayId</code>. 
+	 */
+	public java.lang.Long getArrayid();
 
 	// -------------------------------------------------------------------------
 	// FROM and INTO

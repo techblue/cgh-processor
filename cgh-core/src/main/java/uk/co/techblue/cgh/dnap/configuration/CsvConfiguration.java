@@ -112,6 +112,26 @@ public class CsvConfiguration implements IConfiguration{
     @Property(name = "polarity", displayName = "Polarity")
     private String polarity;
 
+    @Property(name = "protocolName", displayName = "protocolName")
+    private String protocolName;
+
+    @Property(name = "gridGenomicBuild", displayName = "gridGenomicBuild")
+    private String gridGenomicBuild;
+
+    @Property(name = "featureExtractorScanFilename", displayName = "featureExtractorScanFilename")
+    private String featureExtractorScanFilename;
+
+    @Property(name = "featureExtractorDesignFilename", displayName = "featureExtractorDesignFilename")
+    private String featureExtractorDesignFilename;
+
+    @Property(name = "gIsWellAboveBG", type = Type.BOOLEAN, displayName = "gIsWellAboveBG")
+    private String gIsWellAboveBG;
+
+    @Property(name = "rIsWellAboveBG", type = Type.BOOLEAN, displayName = "rIsWellAboveBG")
+    private String rIsWellAboveBG;
+
+    @Property(name = "sex", displayName = "Sex")
+    private String sex;
 
     /**
      * Gets the feature extractor barcode.
@@ -543,6 +563,62 @@ public class CsvConfiguration implements IConfiguration{
      */
     public void setPolarity(String polarity) {
         this.polarity = polarity;
+    }
+
+    public String getProtocolName() {
+        return protocolName;
+    }
+
+    public void setProtocolName(String protocolName) {
+        this.protocolName = protocolName;
+    }
+
+    public String getGridGenomicBuild() {
+        return gridGenomicBuild;
+    }
+
+    public void setGridGenomicBuild(String gridGenomicBuild) {
+        this.gridGenomicBuild = gridGenomicBuild;
+    }
+
+    public String getFeatureExtractorScanFilename() {
+        return featureExtractorScanFilename;
+    }
+
+    public void setFeatureExtractorScanFilename(String featureExtractorScanFilename) {
+        this.featureExtractorScanFilename = featureExtractorScanFilename;
+    }
+
+    public String getFeatureExtractorDesignFilename() {
+        return featureExtractorDesignFilename;
+    }
+
+    public void setFeatureExtractorDesignFilename(String featureExtractorDesignFilename) {
+        this.featureExtractorDesignFilename = featureExtractorDesignFilename;
+    }
+
+    public String getgIsWellAboveBG() {
+        return gIsWellAboveBG;
+    }
+
+    public void setgIsWellAboveBG(String gIsWellAboveBG) {
+        this.gIsWellAboveBG = gIsWellAboveBG;
+    }
+
+    public String getrIsWellAboveBG() {
+        return rIsWellAboveBG;
+    }
+
+    public void setrIsWellAboveBG(String rIsWellAboveBG) {
+        this.rIsWellAboveBG = rIsWellAboveBG;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
 }

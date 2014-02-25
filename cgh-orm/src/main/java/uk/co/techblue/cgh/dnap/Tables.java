@@ -17,6 +17,11 @@ public class Tables {
 	public static final uk.co.techblue.cgh.dnap.tables.Array ARRAY = uk.co.techblue.cgh.dnap.tables.Array.ARRAY;
 
 	/**
+	 * The table cgh-processor.arrayreference
+	 */
+	public static final uk.co.techblue.cgh.dnap.tables.Arrayreference ARRAYREFERENCE = uk.co.techblue.cgh.dnap.tables.Arrayreference.ARRAYREFERENCE;
+
+	/**
 	 * The table cgh-processor.audit
 	 */
 	public static final uk.co.techblue.cgh.dnap.tables.Audit AUDIT = uk.co.techblue.cgh.dnap.tables.Audit.AUDIT;
@@ -25,6 +30,16 @@ public class Tables {
 	 * The table cgh-processor.baselineaverages
 	 */
 	public static final uk.co.techblue.cgh.dnap.tables.Baselineaverages BASELINEAVERAGES = uk.co.techblue.cgh.dnap.tables.Baselineaverages.BASELINEAVERAGES;
+
+	/**
+	 * The table cgh-processor.DATABASECHANGELOG
+	 */
+	public static final uk.co.techblue.cgh.dnap.tables.Databasechangelog DATABASECHANGELOG = uk.co.techblue.cgh.dnap.tables.Databasechangelog.DATABASECHANGELOG;
+
+	/**
+	 * The table cgh-processor.DATABASECHANGELOGLOCK
+	 */
+	public static final uk.co.techblue.cgh.dnap.tables.Databasechangeloglock DATABASECHANGELOGLOCK = uk.co.techblue.cgh.dnap.tables.Databasechangeloglock.DATABASECHANGELOGLOCK;
 
 	/**
 	 * The table cgh-processor.region
@@ -37,9 +52,19 @@ public class Tables {
 	public static final uk.co.techblue.cgh.dnap.tables.Regionintensity REGIONINTENSITY = uk.co.techblue.cgh.dnap.tables.Regionintensity.REGIONINTENSITY;
 
 	/**
+	 * The table cgh-processor.regionintensityreference
+	 */
+	public static final uk.co.techblue.cgh.dnap.tables.Regionintensityreference REGIONINTENSITYREFERENCE = uk.co.techblue.cgh.dnap.tables.Regionintensityreference.REGIONINTENSITYREFERENCE;
+
+	/**
 	 * The table cgh-processor.signal
 	 */
 	public static final uk.co.techblue.cgh.dnap.tables.Signal SIGNAL = uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL;
+
+	/**
+	 * The table cgh-processor.signalreference
+	 */
+	public static final uk.co.techblue.cgh.dnap.tables.Signalreference SIGNALREFERENCE = uk.co.techblue.cgh.dnap.tables.Signalreference.SIGNALREFERENCE;
 
 	/**
 	 * The table cgh-processor.zscore

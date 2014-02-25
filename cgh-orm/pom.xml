@@ -5,7 +5,7 @@
     <parent>
         <groupId>uk.co.techblue</groupId>
         <artifactId>cgh-processor</artifactId>
-        <version>${application.version}</version>
+        <version>1.0.2</version>
     </parent>
 
     <artifactId>cgh-orm</artifactId>
@@ -20,7 +20,7 @@
                 <groupId>org.jooq</groupId>
                 <artifactId>jooq-codegen-maven</artifactId>
 
-                <!-- The plugin should hook into the generate goal
+                <!-- The plugin should hook into the generate goal -->
                 <executions>
                     <execution>
                         <goals>
@@ -28,7 +28,7 @@
                         </goals>
                     </execution>
                 </executions>
-                 -->
+                 
                 <!-- Specify the plugin configuration -->
                 <configuration>
                     <!-- JDBC connection parameters -->

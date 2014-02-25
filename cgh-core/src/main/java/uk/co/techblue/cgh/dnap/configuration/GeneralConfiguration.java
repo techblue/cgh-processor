@@ -20,6 +20,10 @@ public class GeneralConfiguration implements IConfiguration {
     @Property(name = "attib.file", displayName = "Attribute File Name", description = "Name of attributes file")
     private String attribFileName;
 
+    /** The attrib_ref file name. */
+    @Property(name = "attib_ref.file", displayName = "Ref Attribute File Name", description = "Name of ref attributes file")
+    private String attribRefFileName;
+
     /** The region file name. */
     @Property(name = "region.file", displayName = "Regions File Name", description = "Name of regions file")
     private String regionFileName;
@@ -235,4 +239,24 @@ public class GeneralConfiguration implements IConfiguration {
     public void setSystematicConst8(String systematicConst8) {
         this.systematicConst8 = systematicConst8;
     }
+
+    /**
+     * Gets the ref Attrib file name
+     * 
+     * @return the reference attributes file name
+     */
+    public String getAttribRefFileName() {
+        return attribRefFileName;
+    }
+
+    /**
+     * Sets the reference attribute file name
+     * 
+     * @param attribRefFileName attribute ref name
+     */
+
+    public void setAttribRefFileName(String attribRefFileName) {
+        this.attribRefFileName = attribRefFileName;
+    }
+
 }

@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Region extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tables.records.RegionRecord> {
 
-	private static final long serialVersionUID = 2192601;
+	private static final long serialVersionUID = 1393158370;
 
 	/**
 	 * The singleton instance of <code>cgh-processor.region</code>
@@ -30,7 +30,7 @@ public class Region extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.Long> REGIONID = createField("RegionID", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
-	 * The column <code>cgh-processor.region.Chromosome</code>. 
+	 * The column <code>cgh-processor.region.Chromosome</code>. it defines genes
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.String> CHROMOSOME = createField("Chromosome", org.jooq.impl.SQLDataType.VARCHAR.length(10), this);
 
@@ -43,6 +43,11 @@ public class Region extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tabl
 	 * The column <code>cgh-processor.region.StopPosition</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.Long> STOPPOSITION = createField("StopPosition", org.jooq.impl.SQLDataType.BIGINT, this);
+
+	/**
+	 * The column <code>cgh-processor.region.region</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionRecord, java.lang.String> REGION_ = createField("region", org.jooq.impl.SQLDataType.VARCHAR.length(50), this);
 
 	/**
 	 * Create a <code>cgh-processor.region</code> table reference

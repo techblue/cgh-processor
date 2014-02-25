@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables.pojos;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Zscore implements uk.co.techblue.cgh.dnap.tables.interfaces.IZscore {
 
-	private static final long serialVersionUID = -786827221;
+	private static final long serialVersionUID = 590931839;
 
 	private java.lang.Long   zscoreid;
 	private java.lang.Long   regionintensityid;

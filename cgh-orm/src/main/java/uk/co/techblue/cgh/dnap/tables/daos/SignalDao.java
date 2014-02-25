@@ -123,13 +123,6 @@ public class SignalDao extends org.jooq.impl.DAOImpl<uk.co.techblue.cgh.dnap.tab
 	}
 
 	/**
-	 * Fetch records that have <code>FeatureExtractor_barcode IN (values)</code>
-	 */
-	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Signal> fetchByFeatureextractorBarcode(java.lang.String... values) {
-		return fetch(uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL.FEATUREEXTRACTOR_BARCODE, values);
-	}
-
-	/**
 	 * Fetch records that have <code>Chromosome IN (values)</code>
 	 */
 	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Signal> fetchByChromosome(java.lang.String... values) {
@@ -148,5 +141,26 @@ public class SignalDao extends org.jooq.impl.DAOImpl<uk.co.techblue.cgh.dnap.tab
 	 */
 	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Signal> fetchByStopposition(java.lang.Long... values) {
 		return fetch(uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL.STOPPOSITION, values);
+	}
+
+	/**
+	 * Fetch records that have <code>gIsWellAboveBG IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Signal> fetchByGiswellabovebg(java.lang.Byte... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL.GISWELLABOVEBG, values);
+	}
+
+	/**
+	 * Fetch records that have <code>rIsWellAboveBG IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Signal> fetchByRiswellabovebg(java.lang.Byte... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL.RISWELLABOVEBG, values);
+	}
+
+	/**
+	 * Fetch records that have <code>ArrayId IN (values)</code>
+	 */
+	public java.util.List<uk.co.techblue.cgh.dnap.tables.pojos.Signal> fetchByArrayid(java.lang.Long... values) {
+		return fetch(uk.co.techblue.cgh.dnap.tables.Signal.SIGNAL.ARRAYID, values);
 	}
 }

@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables.pojos;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Signal implements uk.co.techblue.cgh.dnap.tables.interfaces.ISignal {
 
-	private static final long serialVersionUID = 1815770554;
+	private static final long serialVersionUID = 639182870;
 
 	private java.lang.Long    signalid;
 	private java.lang.String  probename;
@@ -23,10 +23,12 @@ public class Signal implements uk.co.techblue.cgh.dnap.tables.interfaces.ISignal
 	private java.lang.Boolean risfeatnonunifol;
 	private java.lang.Boolean gisbgnonunifol;
 	private java.lang.Boolean risbgnonunifol;
-	private java.lang.String  featureextractorBarcode;
 	private java.lang.String  chromosome;
 	private java.lang.Long    startposition;
 	private java.lang.Long    stopposition;
+	private java.lang.Byte    giswellabovebg;
+	private java.lang.Byte    riswellabovebg;
+	private java.lang.Long    arrayid;
 
 	@Override
 	public java.lang.Long getSignalid() {
@@ -149,16 +151,6 @@ public class Signal implements uk.co.techblue.cgh.dnap.tables.interfaces.ISignal
 	}
 
 	@Override
-	public java.lang.String getFeatureextractorBarcode() {
-		return this.featureextractorBarcode;
-	}
-
-	@Override
-	public void setFeatureextractorBarcode(java.lang.String featureextractorBarcode) {
-		this.featureextractorBarcode = featureextractorBarcode;
-	}
-
-	@Override
 	public java.lang.String getChromosome() {
 		return this.chromosome;
 	}
@@ -188,6 +180,36 @@ public class Signal implements uk.co.techblue.cgh.dnap.tables.interfaces.ISignal
 		this.stopposition = stopposition;
 	}
 
+	@Override
+	public java.lang.Byte getGiswellabovebg() {
+		return this.giswellabovebg;
+	}
+
+	@Override
+	public void setGiswellabovebg(java.lang.Byte giswellabovebg) {
+		this.giswellabovebg = giswellabovebg;
+	}
+
+	@Override
+	public java.lang.Byte getRiswellabovebg() {
+		return this.riswellabovebg;
+	}
+
+	@Override
+	public void setRiswellabovebg(java.lang.Byte riswellabovebg) {
+		this.riswellabovebg = riswellabovebg;
+	}
+
+	@Override
+	public java.lang.Long getArrayid() {
+		return this.arrayid;
+	}
+
+	@Override
+	public void setArrayid(java.lang.Long arrayid) {
+		this.arrayid = arrayid;
+	}
+
 	// -------------------------------------------------------------------------
 	// FROM and INTO
 	// -------------------------------------------------------------------------
@@ -209,10 +231,12 @@ public class Signal implements uk.co.techblue.cgh.dnap.tables.interfaces.ISignal
 		setRisfeatnonunifol(from.getRisfeatnonunifol());
 		setGisbgnonunifol(from.getGisbgnonunifol());
 		setRisbgnonunifol(from.getRisbgnonunifol());
-		setFeatureextractorBarcode(from.getFeatureextractorBarcode());
 		setChromosome(from.getChromosome());
 		setStartposition(from.getStartposition());
 		setStopposition(from.getStopposition());
+		setGiswellabovebg(from.getGiswellabovebg());
+		setRiswellabovebg(from.getRiswellabovebg());
+		setArrayid(from.getArrayid());
 	}
 
 	/**

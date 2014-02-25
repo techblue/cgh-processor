@@ -9,7 +9,7 @@ package uk.co.techblue.cgh.dnap.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked" })
 public class Regionintensity extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord> {
 
-	private static final long serialVersionUID = 456980551;
+	private static final long serialVersionUID = -1255918603;
 
 	/**
 	 * The singleton instance of <code>cgh-processor.regionintensity</code>
@@ -33,26 +33,6 @@ public class Regionintensity extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.
 	 * The column <code>cgh-processor.regionintensity.RegionId</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> REGIONID = createField("RegionId", org.jooq.impl.SQLDataType.BIGINT, this);
-
-	/**
-	 * The column <code>cgh-processor.regionintensity.Chromosome</code>. 
-	 */
-	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.String> CHROMOSOME = createField("Chromosome", org.jooq.impl.SQLDataType.VARCHAR.length(10), this);
-
-	/**
-	 * The column <code>cgh-processor.regionintensity.StartPosition</code>. 
-	 */
-	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> STARTPOSITION = createField("StartPosition", org.jooq.impl.SQLDataType.BIGINT, this);
-
-	/**
-	 * The column <code>cgh-processor.regionintensity.StopPosition</code>. 
-	 */
-	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> STOPPOSITION = createField("StopPosition", org.jooq.impl.SQLDataType.BIGINT, this);
-
-	/**
-	 * The column <code>cgh-processor.regionintensity.FeatureExtractor_Barcode</code>. 
-	 */
-	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.String> FEATUREEXTRACTOR_BARCODE = createField("FeatureExtractor_Barcode", org.jooq.impl.SQLDataType.VARCHAR.length(22), this);
 
 	/**
 	 * The column <code>cgh-processor.regionintensity.MeanGreenSignal</code>. 
@@ -83,6 +63,11 @@ public class Regionintensity extends org.jooq.impl.TableImpl<uk.co.techblue.cgh.
 	 * The column <code>cgh-processor.regionintensity.MedianLogRatio</code>. 
 	 */
 	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Double> MEDIANLOGRATIO = createField("MedianLogRatio", org.jooq.impl.SQLDataType.DOUBLE, this);
+
+	/**
+	 * The column <code>cgh-processor.regionintensity.ArrayId</code>. 
+	 */
+	public final org.jooq.TableField<uk.co.techblue.cgh.dnap.tables.records.RegionintensityRecord, java.lang.Long> ARRAYID = createField("ArrayId", org.jooq.impl.SQLDataType.BIGINT, this);
 
 	/**
 	 * Create a <code>cgh-processor.regionintensity</code> table reference
